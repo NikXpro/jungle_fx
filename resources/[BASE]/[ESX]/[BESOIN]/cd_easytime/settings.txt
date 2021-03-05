@@ -1,0 +1,1 @@
+{"blackout":false,"hours":1,"freeze":true,"dynamic":true,"mins":7,"weather":"OVERCAST"}
