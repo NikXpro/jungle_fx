@@ -1,0 +1,36 @@
+
+* {
+    color: #eee;
+    font-size: 30px;
+}
+.bg {
+    background-image: url(../html/background.jpg);
+    width: auto;
+    height: auto;
+}
+
+
+.container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.loadbar {
+    width: 35%;
+    background-color: rgb(17, 17, 17);
+    height: 20px;
+    margin-top: 54%;
+    margin-left: auto;
+    margin-right: auto;
+
+    display: block;
+}
+
+.progressBar {
+    width: 10%;
+    background-color: #22ac10;
+    height: 20px;
+    left: 10%;
+}

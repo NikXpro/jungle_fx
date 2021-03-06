@@ -47,7 +47,7 @@ local function Harvest(source)
       if TabacBlondQuantity >= 80 then
         TriggerClientEvent('esx:showNotification', source, _U('you_do_not_room'))
       else
-                xPlayer.addInventoryItem('tabacblond', 4)
+                xPlayer.addInventoryItem('tabacblond', 1)
 
         Harvest(source)
       end
@@ -78,10 +78,10 @@ local function Harvest2(source)
 
       local xPlayer  = ESX.GetPlayerFromId(source)
       local TabacBrunQuantity  = xPlayer.getInventoryItem('tabacbrun').count
-      if TabacBrunQuantity >= 50 then
+      if TabacBrunQuantity >= 80 then
         TriggerClientEvent('esx:showNotification', source, _U('you_do_not_room'))
       else
-                xPlayer.addInventoryItem('tabacbrun', 4)
+                xPlayer.addInventoryItem('tabacbrun', 1)
 
         Harvest2(source)
       end
@@ -151,8 +151,8 @@ local function Craft2(source)
       if TabacBrunQuantity <= 0 then
         TriggerClientEvent('esx:showNotification', source, _U('not_enough_tabacbrun'))
       else
-                xPlayer.removeInventoryItem('tabacbrun', 8)
-                xPlayer.addInventoryItem('tabacbrunsec', 4)
+                xPlayer.removeInventoryItem('tabacbrun', 4)
+                xPlayer.addInventoryItem('tabacbrunsec', 2)
 
         Craft2(source)
       end
