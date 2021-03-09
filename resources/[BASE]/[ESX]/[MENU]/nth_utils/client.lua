@@ -344,7 +344,7 @@ Player = {
 }
 
 Controls = {
-	HandsUP = {keyboard = Keys['H']},
+	HandsUP = {keyboard = 'QUOTE'},
 	Crouch = {keyboard = Keys['LEFTCTRL']},
 }
 
