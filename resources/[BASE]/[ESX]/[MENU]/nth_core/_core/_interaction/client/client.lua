@@ -33,7 +33,7 @@ function Citizen.Trace(...)
 end
 
 --Début ragdoll
-Keys.Register('OEM_3', 'OEM_3', 'Tomber/Se relever.', function()
+Keys.Register('COMMA', 'COMMA', 'Tomber/Se relever.', function()
     Player.ragdoll = not Player.ragdoll
 	if Player.ragdoll == true then
 		Ragdoll()
