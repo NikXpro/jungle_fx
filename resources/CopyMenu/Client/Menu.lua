@@ -28,7 +28,7 @@ Citizen.CreateThread( function()
                     local Coords = GetEntityCoords(PlayerPedId())
                     local x, y, z = table.unpack(Coords)
                     local Heading = GetEntityHeading(PlayerPedId())
-                    Copy.Copieur = "vector3("..x..", "..y..", "..z..")"
+                    Copy.Copieur = "vector3("..x..", "..y..", "..z.."),"
                     SendNUIMessage({
                         Copy = Copy.Copieur
                     })
