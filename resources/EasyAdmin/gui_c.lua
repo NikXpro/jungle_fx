@@ -10,7 +10,7 @@ showLicenses = false
 RedM = false
 
 settings = {
-	button = 289,
+	button = 56,
 	forceShowGUIButtons = false,
 }
 
