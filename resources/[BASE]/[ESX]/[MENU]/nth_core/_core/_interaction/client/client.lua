@@ -49,7 +49,7 @@ Citizen.CreateThread(function()
       Citizen.Wait(0)
     end
   
-    Keys.Register('K', 'K', 'Verouiller/Dévérouiller un vehicule.', function()
+    Keys.Register('J', 'J', 'Verouiller/Dévérouiller un vehicule.', function()
           local coords = GetEntityCoords(GetPlayerPed(-1))
           local hasAlreadyLocked = false
           cars = ESX.Game.GetVehiclesInArea(coords, 30)
