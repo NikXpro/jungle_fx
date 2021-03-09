@@ -186,7 +186,7 @@ data.jobMenu = {
         MenuId = "LocationBateauPort",
         MenuType = "garage",
         Settings = {
-            JobRequired = { Activate = true, jobName = {"ambulance"} },
+            JobRequired = { Activate = false, jobName = {"ambulance"} },
             TitreMenu = "",
             DescriptionMenu = "Location Bateau sud",
             CustomBanner = { Activate = true, BannerDic = "banner", BannerName = "BCSO" },
