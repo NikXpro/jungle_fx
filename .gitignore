@@ -4,5 +4,6 @@ essentialmode.db
 imgui.ini
 start.bat
 vmenu_bans.db
-resources/EasyAdmin/backups
-resources/[BASE]/[ESX]/[JOBS]/GangsBuilder/data
+resources/EasyAdmin/backups/
+resources/[BASE]/[ESX]/[JOBS]/GangsBuilder/data/
+resources/[BASE]/[ESX]/[BESOIN]/cd_easytime/settings.txt

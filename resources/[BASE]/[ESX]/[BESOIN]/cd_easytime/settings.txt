@@ -1,1 +1,1 @@
-{"blackout":false,"hours":1,"freeze":true,"dynamic":true,"mins":7,"weather":"OVERCAST"}
+{"dynamic":true,"hours":10,"weather":"CLOUDS","mins":26,"freeze":false,"blackout":false}
