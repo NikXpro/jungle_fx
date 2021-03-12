@@ -16,3 +16,9 @@ RegisterServerEvent("siren:sync")
 AddEventHandler("siren:sync", function(state, veh)
     TriggerClientEvent("siren:ClientSync", -1, state, veh)
 end)
+
+RegisterServerEvent("RPCore:drag")
+AddEventHandler("RPCore:drag", function(Target)
+	local Source = source
+	TriggerClientEvent("RPCore:drag", Target, Source)
+end)
