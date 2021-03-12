@@ -53,7 +53,7 @@ Config.webhooks = {
 	BUY_MAGASIN = "https://discordapp.com/api/webhooks/747840014972354640/382dqEeZxdkGX864VPBQQX4ivjPl-6TREuXLAym_-x-ZVR2QZ7arTIBID9sd3xc12HND",
 
 	--RAPORT D'INCIDENT
-	BUG_REPORT = "https://discordapp.com/api/webhooks/770969660274245652/g9e3aLrAyClji-0810DyjDDUQm4I8ySmGzJZsk0L4INie7gDYayE6MlK8iHVv4QQomVW",
+	BUG_REPORT = "https://discord.com/api/webhooks/820033261363134475/jIxt-1UV9DZOgGrSAK0nL_lxPzfQXPpAi-7MJkjTxfDcnJA87htTjHwr9pCHO4cHCMLy",
   }
 
 Config.debug = false --Ne pas activé

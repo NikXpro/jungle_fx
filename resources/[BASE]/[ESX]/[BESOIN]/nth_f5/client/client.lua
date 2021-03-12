@@ -631,6 +631,7 @@ Citizen.CreateThread(function()
       RageUI.IsVisible(actionMenu, function()
         RageUI.Button("Porter sur son dos", nil, {RightLabel = Emoticon.Cheval},true, {onSelected = function()ExecuteCommand("piggyback")end});
         RageUI.Button("Porter sur son épaule", nil, {RightLabel = Emoticon.Cheval},true, {onSelected = function()ExecuteCommand("carry")end});
+        RageUI.Button("Tirer la personne", nil, {RightLabel = Emoticon.Cheval},true, {onSelected = function()ExecuteCommand("drag")end});
         RageUI.Button('Rapporter un incident', nil, {RightLabel = "→"}, true, {onSelected = function() end}, incidentMenu);
       end)
     end
