@@ -408,7 +408,7 @@ end, false)
 	
 Citizen.CreateThread(function()
 	while true do
-		Citizen.Wait(0)
+		Citizen.Wait(6)
 
 		if NetworkIsSessionStarted() then
 			TriggerEvent("chat:addSuggestion", "/drag", "Pour tirer un joueur")
