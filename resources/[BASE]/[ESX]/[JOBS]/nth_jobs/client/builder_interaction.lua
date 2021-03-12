@@ -16,6 +16,6 @@ Citizen.CreateThread(function()
     end
 end)
 
-Keys.Register('F6', 'F6', 'Menu intéraction EMS.', function()
+--[[Keys.Register('F6', 'F6', 'Menu intéraction EMS.', function()
     RageUI.Visible(emsMenu, not RageUI.Visible(emsMenu))
-end)
+end)]]

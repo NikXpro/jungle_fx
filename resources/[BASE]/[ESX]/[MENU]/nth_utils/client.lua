@@ -25,6 +25,14 @@ Citizen.CreateThread(function()
 	PlayerData = ESX.GetPlayerData()
 end)
 
+Player = {
+    crouched = false,
+    handsUp = false,
+}
+
+Controls = {
+	Crouch = {keyboard = Keys['LEFTCTRL']}
+}
 
 RegisterKeyMapping('binoculars', 'Utilliser le télémétre', 'keyboard', "")
 RegisterKeyMapping('siren', 'Activer/Désactiver les sirens', 'keyboard', "")
@@ -32,7 +40,7 @@ RegisterKeyMapping('vehicule_place_1', 'Aller en conducteur', 'keyboard', "1")
 RegisterKeyMapping('vehicule_place_2', 'Aller en passager', 'keyboard', "2")
 RegisterKeyMapping('vehicule_place_3', 'Aller en passager arriére gauche', 'keyboard', "3")
 RegisterKeyMapping('vehicule_place_4', 'Aller en passager arriére droite', 'keyboard', "4")
-
+RegisterKeyMapping('lever_main', 'Mettre les main en l\'air', 'keyboard', "OEM_3")
 
 
 Citizen.CreateThread(function()
@@ -53,6 +61,20 @@ Citizen.CreateThread(function()
 	end
 end)
 
+RegisterCommand('lever_main', function()
+	local plyPed = PlayerPedId()
+	if (DoesEntityExist(plyPed)) and not (IsEntityDead(plyPed)) and (IsPedOnFoot(plyPed)) then
+		Player.handsUp = not Player.handsUp
+		if Player.handsUp then
+			ESX.Streaming.RequestAnimDict('random@mugging3', function()
+				TaskPlayAnim(plyPed, 'random@mugging3', 'handsup_standing_base', 8.0, -8, -1, 49, 0, 0, 0, 0)
+				RemoveAnimDict('random@mugging3')
+			end)
+		else
+			ClearPedSecondaryTask(plyPed)
+		end
+	end
+end)
 
 positions = { --tp
     --{{-1337.45, -1161.55, 3.51, 265.02}, {20.09, 114.39, 82.27, 248.5}, {36,237,157}, "Appuyer sur ~INPUT_CONTEXT~ pour ~g~Entrer~s~/~r~Sortir~s~ de chez ~b~D.K~s~"}, -- 410th appartement chef
@@ -207,12 +229,6 @@ RegisterCommand('vehicule_place_2', function()
 		CarSpeed = GetEntitySpeed(plyVehicle) * 3.6 -- On définit la vitesse du véhicule en km/h
 		if CarSpeed <= 40.0 then -- On ne peux pas changer de place si la vitesse du véhicule est au dessus ou égale à 60 km/h
 				SetPedIntoVehicle(plyPed, plyVehicle, 0)
-			if IsControlJustReleased(0, 160) then -- arriere gauche
-				SetPedIntoVehicle(plyPed, plyVehicle, 1)
-			end
-			if IsControlJustReleased(0, 164) then -- arriere gauche
-				SetPedIntoVehicle(plyPed, plyVehicle, 2)
-			end
 		end
 	end
 end)
@@ -224,9 +240,6 @@ RegisterCommand('vehicule_place_3', function()
 		CarSpeed = GetEntitySpeed(plyVehicle) * 3.6 -- On définit la vitesse du véhicule en km/h
 		if CarSpeed <= 40.0 then -- On ne peux pas changer de place si la vitesse du véhicule est au dessus ou égale à 60 km/h
 			SetPedIntoVehicle(plyPed, plyVehicle, 1)
-			if IsControlJustReleased(0, 164) then -- arriere gauche
-				SetPedIntoVehicle(plyPed, plyVehicle, 2)
-			end
 		end
 	end
 end)
@@ -337,22 +350,202 @@ Citizen.CreateThread(function()
 end)
 
 
-
-Player = {
-    crouched = false,
-    handsUp = false,
+local Drag = {
+	Distance = 3,
+	Dragging = false,
+	Dragger = -1,
+	Dragged = false,
 }
+	
+function Drag:GetPlayers()
+	local Players = {}
+	for Index = 0, 255 do
+		if NetworkIsPlayerActive(Index) then
+			table.insert(Players, Index)
+		end
+	end
+	return Players
+end
+	
+function Drag:GetClosestPlayer()
+	local Players = self:GetPlayers()
+	local ClosestDistance = -1
+	local ClosestPlayer = -1
+	local PlayerPed = PlayerPedId()
+	local PlayerPosition = GetEntityCoords(PlayerPed, false)
+	
+	for Index = 1, #Players do
+		local TargetPed = GetPlayerPed(Players[Index])
+		if PlayerPed ~= TargetPed then
+			local TargetCoords = GetEntityCoords(TargetPed, false)
+			local Distance = #(PlayerPosition - TargetCoords)
 
-Controls = {
-	HandsUP = {keyboard = 'QUOTE'},
-	Crouch = {keyboard = Keys['LEFTCTRL']},
-}
+			if ClosestDistance == -1 or ClosestDistance > Distance then
+				ClosestPlayer = Players[Index]
+				ClosestDistance = Distance
+			end
+		end
+	end
+	
+	return ClosestPlayer, ClosestDistance
+end
+	
+RegisterNetEvent("nth:drag")
+AddEventHandler("nth:drag", function(Dragger)
+	Drag.Dragging = not Drag.Dragging
+	Drag.Dragger = Dragger
+end)
+	
+RegisterCommand("drag", function(source, args, fullCommand)
+	local Player, Distance = Drag:GetClosestPlayer()
+
+	if Distance ~= -1 and Distance < Drag.Distance then
+		TriggerServerEvent("nth:drag", GetPlayerServerId(Player))
+	else
+		ESX.ShowNotification("Aucun joueur a proximité")
+	end
+end, false)
+	
+Citizen.CreateThread(function()
+	while true do
+		Citizen.Wait(0)
+
+		if NetworkIsSessionStarted() then
+			TriggerEvent("chat:addSuggestion", "/drag", "Pour tirer un joueur")
+			return
+		end
+	end
+end)
+	
+Citizen.CreateThread(function()
+	while true do
+		Citizen.Wait(6)
+		if Drag.Dragging then
+			local PlayerPed = PlayerPedId()
+
+			Drag.Dragged = true
+			AttachEntityToEntity(PlayerPed, GetPlayerPed(GetPlayerFromServerId(Drag.Dragger)), 4103, 11816, 0.48, 0.00, 0.0, 0.0, 0.0, 0.0, false, false, false, false, 2, true)
+		else
+			if Drag.Dragged then
+				local PlayerPed = PlayerPedId()
+
+				if not IsPedInParachuteFreeFall(PlayerPed) then
+					Drag.Dragged = false
+					DetachEntity(PlayerPed, true, false)    
+				end
+			end
+		end
+	end
+end)
+
+
+local mp_pointing = false
+local keyPressed = false
+    
+local function startPointing()
+    local ped = PlayerPedId()
+    RequestAnimDict("anim@mp_point")
+    while not HasAnimDictLoaded("anim@mp_point") do
+        Wait(0)
+    end
+    SetPedCurrentWeaponVisible(ped, 0, 1, 1, 1)
+    SetPedConfigFlag(ped, 36, 1)
+    Citizen.InvokeNative(0x2D537BA194896636, ped, "task_mp_pointing", 0.5, 0, "anim@mp_point", 24)
+    RemoveAnimDict("anim@mp_point")
+end
+
+local function stopPointing()
+    local ped = PlayerPedId()
+    Citizen.InvokeNative(0xD01015C7316AE176, ped, "Stop")
+    if not IsPedInjured(ped) then
+        ClearPedSecondaryTask(ped)
+    end
+    if not IsPedInAnyVehicle(ped, 1) then
+        SetPedCurrentWeaponVisible(ped, 1, 1, 1, 1)
+    end
+    SetPedConfigFlag(ped, 36, 0)
+    ClearPedSecondaryTask(PlayerPedId())
+end
+
+Citizen.CreateThread(function()
+local once = true
+local oldval = false
+local oldvalped = false
+    while true do
+        Wait(6)
+
+        if once then
+            once = false
+        end
+
+        if not keyPressed then
+            if IsControlPressed(0, 29) and not mp_pointing and IsPedOnFoot(PlayerPedId()) then
+                Wait(200)
+                if not IsControlPressed(0, 29) then
+                    keyPressed = true
+                    startPointing()
+                    mp_pointing = true
+                else
+                    keyPressed = true
+                    while IsControlPressed(0, 29) do
+                        Wait(50)
+                    end
+                end
+            elseif (IsControlPressed(0, 29) and mp_pointing) or (not IsPedOnFoot(PlayerPedId()) and mp_pointing) then
+                keyPressed = true
+                mp_pointing = false
+                stopPointing()
+            end
+        end
+
+        if keyPressed then
+            if not IsControlPressed(0, 29) then
+                keyPressed = false
+            end
+        end
+        if Citizen.InvokeNative(0x921CE12C489C4C41, PlayerPedId()) and not mp_pointing then
+            stopPointing()
+        end
+        if Citizen.InvokeNative(0x921CE12C489C4C41, PlayerPedId()) then
+            if not IsPedOnFoot(PlayerPedId()) then
+                stopPointing()
+            else
+                local ped = PlayerPedId()
+                local camPitch = GetGameplayCamRelativePitch()
+                if camPitch < -70.0 then
+                    camPitch = -70.0
+                elseif camPitch > 42.0 then
+                    camPitch = 42.0
+                end
+                camPitch = (camPitch + 70.0) / 112.0
+                local camHeading = GetGameplayCamRelativeHeading()
+                local cosCamHeading = Cos(camHeading)
+                local sinCamHeading = Sin(camHeading)
+                if camHeading < -180.0 then
+                    camHeading = -180.0
+                elseif camHeading > 180.0 then
+                    camHeading = 180.0
+                end
+                camHeading = (camHeading + 180.0) / 360.0
+                local blocked = 0
+                local nn = 0
+                local coords = GetOffsetFromEntityInWorldCoords(ped, (cosCamHeading * -0.2) - (sinCamHeading * (0.4 * camHeading + 0.3)), (sinCamHeading * -0.2) + (cosCamHeading * (0.4 * camHeading + 0.3)), 0.6)
+                local ray = Cast_3dRayPointToPoint(coords.x, coords.y, coords.z - 0.2, coords.x, coords.y, coords.z + 0.2, 0.4, 95, ped, 7);
+                nn,blocked,coords,coords = GetRaycastResult(ray)
+                Citizen.InvokeNative(0xD5BB4025AE449A4E, ped, "Pitch", camPitch)
+                Citizen.InvokeNative(0xD5BB4025AE449A4E, ped, "Heading", camHeading * -1.0 + 1.0)
+                Citizen.InvokeNative(0xB0A6CFD2C69C1088, ped, "isBlocked", blocked)
+                Citizen.InvokeNative(0xB0A6CFD2C69C1088, ped, "isFirstPerson", Citizen.InvokeNative(0xEE778F8C7E1142E2, Citizen.InvokeNative(0x19CAFA3C87F7C2FF)) == 4)
+            end
+        end
+    end
+end)
+
 
 Citizen.CreateThread(function()
 	while true do
 		Citizen.Wait(7)
 		DisableControlAction(1, 36, true)
-
 		if IsDisabledControlJustReleased(1, 36) and IsInputDisabled(2) then
 			local plyPed = PlayerPedId()
 
@@ -369,28 +562,6 @@ Citizen.CreateThread(function()
 				end
 			end
 		end
-
-		if IsControlJustReleased(1, Controls.HandsUP.keyboard) and IsInputDisabled(2) then
-			local plyPed = PlayerPedId()
-
-			if (DoesEntityExist(plyPed)) and not (IsEntityDead(plyPed)) and (IsPedOnFoot(plyPed)) then
-				if Player.pointing then
-					Player.pointing = false
-				end
-
-				Player.handsUp = not Player.handsUp
-
-				if Player.handsUp then
-					ESX.Streaming.RequestAnimDict('random@mugging3', function()
-						TaskPlayAnim(plyPed, 'random@mugging3', 'handsup_standing_base', 8.0, -8, -1, 49, 0, 0, 0, 0)
-						RemoveAnimDict('random@mugging3')
-					end)
-				else
-					ClearPedSecondaryTask(plyPed)
-				end
-			end
-		end
-
 		if Player.crouched or Player.handsUp then
 			if not IsPedOnFoot(PlayerPedId()) then
 				ResetPedMovementClipset(plyPed, 0)
