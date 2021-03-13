@@ -20,3 +20,5 @@ Config.Weapons = {
 	"WEAPON_STUNGUN",
 	"WEAPON_REVOLVER",
 }
+
+Config.Drag = false

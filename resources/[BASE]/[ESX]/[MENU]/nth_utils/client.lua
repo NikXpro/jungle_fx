@@ -349,100 +349,101 @@ Citizen.CreateThread(function()
 	end
 end)
 
+if Config.Drag then
+	local Drag = {
+		Distance = 3,
+		Dragging = false,
+		Dragger = -1,
+		Dragged = false,
+	}
 
-local Drag = {
-	Distance = 3,
-	Dragging = false,
-	Dragger = -1,
-	Dragged = false,
-}
-
-function Drag:GetPlayers()
-	local Players = {}
-    
-	for Index = 0, 255 do
-		if NetworkIsPlayerActive(Index) then
-			table.insert(Players, Index)
+	function Drag:GetPlayers()
+		local Players = {}
+	
+		for Index = 0, 255 do
+			if NetworkIsPlayerActive(Index) then
+				table.insert(Players, Index)
+			end
 		end
+
+	    return Players
 	end
 
-    return Players
-end
+	function Drag:GetClosestPlayer()
+	    local Players = self:GetPlayers()
+	    local ClosestDistance = -1
+	    local ClosestPlayer = -1
+	    local PlayerPed = PlayerPedId()
+	    local PlayerPosition = GetEntityCoords(PlayerPed, false)
+	
+	    for Index = 1, #Players do
+	    	local TargetPed = GetPlayerPed(Players[Index])
+	    	if PlayerPed ~= TargetPed then
+	    		local TargetCoords = GetEntityCoords(TargetPed, false)
+	    		local Distance = #(PlayerPosition - TargetCoords)
 
-function Drag:GetClosestPlayer()
-    local Players = self:GetPlayers()
-    local ClosestDistance = -1
-    local ClosestPlayer = -1
-    local PlayerPed = PlayerPedId()
-    local PlayerPosition = GetEntityCoords(PlayerPed, false)
-    
-    for Index = 1, #Players do
-    	local TargetPed = GetPlayerPed(Players[Index])
-    	if PlayerPed ~= TargetPed then
-    		local TargetCoords = GetEntityCoords(TargetPed, false)
-    		local Distance = #(PlayerPosition - TargetCoords)
-
-    		if ClosestDistance == -1 or ClosestDistance > Distance then
-    			ClosestPlayer = Players[Index]
-    			ClosestDistance = Distance
-    		end
-    	end
-    end
-    
-    return ClosestPlayer, ClosestDistance
-end
-
-RegisterNetEvent("RPCore:drag")
-AddEventHandler("RPCore:drag", function(Dragger)
-	Drag.Dragging = not Drag.Dragging
-	Drag.Dragger = Dragger
-end)
-
-RegisterCommand("drag", function(source, args, fullCommand)
-	local Player, Distance = Drag:GetClosestPlayer()
-
-	if Distance ~= -1 and Distance < Drag.Distance then
-		TriggerServerEvent("RPCore:drag", GetPlayerServerId(Player))
-	else
-		TriggerEvent("chat:addMessage", {
-			color = {255, 0, 0},
-			multiline = true,
-			args = {"Government", "Please get closer to the target!"},
-		})
+	    		if ClosestDistance == -1 or ClosestDistance > Distance then
+	    			ClosestPlayer = Players[Index]
+	    			ClosestDistance = Distance
+	    		end
+	    	end
+	    end
+	
+	    return ClosestPlayer, ClosestDistance
 	end
-end, false)
 
-Citizen.CreateThread(function()
-	while true do
-		Citizen.Wait(0)
+	RegisterNetEvent("RPCore:drag")
+	AddEventHandler("RPCore:drag", function(Dragger)
+		Drag.Dragging = not Drag.Dragging
+		Drag.Dragger = Dragger
+	end)
 
-		if NetworkIsSessionStarted() then
-			TriggerEvent("chat:addSuggestion", "/drag", "Drag the closest player")
-			return
-		end
-	end
-end)
+	RegisterCommand("drag", function(source, args, fullCommand)
+		local Player, Distance = Drag:GetClosestPlayer()
 
-Citizen.CreateThread(function()
-	while true do
-		Citizen.Wait(0)
-		if Drag.Dragging then
-			local PlayerPed = PlayerPedId()
-
-			Drag.Dragged = true
-			AttachEntityToEntity(PlayerPed, GetPlayerPed(GetPlayerFromServerId(Drag.Dragger)), 4103, 11816, 0.48, 0.00, 0.0, 0.0, 0.0, 0.0, false, false, false, false, 2, true)
+		if Distance ~= -1 and Distance < Drag.Distance then
+			TriggerServerEvent("RPCore:drag", GetPlayerServerId(Player))
 		else
-			if Drag.Dragged then
+			TriggerEvent("chat:addMessage", {
+				color = {255, 0, 0},
+				multiline = true,
+				args = {"Government", "Please get closer to the target!"},
+			})
+		end
+	end, false)
+
+	Citizen.CreateThread(function()
+		while true do
+			Citizen.Wait(0)
+
+			if NetworkIsSessionStarted() then
+				TriggerEvent("chat:addSuggestion", "/drag", "Drag the closest player")
+				return
+			end
+		end
+	end)
+
+	Citizen.CreateThread(function()
+		while true do
+			Citizen.Wait(0)
+			if Drag.Dragging then
 				local PlayerPed = PlayerPedId()
 
-				if not IsPedInParachuteFreeFall(PlayerPed) then
-					Drag.Dragged = false
-					DetachEntity(PlayerPed, true, false)    
+				Drag.Dragged = true
+				AttachEntityToEntity(PlayerPed, GetPlayerPed(GetPlayerFromServerId(Drag.Dragger)), 4103, 11816, 0.48, 0.00, 0.0, 0.0, 0.0, 0.0, false, false, false, false, 2, true)
+			else
+				if Drag.Dragged then
+					local PlayerPed = PlayerPedId()
+
+					if not IsPedInParachuteFreeFall(PlayerPed) then
+						Drag.Dragged = false
+						DetachEntity(PlayerPed, true, false)    
+					end
 				end
 			end
 		end
-	end
-end)
+	end)
+end
 
 
 local mp_pointing = false
