@@ -1,5 +1,4 @@
 ESX = nil
-local PlayerData = {}
 local PlayerLoaded = false
 local blips = {}
 Citizen.CreateThread(function()

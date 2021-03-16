@@ -56,7 +56,7 @@ data.menu = {
 
 		ped = "s_m_y_cop_01",
 		TailleZone = 2.5,
-		zone = vector3(443.5, -986.5, 29.69),
+		zone = vector3(443.02279663086, -983.16363525391, 29.689540863037),
     	heading = 95.9,
 	},
 	ambulance = {
@@ -73,20 +73,5 @@ data.menu = {
 		TailleZone = 2.5,
 		zone = vector3(312.35, -594.19, 42.28),
     	heading = 357.99,
-	},
-	cardealer = {
-		MenuId = "cardealer",
-		MenuType = "service",
-		ServiceOff = "cardealeroff", --nom du garage hors service
-		ServiceOn = "cardealer", --nom du garage en service
-		TitreMenu = "Service vendeur",
-		DescriptionMenu = "Prendre/quitter son service~",
-
-		MessageZone = "Appuyer sur ~INPUT_CONTEXT~ pour parler a Simeon.",
-
-		ped = "ig_siemonyetarian",
-		TailleZone = 2,
-		zone = vector3(-55.58, -1098.03, 25.42),
-    	heading = 333.21,
 	},
 }

@@ -546,7 +546,11 @@ Citizen.CreateThread(function()
                 local isMale = skin.sex == 0
                 TriggerEvent('skinchanger:loadDefaultModel', isMale, function()
                   skin = skin
-                  
+                  TriggerEvent('skinchanger:loadSkin', skin)
+                end)
+                Wait(100)
+                TriggerEvent('skinchanger:loadDefaultModel', isMale, function()
+                  skin = skin
                   TriggerEvent('skinchanger:loadSkin', skin)
                 end)
               end)
@@ -588,10 +592,28 @@ Citizen.CreateThread(function()
                     local xPlayer = PlayerId()
                     local skin = json.decode(ListPeds[i].skin)
                     local isMale = skin.sex == 0
-                    TriggerEvent('skinchanger:loadDefaultModel', isMale, function()
-                      skin = skin
-                      TriggerEvent('skinchanger:loadSkin', skin)
-                    end)
+                    Wait(100)
+                    if skin.sex == 0 then
+                      TriggerEvent('skinchanger:loadDefaultModel', isMale, function()
+                        skin = skin
+                        TriggerEvent('skinchanger:loadSkin', skin)
+                      end)
+                      Wait(150)
+                      TriggerEvent('skinchanger:loadDefaultModel', isMale, function()
+                        skin = skin
+                        TriggerEvent('skinchanger:loadSkin', skin)
+                      end)
+                    else
+                      TriggerEvent('skinchanger:loadDefaultModel', isMale, function()
+                        skin = skin
+                        TriggerEvent('skinchanger:loadSkin', skin)
+                      end)
+                      Wait(150)
+                      TriggerEvent('skinchanger:loadDefaultModel', isMale, function()
+                        skin = skin
+                        TriggerEvent('skinchanger:loadSkin', skin)
+                      end)
+                    end
    				          ESX.ShowNotification('Skin changer !')
                   elseif OM.SaveSection == 2 then 
                     local newName = KeyboardInput("Nouveau nom", '', 20)
@@ -635,7 +657,11 @@ Citizen.CreateThread(function()
                 local isMale = skin.sex == 0
                 TriggerEvent('skinchanger:loadDefaultModel', isMale, function()
                   skin = skin
-                  
+                  TriggerEvent('skinchanger:loadSkin', skin)
+                end)
+                Wait(100)
+                TriggerEvent('skinchanger:loadDefaultModel', isMale, function()
+                  skin = skin
                   TriggerEvent('skinchanger:loadSkin', skin)
                 end)
               end)
