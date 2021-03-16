@@ -2,6 +2,17 @@ ESX = nil
 
 TriggerEvent('esx:getSharedObject', function(obj) ESX = obj end)
 
+ESX.RegisterServerCallback('nth:Usergroup', function(source, cb)
+	local xPlayer = ESX.GetPlayerFromId(source)
+	local plyGroup = xPlayer.getGroup()
+
+	if plyGroup ~= nil then 
+		cb(plyGroup)
+	else
+		cb('user')
+	end
+end)
+
 ESX.RegisterServerCallback('nth:getSaveList', function(source, cb)
     local src_ = source
     local license = GetPlayerIdentifiers(src_)[1]

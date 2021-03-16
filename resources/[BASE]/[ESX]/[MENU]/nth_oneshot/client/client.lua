@@ -450,242 +450,13 @@ local pedslist = {
   }
 }
 
-local FoundObjects = {
-	{HashIs = -1267889684, ModNam = '02gate3_l'},
-  {HashIs = -832573324, ModNam = 'a_c_boar'},
-  {HashIs = 1462895032, ModNam = 'a_c_cat_01'},
-  {HashIs = -1430839454, ModNam = 'a_c_chickenhawk'},
-  {HashIs = -1469565163, ModNam = 'a_c_chimp'},
-  {HashIs = 351016938, ModNam = 'a_c_chop'},
-  {HashIs = 1457690978, ModNam = 'a_c_cormorant'},
-  {HashIs = -50684386, ModNam = 'a_c_cow'},
-  {HashIs = 1682622302, ModNam = 'a_c_coyote'},
-  {HashIs = 402729631, ModNam = 'a_c_crow'},
-  {HashIs = -664053099, ModNam = 'a_c_deer'},
-  {HashIs = -1950698411, ModNam = 'a_c_dolphin'},
-  {HashIs = 802685111, ModNam = 'a_c_fish'},
-  {HashIs = 1794449327, ModNam = 'a_c_hen'},
-  {HashIs = 1193010354, ModNam = 'a_c_humpback'},
-  {HashIs = 1318032802, ModNam = 'a_c_husky'},
-  {HashIs = -1920284487, ModNam = 'a_c_killerwhale'},
-  {HashIs = 307287994, ModNam = 'a_c_mtlion'},
-  {HashIs = -1323586730, ModNam = 'a_c_pig'},
-  {HashIs = 111281960, ModNam = 'a_c_pigeon'},
-  {HashIs = 1125994524, ModNam = 'a_c_poodle'},
-  {HashIs = 1832265812, ModNam = 'a_c_pug'},
-  {HashIs = -541762431, ModNam = 'a_c_rabbit_01'},
-  {HashIs = -1011537562, ModNam = 'a_c_rat'},
-  {HashIs = 882848737, ModNam = 'a_c_retriever'},
-  {HashIs = -1026527405, ModNam = 'a_c_rhesus'},
-  {HashIs = -1788665315, ModNam = 'a_c_rottweiler'},
-  {HashIs = -745300483, ModNam = 'a_c_seagull'},
-  {HashIs = 1015224100, ModNam = 'a_c_sharkhammer'},
-  {HashIs = 113504370, ModNam = 'a_c_sharktiger'},
-  {HashIs = 1126154828, ModNam = 'a_c_shepherd'},
-  {HashIs = -1589092019, ModNam = 'a_c_stingray'},
-  {HashIs = -1384627013, ModNam = 'a_c_westy'},
-  {HashIs = 808859815, ModNam = 'a_f_m_beach_01'},
-  {HashIs = -1106743555, ModNam = 'a_f_m_bevhills_01'},
-  {HashIs = -1606864033, ModNam = 'a_f_m_bevhills_02'},
-  {HashIs = 1004114196, ModNam = 'a_f_m_bodybuild_01'},
-  {HashIs = 532905404, ModNam = 'a_f_m_business_02'},
-  {HashIs = 1699403886, ModNam = 'a_f_m_downtown_01'},
-  {HashIs = -1656894598, ModNam = 'a_f_m_eastsa_01'},
-  {HashIs = 1674107025, ModNam = 'a_f_m_eastsa_02'},
-  {HashIs = -88831029, ModNam = 'a_f_m_fatbla_01'},
-  {HashIs = -1244692252, ModNam = 'a_f_m_fatcult_01'},
-  {HashIs = 951767867, ModNam = 'a_f_m_fatwhite_01'},
-  {HashIs = 1388848350, ModNam = 'a_f_m_ktown_01'},
-  {HashIs = 1090617681, ModNam = 'a_f_m_ktown_02'},
-  {HashIs = 379310561, ModNam = 'a_f_m_prolhost_01'},
-  {HashIs = -569505431, ModNam = 'a_f_m_salton_01'},
-  {HashIs = -1332260293, ModNam = 'a_f_m_skidrow_01'},
-  {HashIs = 1951946145, ModNam = 'a_f_m_soucent_01'},
-  {HashIs = -215821512, ModNam = 'a_f_m_soucent_02'},
-  {HashIs = -840346158, ModNam = 'a_f_m_soucentmc_01'},
-  {HashIs = 1347814329, ModNam = 'a_f_m_tourist_01'},
-  {HashIs = 1224306523, ModNam = 'a_f_m_tramp_01'},
-  {HashIs = -1935621530, ModNam = 'a_f_m_trampbeac_01'},
-  {HashIs = 1640504453, ModNam = 'a_f_o_genstreet_01'},
-  {HashIs = -1160266880, ModNam = 'a_f_o_indian_01'},
-  {HashIs = 1204772502, ModNam = 'a_f_o_ktown_01'},
-  {HashIs = -855671414, ModNam = 'a_f_o_salton_01'},
-  {HashIs = 1039800368, ModNam = 'a_f_o_soucent_01'},
-  {HashIs = -1519524074, ModNam = 'a_f_o_soucent_02'},
-  {HashIs = -945854168, ModNam = 'a_f_y_beach_01'},
-  {HashIs = 1146800212, ModNam = 'a_f_y_bevhills_01'},
-  {HashIs = 1546450936, ModNam = 'a_f_y_bevhills_02'},
-  {HashIs = 549978415, ModNam = 'a_f_y_bevhills_03'},
-  {HashIs = 920595805, ModNam = 'a_f_y_bevhills_04'},
-  {HashIs = 664399832, ModNam = 'a_f_y_business_01'},
-  {HashIs = 826475330, ModNam = 'a_f_y_business_02'},
-  {HashIs = -1366884940, ModNam = 'a_f_y_business_03'},
-  {HashIs = -1211756494, ModNam = 'a_f_y_business_04'},
-  {HashIs = -173013091, ModNam = 'a_f_y_eastsa_01'},
-  {HashIs = 70821038, ModNam = 'a_f_y_eastsa_02'},
-  {HashIs = 1371553700, ModNam = 'a_f_y_eastsa_03'},
-  {HashIs = 1755064960, ModNam = 'a_f_y_epsilon_01'},
-  {HashIs = 1348537411, ModNam = 'a_f_y_femaleagent'},
-  {HashIs = 1165780219, ModNam = 'a_f_y_fitness_01'},
-  {HashIs = 331645324, ModNam = 'a_f_y_fitness_02'},
-  {HashIs = 793439294, ModNam = 'a_f_y_genhot_01'},
-  {HashIs = 2111372120, ModNam = 'a_f_y_golfer_01'},
-  {HashIs = 813893651, ModNam = 'a_f_y_hiker_01'},
-  {HashIs = 343259175, ModNam = 'a_f_y_hippie_01'},
-  {HashIs = -2109222095, ModNam = 'a_f_y_hipster_01'},
-  {HashIs = -1745486195, ModNam = 'a_f_y_hipster_02'},
-  {HashIs = -1514497514, ModNam = 'a_f_y_hipster_03'},
-  {HashIs = 429425116, ModNam = 'a_f_y_hipster_04'},
-  {HashIs = 153984193, ModNam = 'a_f_y_indian_01'},
-  {HashIs = -619494093, ModNam = 'a_f_y_juggalo_01'},
-  {HashIs = -951490775, ModNam = 'a_f_y_runner_01'},
-  {HashIs = 1064866854, ModNam = 'a_f_y_rurmeth_01'},
-  {HashIs = -614546432, ModNam = 'a_f_y_scdressy_01'},
-  {HashIs = 1767892582, ModNam = 'a_f_y_skater_01'},
-  {HashIs = 744758650, ModNam = 'a_f_y_soucent_01'},
-  {HashIs = 1519319503, ModNam = 'a_f_y_soucent_02'},
-  {HashIs = -2018356203, ModNam = 'a_f_y_soucent_03'},
-  {HashIs = 1426880966, ModNam = 'a_f_y_tennis_01'},
-  {HashIs = -1661836925, ModNam = 'a_f_y_topless_01'},
-  {HashIs = 1446741360, ModNam = 'a_f_y_tourist_01'},
-  {HashIs = -1859912896, ModNam = 'a_f_y_tourist_02'},
-  {HashIs = 435429221, ModNam = 'a_f_y_vinewood_01'},
-  {HashIs = -625565461, ModNam = 'a_f_y_vinewood_02'},
-  {HashIs = 933092024, ModNam = 'a_f_y_vinewood_03'},
-  {HashIs = -85696186, ModNam = 'a_f_y_vinewood_04'},
-  {HashIs = -1004861906, ModNam = 'a_f_y_yoga_01'},
-  {HashIs = 1413662315, ModNam = 'a_m_m_acult_01'},
-  {HashIs = -781039234, ModNam = 'a_m_m_afriamer_01'},
-  {HashIs = 1077785853, ModNam = 'a_m_m_beach_01'},
-  {HashIs = 2021631368, ModNam = 'a_m_m_beach_02'},
-  {HashIs = 1423699487, ModNam = 'a_m_m_bevhills_01'},
-  {HashIs = 1068876755, ModNam = 'a_m_m_bevhills_02'},
-  {HashIs = 2120901815, ModNam = 'a_m_m_business_01'},
-  {HashIs = -106498753, ModNam = 'a_m_m_eastsa_01'},
-  {HashIs = 131961260, ModNam = 'a_m_m_eastsa_02'},
-  {HashIs = -1806291497, ModNam = 'a_m_m_farmer_01'},
-  {HashIs = 1641152947, ModNam = 'a_m_m_fatlatin_01'},
-  {HashIs = 115168927, ModNam = 'a_m_m_genfat_01'},
-  {HashIs = 330231874, ModNam = 'a_m_m_genfat_02'},
-  {HashIs = -1444213182, ModNam = 'a_m_m_golfer_01'},
-  {HashIs = 1809430156, ModNam = 'a_m_m_hasjew_01'},
-  {HashIs = 1822107721, ModNam = 'a_m_m_hillbilly_01'},
-  {HashIs = 2064532783, ModNam = 'a_m_m_hillbilly_02'},
-  {HashIs = -573920724, ModNam = 'a_m_m_indian_01'},
-  {HashIs = -782401935, ModNam = 'a_m_m_ktown_01'},
-  {HashIs = 803106487, ModNam = 'a_m_m_malibu_01'},
-  {HashIs = -578715987, ModNam = 'a_m_m_mexcntry_01'},
-  {HashIs = -1302522190, ModNam = 'a_m_m_mexlabor_01'},
-  {HashIs = 1746653202, ModNam = 'a_m_m_og_boss_01'},
-  {HashIs = -322270187, ModNam = 'a_m_m_paparazzi_01'},
-  {HashIs = -1445349730, ModNam = 'a_m_m_polynesian_01'},
-  {HashIs = -1760377969, ModNam = 'a_m_m_prolhost_01'},
-  {HashIs = 1001210244, ModNam = 'a_m_m_rurmeth_01'},
-  {HashIs = 1328415626, ModNam = 'a_m_m_salton_01'},
-  {HashIs = 1626646295, ModNam = 'a_m_m_salton_02'},
-  {HashIs = -1299428795, ModNam = 'a_m_m_salton_03'},
-  {HashIs = -1773858377, ModNam = 'a_m_m_salton_04'},
-  {HashIs = -640198516, ModNam = 'a_m_m_skater_01'},
-  {HashIs = 32417469, ModNam = 'a_m_m_skidrow_01'},
-  {HashIs = 193817059, ModNam = 'a_m_m_socenlat_01'},
-  {HashIs = 1750583735, ModNam = 'a_m_m_soucent_01'},
-  {HashIs = -1620232223, ModNam = 'a_m_m_soucent_02'},
-  {HashIs = -1948675910, ModNam = 'a_m_m_soucent_03'},
-  {HashIs = -1023672578, ModNam = 'a_m_m_soucent_04'},
-  {HashIs = -1029146878, ModNam = 'a_m_m_stlat_02'},
-  {HashIs = 1416254276, ModNam = 'a_m_m_tennis_01'},
-  {HashIs = -929103484, ModNam = 'a_m_m_tourist_01'},
-  {HashIs = 516505552, ModNam = 'a_m_m_tramp_01'},
-  {HashIs = 1404403376, ModNam = 'a_m_m_trampbeac_01'},
-  {HashIs = -521758348, ModNam = 'a_m_m_tranvest_01'},
-  {HashIs = -150026812, ModNam = 'a_m_m_tranvest_02'},
-  {HashIs = 1430544400, ModNam = 'a_m_o_acult_01'},
-  {HashIs = 1268862154, ModNam = 'a_m_o_acult_02'},
-  {HashIs = -2077764712, ModNam = 'a_m_o_beach_01'},
-  {HashIs = -1386944600, ModNam = 'a_m_o_genstreet_01'},
-  {HashIs = 355916122, ModNam = 'a_m_o_ktown_01'},
-  {HashIs = 539004493, ModNam = 'a_m_o_salton_01'},
-  {HashIs = 718836251, ModNam = 'a_m_o_soucent_01'},
-  {HashIs = 1082572151, ModNam = 'a_m_o_soucent_02'},
-  {HashIs = 238213328, ModNam = 'a_m_o_soucent_03'},
-  {HashIs = 390939205, ModNam = 'a_m_o_tramp_01'},
-  {HashIs = -1251702741, ModNam = 'a_m_y_acult_01'},
-  {HashIs = -2132435154, ModNam = 'a_m_y_acult_02'},
-  {HashIs = -771835772, ModNam = 'a_m_y_beach_01'},
-  {HashIs = 600300561, ModNam = 'a_m_y_beach_02'},
-  {HashIs = -408329255, ModNam = 'a_m_y_beach_03'},
-  {HashIs = 2114544056, ModNam = 'a_m_y_beachvesp_01'},
-  {HashIs = -900269486, ModNam = 'a_m_y_beachvesp_02'},
-  {HashIs = 1982350912, ModNam = 'a_m_y_bevhills_01'},
-  {HashIs = 1720428295, ModNam = 'a_m_y_bevhills_02'},
-  {HashIs = 933205398, ModNam = 'a_m_y_breakdance_01'},
-  {HashIs = -1697435671, ModNam = 'a_m_y_busicas_01'},
-  {HashIs = -912318012, ModNam = 'a_m_y_business_01'},
-  {HashIs = -1280051738, ModNam = 'a_m_y_business_02'},
-  {HashIs = -1589423867, ModNam = 'a_m_y_business_03'},
-  {HashIs = -37334073, ModNam = 'a_m_y_cyclist_01'},
-  {HashIs = -12678997, ModNam = 'a_m_y_dhill_01'},
-  {HashIs = 766375082, ModNam = 'a_m_y_downtown_01'},
-  {HashIs = -1538846349, ModNam = 'a_m_y_eastsa_01'},
-  {HashIs = 377976310, ModNam = 'a_m_y_eastsa_02'},
-  {HashIs = 2010389054, ModNam = 'a_m_y_epsilon_01'},
-  {HashIs = -1434255461, ModNam = 'a_m_y_epsilon_02'},
-  {HashIs = -775102410, ModNam = 'a_m_y_gay_01'},
-  {HashIs = -1519253631, ModNam = 'a_m_y_gay_02'},
-  {HashIs = -1736970383, ModNam = 'a_m_y_genstreet_01'},
-  {HashIs = 891398354, ModNam = 'a_m_y_genstreet_02'},
-  {HashIs = -685776591, ModNam = 'a_m_y_golfer_01'},
-  {HashIs = -512913663, ModNam = 'a_m_y_hasjew_01'},
-  {HashIs = 1358380044, ModNam = 'a_m_y_hiker_01'},
-  {HashIs = 2097407511, ModNam = 'a_m_y_hippy_01'},
-  {HashIs = 587703123, ModNam = 'a_m_y_hipster_01'},
-  {HashIs = 349505262, ModNam = 'a_m_y_hipster_02'},
-  {HashIs = 1312913862, ModNam = 'a_m_y_hipster_03'},
-  {HashIs = 706935758, ModNam = 'a_m_y_indian_01'},
-  {HashIs = 767028979, ModNam = 'a_m_y_jetski_01'},
-  {HashIs = -1849016788, ModNam = 'a_m_y_juggalo_01'},
-  {HashIs = 452351020, ModNam = 'a_m_y_ktown_01'},
-  {HashIs = 696250687, ModNam = 'a_m_y_ktown_02'},
-  {HashIs = 321657486, ModNam = 'a_m_y_latino_01'},
-  {HashIs = 1768677545, ModNam = 'a_m_y_methhead_01'},
-  {HashIs = 810804565, ModNam = 'a_m_y_mexthug_01'},
-  {HashIs = 1694362237, ModNam = 'a_m_y_motox_01'},
-  {HashIs = 2007797722, ModNam = 'a_m_y_motox_02'},
-  {HashIs = 1264920838, ModNam = 'a_m_y_musclbeac_01'},
-  {HashIs = -920443780, ModNam = 'a_m_y_musclbeac_02'},
-  {HashIs = -2088436577, ModNam = 'a_m_y_polynesian_01'},
-  {HashIs = -178150202, ModNam = 'a_m_y_roadcyc_01'},
-  {HashIs = 623927022, ModNam = 'a_m_y_runner_01'},
-  {HashIs = -2076336881, ModNam = 'a_m_y_runner_02'},
-  {HashIs = -681546704, ModNam = 'a_m_y_salton_01'},
-  {HashIs = -1044093321, ModNam = 'a_m_y_skater_01'},
-  {HashIs = -1342520604, ModNam = 'a_m_y_skater_02'},
-  {HashIs = -417940021, ModNam = 'a_m_y_soucent_01'},
-  {HashIs = -1398552374, ModNam = 'a_m_y_soucent_02'},
-  {HashIs = -1007618204, ModNam = 'a_m_y_soucent_03'},
-  {HashIs = -1976105999, ModNam = 'a_m_y_soucent_04'},
-  {HashIs = -812470807, ModNam = 'a_m_y_stbla_01'},
-  {HashIs = -1731772337, ModNam = 'a_m_y_stbla_02'},
-  {HashIs = -2039163396, ModNam = 'a_m_y_stlat_01'},
-  {HashIs = 605602864, ModNam = 'a_m_y_stwhi_01'},
-  {HashIs = 919005580, ModNam = 'a_m_y_stwhi_02'},
-  {HashIs = -1222037748, ModNam = 'a_m_y_sunbathe_01'},
-  {HashIs = -356333586, ModNam = 'a_m_y_surfer_01'},
-  {HashIs = -1047300121, ModNam = 'a_m_y_vindouche_01'},
-  {HashIs = 1264851357, ModNam = 'a_m_y_vinewood_01'},
-  {HashIs = 1561705728, ModNam = 'a_m_y_vinewood_02'},
-  {HashIs = 534725268, ModNam = 'a_m_y_vinewood_03'},
-  {HashIs = 835315305, ModNam = 'a_m_y_vinewood_04'},
-  {HashIs = -1425378987, ModNam = 'a_m_y_yoga_01'},
-}
-
 local OM = {
   pedsSection = 1,
   freemodeSection = 1,
   Confimation = 0,
-  SaveSection = 1
+  SaveSection = 1,
+  group = "user"
 }
-local OneshotMenu = false
 
 Citizen.CreateThread(function()
   while ESX == nil do
@@ -694,6 +465,11 @@ Citizen.CreateThread(function()
 		end)
 		Citizen.Wait(10)
 	end
+end)
+
+RegisterNetEvent('nth_admin:Returngroup')
+AddEventHandler('nth_admin:Returngroup', function(group)
+  OM.group = group
 end)
 
 function GetData()
@@ -706,10 +482,6 @@ local oneshotMenu = RageUI.CreateMenu("", "Oneshot")
 local pedsMenu = RageUI.CreateSubMenu(oneshotMenu, "", "Oneshot")
 local freemodeMenu = RageUI.CreateSubMenu(oneshotMenu, "", "Oneshot")
 local settingsMenu = RageUI.CreateSubMenu(oneshotMenu, "", "Oneshot")
-
-oneshotMenu.Closed = function()
-  OneshotMenu = false
-end
 
 local categorie = {}
 
@@ -978,13 +750,33 @@ Citizen.CreateThread(function()
 end)
 
 --Ouverture du menu
-Keys.Register('G', 'G', 'Menu personnage one-shot.', function()
-  ESX.TriggerServerCallback('nth:getSaveList', function(list)
-    ListPeds = list
-  end)
-  OneshotMenu = true
-  RageUI.Visible(oneshotMenu, not RageUI.Visible(oneshotMenu))
+Keys.Register('', '', 'Menu personnage one-shot.', function()
+  ESX.TriggerServerCallback('nth:Usergroup', function(plyGroup)
+		if plyGroup ~= nil and (plyGroup == 'admin' or plyGroup == 'superadmin' or plyGroup == 'owner' or plyGroup == '_dev') then
+			ESX.TriggerServerCallback('nth:getSaveList', function(list)
+        ListPeds = list
+      end)
+      RageUI.Visible(oneshotMenu, not RageUI.Visible(oneshotMenu))
+		else
+			ESX.ShowNotification('Vous devez être ~r~Admin ~w~pour ouvrir accédées à ce menu.')
+		end
+	end)
 end)
+
+RegisterCommand('oneshot', function(source)
+  ESX.TriggerServerCallback('nth:Usergroup', function(plyGroup)
+		if plyGroup ~= nil and (plyGroup == 'admin' or plyGroup == 'superadmin' or plyGroup == '_dev') then
+			ESX.TriggerServerCallback('nth:getSaveList', function(list)
+        ListPeds = list
+      end)
+      RageUI.Visible(oneshotMenu, not RageUI.Visible(oneshotMenu))
+		else
+			ESX.ShowNotification('Vous devez être ~r~Admin ~w~pour ouvrir accédées à ce menu.')
+		end
+	end)
+end, false)
+
+
 
 RegisterCommand("spawn", function(source, args, rawcommand)
   local ped = PlayerPedId()
