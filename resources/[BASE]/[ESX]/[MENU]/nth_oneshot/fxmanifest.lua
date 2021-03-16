@@ -1,6 +1,6 @@
 fx_version 'adamant'
-
 game 'gta5'
+author 'NikX#1717'
 
 client_scripts {
     "@RageUI/RMenu.lua",
