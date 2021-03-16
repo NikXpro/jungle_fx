@@ -949,5 +949,32 @@ data.shops = {
 			}
 		}
 	},
+	parachuteNord = {
+		MenuId = "parachuteNord", -- Identifiant unique pour chaque shop
+        Settings = {
+            TitreMenu = "",
+            DescriptionMenu = "Equipement de parachutiste",
+            MenuPosition = vector3(1702.189453125, 3290.5915527344, 48.921970367432),
+            MessageZone = "Appuyer sur ~INPUT_CONTEXT~ pour parler a Sebastien",
+            TailleZone = 2.5,
+            CustomBanner = { Activate = true, BannerDic = "banner", BannerName = "shopui_title_gunclub" },
+            JobRequired = { Activate = false, jobName = {} },
+            blip = { Activate = true, property = false, BlipId = 498, BlipScale = 0.8, BlipColor = 16, BlipName = "Magasin de parachutisme" },
+            ped = { Activate = true, PedHash = "cs_dom", Heanding = 56.37761306762695 },
+            marker = { Activate = false, MarkerType = 1, MarkerColor = {r = 50, g = 50, b = 204}, MarkerSize = {x = 1.5, y = 1.5, z = 0.5}, ViewDistance = 3.0 },
+        },
+
+		items = {
+			gadget_parachute = {
+				licence = "", --weapon, drive, dmv...
+				Type = "weapon", --weapon, item
+				Label = "Parachute", --Nom item afficher
+				Name = "gadget_parachute", --Nom item serveur
+				Count = 1,
+                Price = { Activate = true, MoneyType = "money", Amount = 300 },
+                GradeRequired = { Activate = false, GradeNumber = {} },
+			}
+		}
+	},
 
 }
