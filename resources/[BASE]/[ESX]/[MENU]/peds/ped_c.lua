@@ -32,15 +32,7 @@ RegisterCommand("war", function(source, args)
         -- [[ find more groups here https://github.com/jorjic/fivem-docs/wiki/Ped-Types-&-Relationships#default-relationship-groups ]]
         SetPedRelationshipGroupHash(newPed, GetHashKey(teams[j].name)) --[[ when i did army, the peds fought eachother and it was pretty funny - https://runtime.fivem.net/doc/natives/#_0xC80A74AC829DDD92 ]]
         SetRelationshipBetweenGroups(5, GetHashKey(teams[1].name), GetHashKey(teams[2].name)) --[[ 
-            More types (int) here https://github.com/jorjic/fivem-docs/wiki/Ped-Types-&-Relationships#relationship-types 
-            Above, this will make enemies and allies hate eachother
-        ]]
-        if teams[j].name == "allies" then
-            SetRelationshipBetweenGroups(0, GetHashKey(teams[j].name), GetHashKey("PLAYER"))
-            SetPedAccuracy(newPed, 100) --[[ Allies will have 100 percent accuracy ]]
-        else 
-            SetRelationshipBetweenGroups(5, GetHashKey(teams[j].name), GetHashKey("PLAYER")) --[[ this is really janky sorry  ]]
-        end
+        SetRelationshipBetweenGroups(5, GetHashKey(teams[j].name), GetHashKey("PLAYER")) --[[ this is really janky sorry  ]]
         TaskStartScenarioInPlace(newPed, "WORLD_HUMAN_SMOKING", 0, true)
         GiveWeaponToPed(newPed, GetHashKey(teams[j].weapon), 2000, true--[[ weapon is hidden or not (bool)]], false) --[[ https://runtime.fivem.net/doc/natives/#_0xBF0FD6E56C964FCB]]
         SetPedArmour(newPed, 100)
