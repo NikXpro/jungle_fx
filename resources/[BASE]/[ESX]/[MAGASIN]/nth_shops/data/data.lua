@@ -24,6 +24,7 @@ data.shops = {
 				Label = "Bourbon", --Nom item afficher
 				Name = "bourbon", --Nom item serveur
 				Count = 1,
+				License = { Activate = false, Name = "" },
                 Price = { Activate = true, MoneyType = "money", Amount = 60 },  -- money, black_money, bank
                 GradeRequired = { Activate = false, GradeNumber = {} },
 			},
@@ -33,6 +34,7 @@ data.shops = {
 				Label = "Jungle Drink", --Nom item afficher
 				Name = "jungle-drink", --Nom item serveur
 				Count = 1,
+				License = { Activate = false, Name = "" },
                 Price = { Activate = true, MoneyType = "money", Amount = 40 },  -- money, black_money, bank
                 GradeRequired = { Activate = false, GradeNumber = {} },
 			},
@@ -42,6 +44,7 @@ data.shops = {
 				Label = "Donuts", --Nom item afficher
 				Name = "donuts", --Nom item serveur
 				Count = 1,
+				License = { Activate = false, Name = "" },
                 Price = { Activate = true, MoneyType = "money", Amount = 25 },  -- money, black_money, bank
                 GradeRequired = { Activate = false, GradeNumber = {} },
 			},
@@ -51,6 +54,7 @@ data.shops = {
 				Label = "Granola", --Nom item afficher
 				Name = "granola", --Nom item serveur
 				Count = 1,
+				License = { Activate = false, Name = "" },
                 Price = { Activate = true, MoneyType = "money", Amount = 30 },  -- money, black_money, bank
                 GradeRequired = { Activate = false, GradeNumber = {} },
 			},
@@ -60,6 +64,7 @@ data.shops = {
 				Label = "Ice Tea", --Nom item afficher
 				Name = "icetea", --Nom item serveur
 				Count = 1,
+				License = { Activate = false, Name = "" },
                 Price = { Activate = true, MoneyType = "money", Amount = 35 },  -- money, black_money, bank
                 GradeRequired = { Activate = false, GradeNumber = {} },
 			},
@@ -69,6 +74,7 @@ data.shops = {
 				Label = "Café", --Nom item afficher
 				Name = "cafe", --Nom item serveur
 				Count = 1,
+				License = { Activate = false, Name = "" },
                 Price = { Activate = true, MoneyType = "money", Amount = 15 },  -- money, black_money, bank
                 GradeRequired = { Activate = false, GradeNumber = {} },
 			},
@@ -78,6 +84,7 @@ data.shops = {
 				Label = "Bouteille d'eau", --Nom item afficher
 				Name = "water", --Nom item serveur
 				Count = 1,
+				License = { Activate = false, Name = "" },
                 Price = { Activate = true, MoneyType = "money", Amount = 30 },  -- money, black_money, bank
                 GradeRequired = { Activate = false, GradeNumber = {} },
 			},
@@ -87,6 +94,7 @@ data.shops = {
 				Label = "Jus D'orange", --Nom item afficher
 				Name = "jus-orange", --Nom item serveur
 				Count = 1,
+				License = { Activate = false, Name = "" },
                 Price = { Activate = true, MoneyType = "money", Amount = 20 },  -- money, black_money, bank
                 GradeRequired = { Activate = false, GradeNumber = {} },
 			}
@@ -114,6 +122,7 @@ data.shops = {
 				Label = "Bourbon", --Nom item afficher
 				Name = "bourbon", --Nom item serveur
 				Count = 1,
+				License = { Activate = false, Name = "" },
                 Price = { Activate = true, MoneyType = "money", Amount = 60 },  -- money, black_money, bank
                 GradeRequired = { Activate = false, GradeNumber = {} },
 			},
@@ -123,6 +132,7 @@ data.shops = {
 				Label = "Jungle Drink", --Nom item afficher
 				Name = "jungle-drink", --Nom item serveur
 				Count = 1,
+				License = { Activate = false, Name = "" },
                 Price = { Activate = true, MoneyType = "money", Amount = 40 },  -- money, black_money, bank
                 GradeRequired = { Activate = false, GradeNumber = {} },
 			},
@@ -132,6 +142,7 @@ data.shops = {
 				Label = "Fanta", --Nom item afficher
 				Name = "fanta", --Nom item serveur
 				Count = 1,
+				License = { Activate = false, Name = "" },
                 Price = { Activate = true, MoneyType = "money", Amount = 20 },  -- money, black_money, bank
                 GradeRequired = { Activate = false, GradeNumber = {} },
 			},
@@ -141,6 +152,7 @@ data.shops = {
 				Label = "Red Bull", --Nom item afficher
 				Name = "redbull", --Nom item serveur
 				Count = 1,
+				License = { Activate = false, Name = "" },
                 Price = { Activate = true, MoneyType = "money", Amount = 50 },  -- money, black_money, bank
                 GradeRequired = { Activate = false, GradeNumber = {} },
 			},
@@ -150,6 +162,7 @@ data.shops = {
 				Label = "Ice Tea", --Nom item afficher
 				Name = "icetea", --Nom item serveur
 				Count = 1,
+				License = { Activate = false, Name = "" },
                 Price = { Activate = true, MoneyType = "money", Amount = 35 },  -- money, black_money, bank
                 GradeRequired = { Activate = false, GradeNumber = {} },
 			},
@@ -159,6 +172,7 @@ data.shops = {
 				Label = "Flash", --Nom item afficher
 				Name = "flash", --Nom item serveur
 				Count = 1,
+				License = { Activate = false, Name = "" },
                 Price = { Activate = true, MoneyType = "money", Amount = 40 },  -- money, black_money, bank
                 GradeRequired = { Activate = false, GradeNumber = {} },
 			},
@@ -168,6 +182,7 @@ data.shops = {
 				Label = "Coca Cola", --Nom item afficher
 				Name = "coca", --Nom item serveur
 				Count = 1,
+				License = { Activate = false, Name = "" },
                 Price = { Activate = true, MoneyType = "money", Amount = 28 },  -- money, black_money, bank
                 GradeRequired = { Activate = false, GradeNumber = {} },
 			},
@@ -177,6 +192,7 @@ data.shops = {
 				Label = "Jus D'orange", --Nom item afficher
 				Name = "jus-orange", --Nom item serveur
 				Count = 1,
+				License = { Activate = false, Name = "" },
                 Price = { Activate = true, MoneyType = "money", Amount = 20 },  -- money, black_money, bank
                 GradeRequired = { Activate = false, GradeNumber = {} },
 			}
@@ -204,6 +220,7 @@ data.shops = {
 				Label = "Cake", --Nom item afficher
 				Name = "cake", --Nom item serveur
 				Count = 1,
+				License = { Activate = false, Name = "" },
                 Price = { Activate = true, MoneyType = "money", Amount = 20 },  -- money, black_money, bank
                 GradeRequired = { Activate = false, GradeNumber = {} },
 			},
@@ -213,6 +230,7 @@ data.shops = {
 				Label = "Jungle Drink", --Nom item afficher
 				Name = "jungle-drink", --Nom item serveur
 				Count = 1,
+				License = { Activate = false, Name = "" },
                 Price = { Activate = true, MoneyType = "money", Amount = 40 },  -- money, black_money, bank
                 GradeRequired = { Activate = false, GradeNumber = {} },
 			},
@@ -222,6 +240,7 @@ data.shops = {
 				Label = "Fanta", --Nom item afficher
 				Name = "fanta", --Nom item serveur
 				Count = 1,
+				License = { Activate = false, Name = "" },
                 Price = { Activate = true, MoneyType = "money", Amount = 20 },  -- money, black_money, bank
                 GradeRequired = { Activate = false, GradeNumber = {} },
 			},
@@ -231,6 +250,7 @@ data.shops = {
 				Label = "Donuts", --Nom item afficher
 				Name = "donuts", --Nom item serveur
 				Count = 1,
+				License = { Activate = false, Name = "" },
                 Price = { Activate = true, MoneyType = "money", Amount = 20 },  -- money, black_money, bank
                 GradeRequired = { Activate = false, GradeNumber = {} },
 			},
@@ -240,6 +260,7 @@ data.shops = {
 				Label = "Ice Tea", --Nom item afficher
 				Name = "icetea", --Nom item serveur
 				Count = 1,
+				License = { Activate = false, Name = "" },
                 Price = { Activate = true, MoneyType = "money", Amount = 35 },  -- money, black_money, bank
                 GradeRequired = { Activate = false, GradeNumber = {} },
 			},
@@ -249,6 +270,7 @@ data.shops = {
 				Label = "Bouteille d'eau", --Nom item afficher
 				Name = "water", --Nom item serveur
 				Count = 1,
+				License = { Activate = false, Name = "" },
                 Price = { Activate = true, MoneyType = "money", Amount = 18 },  -- money, black_money, bank
                 GradeRequired = { Activate = false, GradeNumber = {} },
 			},
@@ -258,6 +280,7 @@ data.shops = {
 				Label = "Coca Cola", --Nom item afficher
 				Name = "coca", --Nom item serveur
 				Count = 1,
+				License = { Activate = false, Name = "" },
                 Price = { Activate = true, MoneyType = "money", Amount = 28 },  -- money, black_money, bank
                 GradeRequired = { Activate = false, GradeNumber = {} },
 			},
@@ -267,6 +290,7 @@ data.shops = {
 				Label = "Jus D'orange", --Nom item afficher
 				Name = "jus-orange", --Nom item serveur
 				Count = 1,
+				License = { Activate = false, Name = "" },
                 Price = { Activate = true, MoneyType = "money", Amount = 20 },  -- money, black_money, bank
                 GradeRequired = { Activate = false, GradeNumber = {} },
 			},
@@ -276,6 +300,7 @@ data.shops = {
 				Label = "Sandwitch", --Nom item afficher
 				Name = "sandwitch", --Nom item serveur
 				Count = 1,
+				License = { Activate = false, Name = "" },
                 Price = { Activate = true, MoneyType = "money", Amount = 30 },  -- money, black_money, bank
                 GradeRequired = { Activate = false, GradeNumber = {} },
 			}
@@ -303,6 +328,7 @@ data.shops = {
 				Label = "Ice Tea", --Nom item afficher
 				Name = "icetea", --Nom item serveur
 				Count = 1,
+				License = { Activate = false, Name = "" },
                 Price = { Activate = true, MoneyType = "money", Amount = 30 },
                 GradeRequired = { Activate = false, GradeNumber = {} },
 			},
@@ -312,6 +338,7 @@ data.shops = {
 				Label = "Bouteille d'eau", --Nom item afficher
 				Name = "water", --Nom item serveur
 				Count = 1,
+				License = { Activate = false, Name = "" },
                 Price = { Activate = true, MoneyType = "money", Amount = 25 },
                 GradeRequired = { Activate = false, GradeNumber = {} },
 			},
@@ -321,6 +348,7 @@ data.shops = {
 				Label = "Sandwitch", --Nom item afficher
 				Name = "sandwitch", --Nom item serveur
 				Count = 1,
+				License = { Activate = false, Name = "" },
                 Price = { Activate = true, MoneyType = "money", Amount = 35 },
                 GradeRequired = { Activate = false, GradeNumber = {} },
 			},
@@ -330,6 +358,7 @@ data.shops = {
 				Label = "Biere", --Nom item afficher
 				Name = "biere", --Nom item serveur
 				Count = 1,
+				License = { Activate = false, Name = "" },
                 Price = { Activate = true, MoneyType = "money", Amount = 20 },
                 GradeRequired = { Activate = false, GradeNumber = {} },
 			},
@@ -339,6 +368,7 @@ data.shops = {
 				Label = "Paquet de chips", --Nom item afficher
 				Name = "chips", --Nom item serveur
 				Count = 1,
+				License = { Activate = false, Name = "" },
                 Price = { Activate = true, MoneyType = "money", Amount = 30 },
                 GradeRequired = { Activate = false, GradeNumber = {} },
 			},
@@ -348,6 +378,7 @@ data.shops = {
 				Label = "Jungle Drink", --Nom item afficher
 				Name = "jungle-drink", --Nom item serveur
 				Count = 1,
+				License = { Activate = false, Name = "" },
                 Price = { Activate = true, MoneyType = "money", Amount = 60 },
                 GradeRequired = { Activate = false, GradeNumber = {} },
 			}
@@ -375,6 +406,7 @@ data.shops = {
 				Label = "Coca-Cola", --Nom item afficher
 				Name = "coca", --Nom item serveur
 				Count = 1,
+				License = { Activate = false, Name = "" },
                 Price = { Activate = true, MoneyType = "money", Amount = 35 },
                 GradeRequired = { Activate = false, GradeNumber = {} },
 			},
@@ -384,6 +416,7 @@ data.shops = {
 				Label = "Bouteille d'eau", --Nom item afficher
 				Name = "water", --Nom item serveur
 				Count = 1,
+				License = { Activate = false, Name = "" },
                 Price = { Activate = true, MoneyType = "money", Amount = 25 },
                 GradeRequired = { Activate = false, GradeNumber = {} },
 			},
@@ -393,6 +426,7 @@ data.shops = {
 				Label = "Gateaux", --Nom item afficher
 				Name = "cake", --Nom item serveur
 				Count = 1,
+				License = { Activate = false, Name = "" },
                 Price = { Activate = true, MoneyType = "money", Amount = 40 },
                 GradeRequired = { Activate = false, GradeNumber = {} },
 			},
@@ -402,6 +436,7 @@ data.shops = {
 				Label = "Bouteille de Vodka", --Nom item afficher
 				Name = "vodka", --Nom item serveur
 				Count = 1,
+				License = { Activate = false, Name = "" },
                 Price = { Activate = true, MoneyType = "money", Amount = 60 },
                 GradeRequired = { Activate = false, GradeNumber = {} },
 			},
@@ -411,6 +446,7 @@ data.shops = {
 				Label = "Donuts", --Nom item afficher
 				Name = "donuts", --Nom item serveur
 				Count = 1,
+				License = { Activate = false, Name = "" },
                 Price = { Activate = true, MoneyType = "money", Amount = 35 },
                 GradeRequired = { Activate = false, GradeNumber = {} },
 			},
@@ -420,6 +456,7 @@ data.shops = {
 				Label = "Jungle Drink", --Nom item afficher
 				Name = "jungle-drink", --Nom item serveur
 				Count = 1,
+				License = { Activate = false, Name = "" },
                 Price = { Activate = true, MoneyType = "money", Amount = 60 },
                 GradeRequired = { Activate = false, GradeNumber = {} },
 			},
@@ -429,6 +466,7 @@ data.shops = {
 				Label = "Red-bull", --Nom item afficher
 				Name = "redbull", --Nom item serveur
 				Count = 1,
+				License = { Activate = false, Name = "" },
                 Price = { Activate = true, MoneyType = "money", Amount = 40 },
                 GradeRequired = { Activate = false, GradeNumber = {} },
 			}
@@ -456,6 +494,7 @@ data.shops = {
 				Label = "Jus d'orange", --Nom item afficher
 				Name = "jus-orange", --Nom item serveur
 				Count = 1,
+				License = { Activate = false, Name = "" },
                 Price = { Activate = true, MoneyType = "money", Amount = 30 },
                 GradeRequired = { Activate = false, GradeNumber = {} },
 			},
@@ -465,6 +504,7 @@ data.shops = {
 				Label = "Bouteille d'eau", --Nom item afficher
 				Name = "water", --Nom item serveur
 				Count = 1,
+				License = { Activate = false, Name = "" },
                 Price = { Activate = true, MoneyType = "money", Amount = 25 },
                 GradeRequired = { Activate = false, GradeNumber = {} },
 			},
@@ -474,6 +514,7 @@ data.shops = {
 				Label = "KitKat Ball", --Nom item afficher
 				Name = "kitkat-ball", --Nom item serveur
 				Count = 1,
+				License = { Activate = false, Name = "" },
                 Price = { Activate = true, MoneyType = "money", Amount = 35 },
                 GradeRequired = { Activate = false, GradeNumber = {} },
 			},
@@ -483,6 +524,7 @@ data.shops = {
 				Label = "Bouteille de Vodka", --Nom item afficher
 				Name = "vodka", --Nom item serveur
 				Count = 1,
+				License = { Activate = false, Name = "" },
                 Price = { Activate = true, MoneyType = "money", Amount = 50 },
                 GradeRequired = { Activate = false, GradeNumber = {} },
 			},
@@ -492,6 +534,7 @@ data.shops = {
 				Label = "Chips", --Nom item afficher
 				Name = "chips", --Nom item serveur
 				Count = 1,
+				License = { Activate = false, Name = "" },
                 Price = { Activate = true, MoneyType = "money", Amount = 35 },
                 GradeRequired = { Activate = false, GradeNumber = {} },
 			},
@@ -501,6 +544,7 @@ data.shops = {
 				Label = "Jungle Drink", --Nom item afficher
 				Name = "jungle-drink", --Nom item serveur
 				Count = 1,
+				License = { Activate = false, Name = "" },
                 Price = { Activate = true, MoneyType = "money", Amount = 60 },
                 GradeRequired = { Activate = false, GradeNumber = {} },
 			},
@@ -510,6 +554,7 @@ data.shops = {
 				Label = "Bouteille de Fanta", --Nom item afficher
 				Name = "fanta", --Nom item serveur
 				Count = 1,
+				License = { Activate = false, Name = "" },
                 Price = { Activate = true, MoneyType = "money", Amount = 45},
                 GradeRequired = { Activate = false, GradeNumber = {} },
 			}
@@ -537,6 +582,7 @@ data.shops = {
 				Label = "Radio", --Nom item afficher
 				Name = "radio", --Nom item serveur
 				Count = 1,
+				License = { Activate = false, Name = "" },
                 Price = { Activate = true, MoneyType = "money", Amount = 200 },  -- money, black_money, bank
                 GradeRequired = { Activate = false, GradeNumber = {} },
 			},
@@ -546,6 +592,7 @@ data.shops = {
 				Label = "Téléphone", --Nom item afficher
 				Name = "phone", --Nom item serveur
 				Count = 1,
+				License = { Activate = false, Name = "" },
                 Price = { Activate = true, MoneyType = "money", Amount = 150 },  -- money, black_money, bank
                 GradeRequired = { Activate = false, GradeNumber = {} },
 			},
@@ -555,6 +602,7 @@ data.shops = {
 				Label = "Boom Box", --Nom item afficher
 				Name = "boombox", --Nom item serveur
 				Count = 1,
+				License = { Activate = false, Name = "" },
                 Price = { Activate = true, MoneyType = "money", Amount = 400 },  -- money, black_money, bank
                 GradeRequired = { Activate = false, GradeNumber = {} },
 			},
@@ -564,6 +612,7 @@ data.shops = {
 				Label = "Batte De Baseball", --Nom item afficher
 				Name = "weapon_bat", --Nom item serveur
 				Count = 1,
+				License = { Activate = false, Name = "" },
                 Price = { Activate = true, MoneyType = "money", Amount = 5000 },  -- money, black_money, bank
                 GradeRequired = { Activate = false, GradeNumber = {} },
 			},
@@ -573,6 +622,7 @@ data.shops = {
 				Label = "Club De Golf", --Nom item afficher
 				Name = "weapon_golfclub", --Nom item serveur
 				Count = 1,
+				License = { Activate = false, Name = "" },
                 Price = { Activate = true, MoneyType = "money", Amount = 4000 },  -- money, black_money, bank
                 GradeRequired = { Activate = false, GradeNumber = {} },
 			},
@@ -582,6 +632,7 @@ data.shops = {
 				Label = "Tablette", --Nom item afficher
 				Name = "tablette", --Nom item serveur
 				Count = 1,
+				License = { Activate = false, Name = "" },
                 Price = { Activate = true, MoneyType = "money", Amount = 100 },  -- money, black_money, bank
                 GradeRequired = { Activate = false, GradeNumber = {} },
 			},
@@ -591,6 +642,7 @@ data.shops = {
 				Label = "Clé Anglaise", --Nom item afficher
 				Name = "weapon_wrench", --Nom item serveur
 				Count = 1,
+				License = { Activate = false, Name = "" },
                 Price = { Activate = true, MoneyType = "money", Amount = 3500 },  -- money, black_money, bank
                 GradeRequired = { Activate = false, GradeNumber = {} },
 			},
@@ -600,6 +652,7 @@ data.shops = {
 				Label = "Hachette", --Nom item afficher
 				Name = "weapon_hatchet", --Nom item serveur
 				Count = 1,
+				License = { Activate = false, Name = "" },
                 Price = { Activate = true, MoneyType = "money", Amount = 6000 },  -- money, black_money, bank
                 GradeRequired = { Activate = false, GradeNumber = {} },
 			},
@@ -609,6 +662,7 @@ data.shops = {
 				Label = "Marteau", --Nom item afficher
 				Name = "weapon_hammer", --Nom item serveur
 				Count = 1,
+				License = { Activate = false, Name = "" },
                 Price = { Activate = true, MoneyType = "money", Amount = 3000 },  -- money, black_money, bank
                 GradeRequired = { Activate = false, GradeNumber = {} },
 			},
@@ -618,6 +672,7 @@ data.shops = {
 				Label = "Télémétre", --Nom item afficher
 				Name = "jumelle", --Nom item serveur
 				Count = 1,
+				License = { Activate = false, Name = "" },
                 Price = { Activate = true, MoneyType = "money", Amount = 250 },  -- money, black_money, bank
                 GradeRequired = { Activate = false, GradeNumber = {} },
 			}
@@ -645,6 +700,7 @@ data.shops = {
 				Label = "Pistolet", --Nom item afficher
 				Name = "weapon_pistol", --Nom item serveur
 				Count = 1,
+				License = { Activate = false, Name = "" },
                 Price = { Activate = true, MoneyType = "money", Amount = 60000 },  -- money, black_money, bank
                 GradeRequired = { Activate = false, GradeNumber = {} },
 			},
@@ -654,6 +710,7 @@ data.shops = {
 				Label = "Pistolet Vintage", --Nom item afficher
 				Name = "weapon_vintagepistol", --Nom item serveur
 				Count = 1,
+				License = { Activate = false, Name = "" },
                 Price = { Activate = true, MoneyType = "money", Amount = 75000 },  -- money, black_money, bank
                 GradeRequired = { Activate = false, GradeNumber = {} },
 			},
@@ -663,6 +720,7 @@ data.shops = {
 				Label = "Tazer", --Nom item afficher
 				Name = "weapon_stungun", --Nom item serveur
 				Count = 1,
+				License = { Activate = false, Name = "" },
                 Price = { Activate = true, MoneyType = "money", Amount = 20000 },  -- money, black_money, bank
                 GradeRequired = { Activate = false, GradeNumber = {} },
 			},
@@ -672,6 +730,7 @@ data.shops = {
 				Label = "Fusil de chasse", --Nom item afficher
 				Name = "weapon_musket", --Nom item serveur
 				Count = 1,
+				License = { Activate = false, Name = "" },
                 Price = { Activate = true, MoneyType = "money", Amount = 40000 },  -- money, black_money, bank
                 GradeRequired = { Activate = false, GradeNumber = {} },
 			},
@@ -681,6 +740,7 @@ data.shops = {
 				Label = "Couteau", --Nom item afficher
 				Name = "weapon_knife", --Nom item serveur
 				Count = 1,
+				License = { Activate = false, Name = "" },
                 Price = { Activate = true, MoneyType = "money", Amount = 5500 },  -- money, black_money, bank
                 GradeRequired = { Activate = false, GradeNumber = {} },
 			},
@@ -690,6 +750,7 @@ data.shops = {
 				Label = "Lampe torche", --Nom item afficher
 				Name = "weapon_flashlight", --Nom item serveur
 				Count = 1,
+				License = { Activate = false, Name = "" },
                 Price = { Activate = true, MoneyType = "money", Amount = 1500 },  -- money, black_money, bank
                 GradeRequired = { Activate = false, GradeNumber = {} },
 			},
@@ -699,6 +760,7 @@ data.shops = {
 				Label = "Machette", --Nom item afficher
 				Name = "weapon_machete", --Nom item serveur
 				Count = 1,
+				License = { Activate = false, Name = "" },
                 Price = { Activate = true, MoneyType = "money", Amount = 6500 },  -- money, black_money, bank
                 GradeRequired = { Activate = false, GradeNumber = {} },
 			},
@@ -708,6 +770,7 @@ data.shops = {
 				Label = "Poing Américain", --Nom item afficher
 				Name = "weapon_knuckle", --Nom item serveur
 				Count = 1,
+				License = { Activate = false, Name = "" },
                 Price = { Activate = true, MoneyType = "money", Amount = 7000 },  -- money, black_money, bank
                 GradeRequired = { Activate = false, GradeNumber = {} },
 			},
@@ -717,6 +780,7 @@ data.shops = {
 				Label = "Cran d'arrét", --Nom item afficher
 				Name = "weapon_switchblade", --Nom item serveur
 				Count = 1,
+				License = { Activate = false, Name = "" },
                 Price = { Activate = true, MoneyType = "money", Amount = 8000 },  -- money, black_money, bank
                 GradeRequired = { Activate = false, GradeNumber = {} },
 			}
@@ -744,6 +808,7 @@ data.shops = {
 				Label = "Couteau", --Nom item afficher
 				Name = "weapon_knife", --Nom item serveur
 				Count = 1,
+				License = { Activate = false, Name = "" },
                 Price = { Activate = true, MoneyType = "money", Amount = 5500 },
                 GradeRequired = { Activate = false, GradeNumber = {} },
 			},
@@ -753,6 +818,7 @@ data.shops = {
 				Label = "Lampe Torche", --Nom item afficher
 				Name = "weapon_flashlight", --Nom item serveur
 				Count = 1,
+				License = { Activate = false, Name = "" },
                 Price = { Activate = true, MoneyType = "money", Amount = 1500 },
                 GradeRequired = { Activate = false, GradeNumber = {} },
 			},
@@ -762,6 +828,7 @@ data.shops = {
 				Label = "Machette", --Nom item afficher
 				Name = "weapon_machete", --Nom item serveur
 				Count = 1,
+				License = { Activate = false, Name = "" },
                 Price = { Activate = true, MoneyType = "money", Amount = 6500 },
                 GradeRequired = { Activate = false, GradeNumber = {} },
 			},
@@ -771,6 +838,7 @@ data.shops = {
 				Label = "Poing americain", --Nom item afficher
 				Name = "weapon_knuckle", --Nom item serveur
 				Count = 1,
+				License = { Activate = false, Name = "" },
                 Price = { Activate = true, MoneyType = "money", Amount = 7000 },
                 GradeRequired = { Activate = false, GradeNumber = {} },
 			},
@@ -780,6 +848,7 @@ data.shops = {
 				Label = "Cran d'arret", --Nom item afficher
 				Name = "weapon_switchblade", --Nom item serveur
 				Count = 1,
+				License = { Activate = false, Name = "" },
                 Price = { Activate = true, MoneyType = "money", Amount = 8000 },
                 GradeRequired = { Activate = false, GradeNumber = {} },
 			},
@@ -789,6 +858,7 @@ data.shops = {
 				Label = "Pistolet", --Nom item afficher
 				Name = "weapon_pistol", --Nom item serveur
 				Count = 1,
+				License = { Activate = false, Name = "" },
                 Price = { Activate = true, MoneyType = "money", Amount = 60000 },
                 GradeRequired = { Activate = false, GradeNumber = {} },
 			},
@@ -798,6 +868,7 @@ data.shops = {
 				Label = "Pistolet Vintage", --Nom item afficher
 				Name = "weapon_vintagepistol", --Nom item serveur
 				Count = 1,
+				License = { Activate = false, Name = "" },
                 Price = { Activate = true, MoneyType = "money", Amount = 75000 },
                 GradeRequired = { Activate = false, GradeNumber = {} },
 			},
@@ -807,6 +878,7 @@ data.shops = {
 				Label = "Fusil de chasse", --Nom item afficher
 				Name = "weapon_musket", --Nom item serveur
 				Count = 1,
+				License = { Activate = false, Name = "" },
                 Price = { Activate = true, MoneyType = "money", Amount = 40000 },
                 GradeRequired = { Activate = false, GradeNumber = {} },
 			}
@@ -843,6 +915,7 @@ data.shops = {
 				Label = "Permis de conduire moto", --Nom item afficher
 				Name = "card_driver_moto", --Nom item serveur
 				Count = 1,
+				License = { Activate = false, Name = "" },
                 Price = { Activate = true, MoneyType = "money", Amount = 176 },
                 GradeRequired = { Activate = false, GradeNumber = {} },
 			},
@@ -852,6 +925,7 @@ data.shops = {
 				Label = "Permis de conduire camion", --Nom item afficher
 				Name = "card_driver_camion", --Nom item serveur
 				Count = 1,
+				License = { Activate = false, Name = "" },
                 Price = { Activate = true, MoneyType = "money", Amount = 175 },
                 GradeRequired = { Activate = false, GradeNumber = {} },
 			},
@@ -861,6 +935,7 @@ data.shops = {
 				Label = "Carte d'identité", --Nom item afficher
 				Name = "card_identity", --Nom item serveur
 				Count = 1,
+				License = { Activate = false, Name = "" },
                 Price = { Activate = true, MoneyType = "money", Amount = 250 },
                 GradeRequired = { Activate = false, GradeNumber = {} },
 			},
@@ -870,6 +945,7 @@ data.shops = {
 				Label = "Permis port d'arme blanche", --Nom item afficher
 				Name = "card_ppa_1", --Nom item serveur
 				Count = 1,
+				License = { Activate = true, Name = "ppa_1" },
                 Price = { Activate = true, MoneyType = "money", Amount = 5000 },
                 GradeRequired = { Activate = false, GradeNumber = {} },
 			},
@@ -879,6 +955,7 @@ data.shops = {
 				Label = "Permis port d'arme", --Nom item afficher
 				Name = "card_ppa_2", --Nom item serveur
 				Count = 1,
+				License = { Activate = false, Name = "" },
                 Price = { Activate = true, MoneyType = "money", Amount = 50000 },
                 GradeRequired = { Activate = false, GradeNumber = {} },
 			},
@@ -888,6 +965,7 @@ data.shops = {
 				Label = "Permis de chasse", --Nom item afficher
 				Name = "card_ppa_3", --Nom item serveur
 				Count = 1,
+				License = { Activate = true, Name = "ppa_3" },
                 Price = { Activate = true, MoneyType = "money", Amount = 70000 },
                 GradeRequired = { Activate = false, GradeNumber = {} },
 			}
@@ -917,6 +995,7 @@ data.shops = {
 				Label = "Boite de Cal .12", --Nom item afficher
 				Name = "ammo_cal12", --Nom item serveur
 				Count = 1,
+				License = { Activate = false, Name = "" },
                 Price = { Activate = true, MoneyType = "money", Amount = 1952 },
                 GradeRequired = { Activate = false, GradeNumber = {} },
 			},
@@ -926,6 +1005,7 @@ data.shops = {
 				Label = "Boite de 9mm", --Nom item afficher
 				Name = "ammo_9mm", --Nom item serveur
 				Count = 1,
+				License = { Activate = false, Name = "" },
                 Price = { Activate = true, MoneyType = "money", Amount = 2053 },
                 GradeRequired = { Activate = false, GradeNumber = {} },
 			},
@@ -935,6 +1015,7 @@ data.shops = {
 				Label = "Boite de 5.56mm", --Nom item afficher
 				Name = "ammo_5.56mm", --Nom item serveur
 				Count = 1,
+				License = { Activate = false, Name = "" },
                 Price = { Activate = true, MoneyType = "money", Amount = 3067 },
                 GradeRequired = { Activate = false, GradeNumber = {} },
 			},
@@ -944,6 +1025,7 @@ data.shops = {
 				Label = "Boite de 7.62mm", --Nom item afficher
 				Name = "ammo_7.62mm", --Nom item serveur
 				Count = 1,
+				License = { Activate = false, Name = "" },
                 Price = { Activate = true, MoneyType = "money", Amount = 4079 },
                 GradeRequired = { Activate = false, GradeNumber = {} },
 			}
@@ -971,6 +1053,7 @@ data.shops = {
 				Label = "Parachute", --Nom item afficher
 				Name = "gadget_parachute", --Nom item serveur
 				Count = 1,
+				License = { Activate = false, Name = "" },
                 Price = { Activate = true, MoneyType = "money", Amount = 300 },
                 GradeRequired = { Activate = false, GradeNumber = {} },
 			}

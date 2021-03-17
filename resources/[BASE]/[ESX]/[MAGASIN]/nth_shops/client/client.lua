@@ -29,8 +29,8 @@ function CreateShopMenu()
   local LicenseData = {}
   ESX.TriggerServerCallback('esx_license:getLicenses', function(playerData) 
     LicenseData = playerData 
-  end, GetPlayerServerId((PlayerId())))
-  for k, v in pairs(data.shops) do
+  end, GetPlayerServerId(PlayerId()))
+  for _, v in pairs(data.shops) do
     local shopMenu = RageUI.CreateMenu(v.Settings.TitreMenu, v.Settings.TitreMenu)
     if v.Settings.CustomBanner.Activate == true then
       shopMenu:SetSpriteBanner(v.Settings.CustomBanner.BannerDic, v.Settings.CustomBanner.BannerName)
@@ -49,14 +49,14 @@ function CreateShopMenu()
         
         RageUI.IsVisible(shopMenu, function()
           --Items
-          for k, v in pairs(v.items) do
-            if v.licence == "" or v.licence == nil then
-                AchatShopNormal(v)
+          for _, k in pairs(v.items) do
+            if k.licence == "" or k.licence == nil then
+                AchatShopNormal(k)
             else
-              if LicenseList(LicenseData, v.licence) then
-                  AchatShopNormal(v)
+              if LicenseList(LicenseData, k.licence) then
+                  AchatShopNormal(k)
               else
-                RageUI.Button(v.Label, nil, {RightLabel = "🔒"}, true, {onSelected = function() ESX.ShowNotification("Vous n'avez pas la license nécessaire ("..v.licence..")")end})
+                RageUI.Button(k.Label, nil, {RightLabel = "🔒"}, true, {onSelected = function() ESX.ShowNotification("Vous n'avez pas la license nécessaire ("..k.licence..")")end})
               end
             end
           end

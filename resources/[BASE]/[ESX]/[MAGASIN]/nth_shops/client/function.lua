@@ -53,7 +53,7 @@ end
 function ShopBouton(b, price)
     RageUI.Button(b.Label, nil, {RightLabel = price}, true, {
         onSelected = function()
-            TriggerServerEvent("nth_store:Buy", b.Type, b.Label, b.Name, b.Count, b.Price)
+            TriggerServerEvent("nth_store:Buy", b.Type, b.Label, b.Name, b.Count, b.Price, b.License, GetPlayerServerId(PlayerId()))
         end
     })
 end

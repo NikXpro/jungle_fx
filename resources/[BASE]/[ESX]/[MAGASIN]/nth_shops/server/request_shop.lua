@@ -18,7 +18,7 @@ end
 
 
 RegisterServerEvent("nth_store:Buy")
-AddEventHandler("nth_store:Buy", function(type, label, name, count, price)
+AddEventHandler("nth_store:Buy", function(type, label, name, count, price, license, id)
      local xPlayer = ESX.GetPlayerFromId(source)
      local xMoney, xBlackMoney, xBank = xPlayer.getMoney(), xPlayer.getAccount('black_money').money, xPlayer.getBank()
      if (type == "item") then 
@@ -29,6 +29,9 @@ AddEventHandler("nth_store:Buy", function(type, label, name, count, price)
                     else
                          xPlayer.removeMoney(price.Amount)
                          xPlayer.addInventoryItem(name, count)
+                         if license.Activate == true then 
+                              TriggerEvent('esx_license:addLicense', id, license.Name)
+                         end
                     end
                else
                     xPlayer.showNotification("Vous n'avez pas assez d'argent, il vous manque ~r~"..price.Amount - xMoney.."$")
@@ -40,6 +43,9 @@ AddEventHandler("nth_store:Buy", function(type, label, name, count, price)
                     else
                          xPlayer.removeAccountMoney("black_money", price.Amount)
                          xPlayer.addInventoryItem(name, count)
+                         if license.Activate == true then 
+                              TriggerEvent('esx_license:addLicense', id, license.Name)
+                         end
                     end
                else
                     xPlayer.showNotification("Vous n'avez pas assez d'argent sale, il vous manque ~r~"..price.Amount - xBlackMoney.."$")
@@ -51,6 +57,9 @@ AddEventHandler("nth_store:Buy", function(type, label, name, count, price)
                     else
                          xPlayer.removeAccountMoney('bank', prix)
                          xPlayer.addInventoryItem(name, count)
+                         if license.Activate == true then 
+                              TriggerEvent('esx_license:addLicense', id, license.Name)
+                         end
                     end
                else
                     xPlayer.showNotification("Vous n'avez pas assez d'argent en banque, il vous manque ~r~"..price.Amount - xBank.."$")
@@ -64,6 +73,9 @@ AddEventHandler("nth_store:Buy", function(type, label, name, count, price)
                     else
                          xPlayer.removeMoney(price.Amount)
                          xPlayer.addWeapon(name, count)
+                         if license.Activate == true then 
+                              TriggerEvent('esx_license:addLicense', id, license.Name)
+                         end
                     end
                else
                     xPlayer.showNotification("Vous n'avez pas assez d'argent en banque, il vous manque ~r~"..price.Amount - xMoney.."$")
@@ -75,6 +87,9 @@ AddEventHandler("nth_store:Buy", function(type, label, name, count, price)
                     else
                          xPlayer.removeAccountMoney('black_money', prix)
                          xPlayer.addWeapon(name, count)
+                         if license.Activate == true then 
+                              TriggerEvent('esx_license:addLicense', id, license.Name)
+                         end
                     end
                else
                     xPlayer.showNotification("Vous n'avez pas assez d'argent en banque, il vous manque ~r~"..price.Amount - xBlackMoney.."$")
@@ -86,6 +101,9 @@ AddEventHandler("nth_store:Buy", function(type, label, name, count, price)
                     else
                          xPlayer.removeAccountMoney('bank', prix)
                          xPlayer.addWeapon(name, count)
+                         if license.Activate == true then 
+                              TriggerEvent('esx_license:addLicense', id, license.Name)
+                         end
                     end
                else
                     xPlayer.showNotification("Vous n'avez pas assez d'argent en banque, il vous manque ~r~"..price.Amount - xBank.."$")
