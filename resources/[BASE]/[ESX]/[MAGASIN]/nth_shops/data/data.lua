@@ -1031,8 +1031,8 @@ data.shops = {
 			}
 		}
 	},
-	parachuteNord = {
-		MenuId = "parachuteNord", -- Identifiant unique pour chaque shop
+	parachuteSandyShore = {
+		MenuId = "parachuteSandyShore", -- Identifiant unique pour chaque shop
         Settings = {
             TitreMenu = "",
             DescriptionMenu = "Equipement de parachutiste",
@@ -1054,7 +1054,73 @@ data.shops = {
 				Name = "gadget_parachute", --Nom item serveur
 				Count = 1,
 				License = { Activate = false, Name = "" },
-                Price = { Activate = true, MoneyType = "money", Amount = 300 },
+                Price = { Activate = true, MoneyType = "money", Amount = 310 },
+                GradeRequired = { Activate = false, GradeNumber = {} },
+			}
+		}
+	},
+	parachutePaleto = {
+		MenuId = "parachutePaleto", -- Identifiant unique pour chaque shop
+        Settings = {
+            TitreMenu = "",
+            DescriptionMenu = "Equipement de parachutiste",
+            MenuPosition = vector3(-736.49652099609, 5594.9267578125, 40.654621124268),
+            MessageZone = "Appuyer sur ~INPUT_CONTEXT~ pour parler a Paul",
+            TailleZone = 2.5,
+            CustomBanner = { Activate = true, BannerDic = "banner", BannerName = "casinoui_slots_impotent" },
+            JobRequired = { Activate = false, jobName = {} },
+            blip = { Activate = true, property = false, BlipId = 377, BlipScale = 1.0, BlipColor = 48, BlipName = "Magasin de parachutisme" },
+            ped = { Activate = true, PedHash = "cs_dom", Heanding = 88.39604949951172 },
+            marker = { Activate = false, MarkerType = 1, MarkerColor = {r = 50, g = 50, b = 204}, MarkerSize = {x = 1.5, y = 1.5, z = 0.5}, ViewDistance = 3.0 },
+        },
+
+		items = {
+			gadget_parachute = {
+				licence = "", --weapon, drive, dmv...
+				Type = "weapon", --weapon, item
+				Label = "Parachute", --Nom item afficher
+				Name = "gadget_parachute", --Nom item serveur
+				Count = 1,
+				License = { Activate = false, Name = "" },
+                Price = { Activate = true, MoneyType = "money", Amount = 317 },
+                GradeRequired = { Activate = false, GradeNumber = {} },
+			}
+		}
+	},
+	PlongerSud = {
+		MenuId = "PlongerSud", -- Identifiant unique pour chaque shop
+        Settings = {
+            TitreMenu = "",
+            DescriptionMenu = "Equipement de plonger",
+            MenuPosition = vector3(-1512.6689453125, 1517.0758056641, 114.28862762451),
+            MessageZone = "Appuyer sur ~INPUT_CONTEXT~ pour parler a Paul",
+            TailleZone = 2.5,
+            CustomBanner = { Activate = true, BannerDic = "banner", BannerName = "casinoui_slots_impotent" },
+            JobRequired = { Activate = false, jobName = {} },
+            blip = { Activate = true, property = false, BlipId = 377, BlipScale = 1.0, BlipColor = 48, BlipName = "Magasin de plonger" },
+            ped = { Activate = true, PedHash = "cs_devin", Heanding = 87.41787719726562 },
+            marker = { Activate = false, MarkerType = 1, MarkerColor = {r = 50, g = 50, b = 204}, MarkerSize = {x = 1.5, y = 1.5, z = 0.5}, ViewDistance = 3.0 },
+        },
+
+		items = {
+			plonger_1 = {
+				licence = "", --weapon, drive, dmv...
+				Type = "item", --weapon, item
+				Label = "Tenue de plonger amateur", --Nom item afficher
+				Name = "plonger_1", --Nom item serveur
+				Count = 1,
+				License = { Activate = false, Name = "" },
+                Price = { Activate = true, MoneyType = "money", Amount = 423 },
+                GradeRequired = { Activate = false, GradeNumber = {} },
+			},
+			plonger_2 = {
+				licence = "", --weapon, drive, dmv...
+				Type = "item", --weapon, item
+				Label = "Tenue de plongée professionnel", --Nom item afficher
+				Name = "plonger_2", --Nom item serveur
+				Count = 1,
+				License = { Activate = false, Name = "" },
+                Price = { Activate = true, MoneyType = "money", Amount = 784 },
                 GradeRequired = { Activate = false, GradeNumber = {} },
 			}
 		}

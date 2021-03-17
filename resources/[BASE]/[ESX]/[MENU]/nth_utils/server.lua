@@ -22,3 +22,10 @@ AddEventHandler("RPCore:drag", function(Target)
 	local Source = source
 	TriggerClientEvent("RPCore:drag", Target, Source)
 end)
+
+ESX.RegisterUsableItem('plonger_1', function(source)
+    local _source = source
+    local xPlayer = ESX.GetPlayerFromId(_source)
+    xPlayer.removeInventoryItem('plonger_1', 1)
+        TriggerClientEvent('nth:plonger_1', _source)
+end)
