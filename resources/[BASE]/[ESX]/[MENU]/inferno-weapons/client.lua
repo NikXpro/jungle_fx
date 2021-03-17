@@ -73,16 +73,7 @@ Config.BloodEffects = {
 	"Car_Crash_Light",
 	"RunOverByVehicle",
 	"Splashback_Torso_0",
-	"Splashback_Torso_1",
-	"Skin_Melee_0",
-	"Useful_Bits",
-	"Explosion_Med",
-	"BigHitByVehicle",
-	"Car_Crash_Heavy",
-	"HitByVehicle",
-	"BigRunOverByVehicle",
-	"Explosion_Large",
-	"Fall"
+	"Splashback_Torso_1"
 }
 
 -- Blood Effects
