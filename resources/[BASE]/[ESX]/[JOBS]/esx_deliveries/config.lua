@@ -62,15 +62,15 @@ Config.Models = {
 -- Scale of the arrow, usually not modified it
 Config.Scales = {
 	scooter = 0.6,
-	van     = 3.0,
+	van     = 4.0,
 	truck   = 4.5,
 }
 
 -- Rental money of the vehicles
 Config.Safe = {
-	scooter = 4000,
-	van     = 6000,
-	truck   = 8000,
+	scooter = 110,
+	van     = 150,
+	truck   = 250,
 }
 
 -- Random parking locations

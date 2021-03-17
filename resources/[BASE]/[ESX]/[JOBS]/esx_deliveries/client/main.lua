@@ -69,7 +69,6 @@ end
 function HandleInput()
 		
 	if CurrentStatus == Status.PLAYER_REMOVED_GOODS_FROM_VEHICLE then
-		DisableControlAction(0, 21, true)
 		DisableControlAction(1, 22, true)
 
 	else
@@ -199,9 +198,9 @@ function HandleMarkers()
 				
 				TrunkPos = TrunkPos - (TrunkForward * ScaleFactor)
 				TrunkHeight = TrunkPos.z
-				TrunkHeight = TrunkPos.z + 0.7
+				TrunkHeight = TrunkPos.z + 1.0
 				
-				local ArrowSize = {x = 0.8, y = 0.8, z = 0.8}
+				local ArrowSize = {x = 0.9, y = 0.9, z = 0.9}
 				
 				if CurrentType == 'scooter' then
 					ArrowSize = {x = 0.15, y = 0.15, z = 0.15}
@@ -279,7 +278,7 @@ function PlayTrunkAnimation()
 			if Config.Models.vehDoor.usingTrunkForVan then
 				SetVehicleDoorOpen(CurrentVehicle, 5, false, false)
 			else
-				
+				SetVehicleDoorOpen(CurrentVehicle, 5, false, false)
 			end
 			
 		end
@@ -293,7 +292,8 @@ function PlayTrunkAnimation()
 			end
 		elseif CurrentType == 'van' then
 			if Config.Models.vehDoor.usingTrunkForVan then
-				SetVehicleDoorShut(CurrentVehicle, 5, false)
+				SetVehicleDoorOpen(CurrentVehicle, 2, false, false)
+				SetVehicleDoorOpen(CurrentVehicle, 3, false, false)
 			else
 				SetVehicleDoorShut(CurrentVehicle, 2, false)
 				SetVehicleDoorShut(CurrentVehicle, 3, false)

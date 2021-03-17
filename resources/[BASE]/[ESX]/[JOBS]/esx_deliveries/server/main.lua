@@ -36,17 +36,18 @@ end)
 
 AddEventHandler('esx_deliveries:finishDelivery:server', function(deliveryType)
 	local xPlayer = ESX.GetPlayerFromId(source)
-	local PrixFinal = 0
 	if deliveryType == "scooter" then
-		PrixFinal = (Config.Rewards.scooter * 1)
-		xPlayer.addMoney(PrixFinal)
-		TriggerClientEvent('esx:showNotification', source, _U("delivery_point_reward") .. tostring(PrixFinal))
+		local deliveryMoney = math.random(35, 55)
+		xPlayer.addMoney(deliveryMoney)
+		TriggerClientEvent('esx:showNotification', source, _U("delivery_point_reward") .. tostring(deliveryMoney))
 	elseif deliveryType == "van" then
-		local deliveryMoney = math.random(100, 150)
+		local deliveryMoney = math.random(45, 75)
 		xPlayer.addMoney(deliveryMoney)
+		TriggerClientEvent('esx:showNotification', source, _U("delivery_point_reward") .. tostring(deliveryMoney))
 	elseif deliveryType == "truck" then
-		local deliveryMoney = math.random(100, 150)
+		local deliveryMoney = math.random(65, 125)
 		xPlayer.addMoney(deliveryMoney)
+		TriggerClientEvent('esx:showNotification', source, _U("delivery_point_reward") .. tostring(deliveryMoney))
 	end
 end)
 
