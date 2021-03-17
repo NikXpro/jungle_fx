@@ -23,7 +23,7 @@ RegisterCommand("war", function(source, args)
         -- get the source's coords
         local x,y,z = table.unpack(GetEntityCoords(GetPlayerPed(-1)))
         -- refer to ped types here under "PedTypes" -> https://runtime.fivem.net/doc/natives/#_0xD49F9B0955C367DE
-        newPed = CreatePed(4 --[[refer above (4 only works for male peds and 5 is for female peds)]], ped, x+math.random(-totalPeople,totalPeople),y+math.random(-totalPeople,totalPeople) --[[ This random number will space them out more ]],z , 0.0 --[[float (int) Heading]], false, true)
+        newPed = CreatePed(4 --[[refer above (4 only works for male peds and 5 is for female peds)]], ped, x+math.random(-totalPeople,totalPeople),y+math.random(-totalPeople,totalPeople) --[[ This random number will space them out more ]],z , 0.0 --[[float (int) Heading]], true, 1)
         --- now lets give the ped some attributes -> https://runtime.fivem.net/doc/natives/#_0x9F7794730795E019
         SetPedCombatAttributes(newPed, 0, true) --[[ BF_CanUseCover ]]
         SetPedCombatAttributes(newPed, 5, true) --[[ BF_CanFightArmedPedsWhenNotArmed ]]
