@@ -38,9 +38,7 @@ local Emoticon = {
 }
 
 function OpenAmbulanceActionsMenu()
-	local elements = {
-		{label = _U('cloakroom'), value = 'cloakroom'}
-	}
+	local elements = {}
 
 	if Config.EnablePlayerManagement and ESX.PlayerData.job.grade_name == 'boss' then
 		table.insert(elements, {label = _U('boss_actions'), value = 'boss_actions'})
@@ -53,9 +51,7 @@ function OpenAmbulanceActionsMenu()
 		align    = 'top-left',
 		elements = elements
 	}, function(data, menu)
-		if data.current.value == 'cloakroom' then
-			OpenCloakroomMenu()
-		elseif data.current.value == 'boss_actions' then
+		if data.current.value == 'boss_actions' then
 			TriggerEvent('esx_society:openBossMenu', 'ambulance', function(data, menu)
 				menu.close()
 			end, {wash = false})
@@ -216,7 +212,7 @@ end
 -- Draw markers & Marker logic
 Citizen.CreateThread(function()
 	while true do
-		Citizen.Wait(0)
+		Citizen.Wait(6)
 		local playerCoords = GetEntityCoords(PlayerPedId())
 		local letSleep, isInMarker, hasExited = true, false, false
 		local currentHospital, currentPart, currentPartNum
@@ -377,7 +373,7 @@ end)
 -- Key Controls
 Citizen.CreateThread(function()
 	while true do
-		Citizen.Wait(0)
+		Citizen.Wait(6)
 
 		if CurrentAction then
 			ESX.ShowHelpNotification(CurrentActionMsg)
@@ -434,35 +430,6 @@ AddEventHandler('esx_ambulancejob:putInVehicle', function()
 		end
 	end
 end)
-
-function OpenCloakroomMenu()
-	ESX.UI.Menu.Open('default', GetCurrentResourceName(), 'cloakroom', {
-		title    = _U('cloakroom'),
-		align    = 'top-left',
-		elements = {
-			{label = _U('ems_clothes_civil'), value = 'citizen_wear'},
-			{label = _U('ems_clothes_ems'), value = 'ambulance_wear'},
-		}
-	}, function(data, menu)
-		if data.current.value == 'citizen_wear' then
-			ESX.TriggerServerCallback('esx_skin:getPlayerSkin', function(skin, jobSkin)
-				TriggerEvent('skinchanger:loadSkin', skin)
-			end)
-		elseif data.current.value == 'ambulance_wear' then
-			ESX.TriggerServerCallback('esx_skin:getPlayerSkin', function(skin, jobSkin)
-				if skin.sex == 0 then
-					TriggerEvent('skinchanger:loadClothes', skin, jobSkin.skin_male)
-				else
-					TriggerEvent('skinchanger:loadClothes', skin, jobSkin.skin_female)
-				end
-			end)
-		end
-
-		menu.close()
-	end, function(data, menu)
-		menu.close()
-	end)
-end
 
 function OpenVehicleSpawnerMenu(hospital, partNum)
 	local playerCoords = GetEntityCoords(PlayerPedId())
@@ -851,7 +818,7 @@ function WaitForVehicleToLoad(modelHash)
 		RequestModel(modelHash)
 
 		while not HasModelLoaded(modelHash) do
-			Citizen.Wait(0)
+			Citizen.Wait(6)
 
 			DisableControlAction(0, Keys['TOP'], true)
 			DisableControlAction(0, Keys['DOWN'], true)

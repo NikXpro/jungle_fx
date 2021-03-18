@@ -55,7 +55,7 @@ Config.VehiclesList = {
 
 -- CHECK SKINCHANGER CLIENT MAIN.LUA for matching elements
 Config.Uniforms = {
-	tenu_lspd = {
+	tenu_vigne = {
 		male = {
 			['tshirt_1'] = 53,  ['tshirt_2'] = 0,
 			['torso_1'] = 102,   ['torso_2'] = 0,

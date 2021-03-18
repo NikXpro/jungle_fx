@@ -49,7 +49,7 @@ function OpenCloakroomMenu()
 
 	local elements = {
 		{label = _U('citizen_wear'), value = 'citizen_wear'},
-		{label = 'Tenue Manche Court', uniform = 'tenu_lspd' },
+		{label = 'Tenue Vigneron', uniform = 'tenu_vigne' },
 	}
 
 	ESX.UI.Menu.CloseAll()
