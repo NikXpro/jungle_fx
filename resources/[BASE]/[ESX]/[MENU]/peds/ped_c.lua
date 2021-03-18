@@ -2,9 +2,7 @@
 local j = nil
 
 local teams = {
-    {name = "allies", model = "s_m_y_swat_01", weapon = "WEAPON_CARBINERIFLE"} --[[ -- bodyguards, 'friendly' ]],
     {name = "enemies", model = "g_m_m_chicold_01", weapon = "WEAPON_ASSAULTRIFLE"}, 
-    
 }
 for i=1, #teams, 1 do 
     AddRelationshipGroup(teams[i].name)
