@@ -1287,118 +1287,165 @@ end)
 
 
 
+function IncurCooldown(ms)
+	Citizen.CreateThread(function()
+		Cooldown = true Wait(ms) Cooldown = false
+	end)
+end
 
+local function PlayToggleEmote(dict, anim, move, dur)
+	local Ped = PlayerPedId()
+	while not HasAnimDictLoaded(dict) do 
+		RequestAnimDict(dict) Wait(100) 
+	end
+	if IsPedInAnyVehicle(Ped) then 
+		move = 51 
+	end
+	TaskPlayAnim(Ped, dict, anim, 3.0, 3.0, dur, move, 0, false, false, false)
+	local Pause = dur-500 
+	if Pause < 500 then 
+		Pause = 500 
+	end
+	IncurCooldown(Pause)
+end
 
-RegisterNetEvent('nth:plonger_1')
-AddEventHandler('nth:plonger_1', function()
-	if UseTenu then
-		TriggerEvent('skinchanger:getSkin', function(skin)
-    		if skin.sex == 0 then
-        		local clothesSkin = {
-            		['tshirt_1'] = 15, ['tshirt_2'] = 0,
-					['ears_1'] = -1, ['ears_2'] = 0,
-            		['torso_1'] = 15, ['torso_2'] = 0,
-            		['decals_1'] = 0,  ['decals_2']= 0,
-            		['mask_1'] = 36, ['mask_2'] = 0,
-            		['arms'] = 15,
-            		['pants_1'] = 16, ['pants_2'] = 0,
-            		['shoes_1'] = 34, ['shoes_2'] = 0,
-            		['helmet_1'] 	= 8, ['helmet_2'] = 0,
-            		['bags_1'] = 43, ['bags_2'] = 0,
-					['glasses_1'] = 6, ['glasses_2'] = 0,
-					['chain_1'] = 0, ['chain_2'] = 0,
-            		['bproof_1'] = 0,  ['bproof_2'] = 0
-        		}
-        		TriggerEvent('skinchanger:loadClothes', skin, clothesSkin)
-    		else
-        		local clothesSkin = {
-            		['tshirt_1'] = 15, ['tshirt_2'] = 0,
-					['ears_1'] = -1, ['ears_2'] = 0,
-            		['torso_1'] = 15, ['torso_2'] 	= 0,
-            		['decals_1'] = 0,  ['decals_2'] = 0,
-            		['mask_1'] = 36, ['mask_2'] 	= 0,
-            		['arms'] = 15,
-            		['pants_1'] = 15, ['pants_2'] 	= 0,
-            		['shoes_1'] = 35, ['shoes_2'] 	= 0,
-            		['helmet_1']= -1, ['helmet_2'] 	= 0,
-            		['bags_1'] = 43, ['bags_2']	= 0,
-					['glasses_1'] = 5, ['glasses_2'] = 0,
-					['chain_1'] = 0, ['chain_2'] = 0,
-            		['bproof_1'] = 0,  ['bproof_2'] = 0
-        		}
-        		TriggerEvent('skinchanger:loadClothes', skin, clothesSkin)
-        	end
-        	local playerPed = GetPlayerPed(-1)
-			SetEnableScuba(GetPlayerPed(-1),true)
-			SetPedMaxTimeUnderwater(GetPlayerPed(-1), 400.00)
-    	end)
-	else
+RegisterNetEvent('nth:plonger')
+AddEventHandler('nth:plonger', function(color)
+	local playerPed = GetPlayerPed(-1)
+	if UseTenu then 
+		PlayToggleEmote("clothingtie", "try_tie_negative_a", 51, 1200)
+		Wait(1100)
 		TriggerEvent('skinchanger:getSkin', function(skin)
 			ESX.TriggerServerCallback('esx_skin:getPlayerSkin', function(skin, hasSkin)
-				if hasSkin then
-					TriggerEvent('skinchanger:loadSkin', skin)
-					TriggerEvent('esx:restoreLoadout')
+				if hasSkin then 
+					TriggerEvent('skinchanger:loadSkin', skin) TriggerEvent('esx:restoreLoadout')
+					SetEnableScuba(playerPed, false)
+					SetEnableScubaGearLight(playerPed, false)
+					SetPedMaxTimeUnderwater(playerPed, 25.00)
+					
 				end
-			end)
+			end)		 
 		end)
-	end
-	UseTenu  = not UseTenu
-	GUI.Time = GetGameTimer()
-end)
-
-RegisterNetEvent('nth:plonger_2')
-AddEventHandler('nth:plonger_2', function()
-	if UseTenu then
-		TriggerEvent('skinchanger:getSkin', function(skin)
-    		if skin.sex == 0 then
-        		local clothesSkin = {
-            		['tshirt_1'] 	= 15, ['tshirt_2'] = 0,
-					['ears_1'] = -1, ['ears_2'] = 0,
-            		['torso_1'] 	= 15, ['torso_2'] = 0,
-            		['decals_1'] 	= 0,  ['decals_2'] = 0,
-            		['mask_1'] 		= 36, ['mask_2'] = 0,
-            		['arms'] 		= 15,
-            		['pants_1'] 	= 16, ['pants_2'] = 0,
-            		['shoes_1'] 	= 34, ['shoes_2'] = 0,
-            		['helmet_1'] 	= 8, ['helmet_2'] = 0,
-            		['bags_1']		= 43, ['bags_2'] = 0,
-					['glasses_1'] = 6, ['glasses_2'] = 0,
-					['chain_1'] = 0, ['chain_2'] = 0,
-            		['bproof_1'] 	= 0,  ['bproof_2'] 	= 0
-        		}
-        		TriggerEvent('skinchanger:loadClothes', skin, clothesSkin)
-    		else
-        		local clothesSkin = {
-            		['tshirt_1'] 	= 15, ['tshirt_2'] = 0,
-					['ears_1'] = -1, ['ears_2'] = 0,
-            		['torso_1'] = 15, ['torso_2'] = 0,
-            		['decals_1'] = 0,  ['decals_2'] = 0,
-            		['mask_1'] = 36, ['mask_2'] = 0,
-            		['arms'] = 15,
-            		['pants_1'] = 15, ['pants_2'] = 0,
-            		['shoes_1'] = 35, ['shoes_2'] = 0,
-            		['helmet_1'] = -1, ['helmet_2']	= 0,
-            		['bags_1'] = 43, ['bags_2'] = 0,
-					['glasses_1'] = 5, ['glasses_2'] = 0,
-					['chain_1'] = 0, ['chain_2'] = 0,
-            		['bproof_1'] = 0,  ['bproof_2'] = 0
-        		}
-        		TriggerEvent('skinchanger:loadClothes', skin, clothesSkin)
-        	end
-        	local playerPed = GetPlayerPed(-1)
-			SetEnableScuba(GetPlayerPed(-1),true)
-			SetPedMaxTimeUnderwater(GetPlayerPed(-1), 1500.00)
-    	end)
+		
 	else
 		TriggerEvent('skinchanger:getSkin', function(skin)
-			ESX.TriggerServerCallback('esx_skin:getPlayerSkin', function(skin, hasSkin)
-				if hasSkin then
-					TriggerEvent('skinchanger:loadSkin', skin)
-					TriggerEvent('esx:restoreLoadout')
-				end
-			end)
+			local Ped = PlayerPedId()
+			if skin.sex == 0 then
+				PlayToggleEmote("random@domestic", "pickup_low", 0, 1200)
+				Wait(1100)
+				SetPedComponentVariation(Ped, 6, 34, 0, 2)
+
+				Wait(500)
+				PlayToggleEmote("re@construction", "out_of_breath", 51, 1300)
+				Wait(1200)
+				SetPedComponentVariation(Ped, 4, 61, 0, 2)
+
+				Wait(500)
+				PlayToggleEmote("clothingtie", "try_tie_negative_a", 51, 1200)
+				Wait(1100)
+				SetPedComponentVariation(Ped, 11, 15, 0, 2)
+				SetPedComponentVariation(Ped, 8, 15, 0, 2)
+				SetPedComponentVariation(Ped, 3, 15, 0, 2)
+				SetPedComponentVariation(Ped, 10, 0, 0, 2)
+
+				Wait(500)
+				PlayToggleEmote("clothingtie", "try_tie_negative_a", 51, 1200)
+				Wait(1100)
+				SetPedComponentVariation(Ped, 11, 243, color, 2)
+				SetPedComponentVariation(Ped, 3, 30, 0, 2)
+
+				Wait(500)
+				PlayToggleEmote("re@construction", "out_of_breath", 51, 1300)
+				Wait(1200)
+				SetPedComponentVariation(Ped, 4, 94, color, 2)
+
+				Wait(500)
+				PlayToggleEmote("random@domestic", "pickup_low", 0, 1200)
+				Wait(1100)
+				SetPedComponentVariation(Ped, 6, 67, color, 2)
+				local clothesSkin = {
+					--['tshirt_1'] 	= 151, 	['tshirt_2'] 	= 0,
+					['tshirt_1'] 	= 15, 	['tshirt_2'] 	= 0,
+					['torso_1'] 	= 243, 	['torso_2'] 	= color,
+					['decals_1'] 	= 0,  	['decals_2'] 	= 0,
+					['mask_1'] 	= 0, 		['mask_2'] 	= 0,
+					['arms'] 	= 30,
+					['pants_1'] 	= 94, 	['pants_2'] 	= color,
+					['shoes_1'] 	= 67, 	['shoes_2'] 	= color,
+					['helmet_1'] 	= -1, 	['helmet_2'] 	= -1,
+					['bags_1'] 	= -1,		['bags_2'] 	= -1,
+					['chain_1'] 	= -1, 	['bproof_1']	= -1,  
+					['bracelets_1'] = -1, 	['watches_1'] 	= -1,
+					['glasses_1'] 	= 0, 	['ears_1'] 	= -1
+				} 
+				TriggerEvent('skinchanger:loadClothes', skin, clothesSkin)
+
+				Wait(500)
+				PlayToggleEmote("clothingtie", "try_tie_negative_a", 51, 1200)
+				Wait(1100)
+				SetPedComponentVariation(Ped, 8, 151, 0, 2)
+				
+				
+			else
+				PlayToggleEmote("random@domestic", "pickup_low", 0, 1200)
+				Wait(1100)
+				SetPedComponentVariation(Ped, 6, 35, 0, 2)
+
+				Wait(500)
+				PlayToggleEmote("re@construction", "out_of_breath", 51, 1300)
+				Wait(1200)
+				SetPedComponentVariation(Ped, 4, 56, 0, 2)
+
+				Wait(500)
+				PlayToggleEmote("clothingtie", "try_tie_negative_a", 51, 1200)
+				Wait(1100)
+				SetPedComponentVariation(Ped, 11, 15, 0, 2)
+				SetPedComponentVariation(Ped, 8, 15, 0, 2)
+				SetPedComponentVariation(Ped, 3, 15, 0, 2)
+				SetPedComponentVariation(Ped, 10, 0, 0, 2)
+
+				Wait(500)
+				PlayToggleEmote("clothingtie", "try_tie_negative_a", 51, 1200)
+				Wait(1100)
+				SetPedComponentVariation(Ped, 11, 251, color, 2)
+				SetPedComponentVariation(Ped, 3, 30, 0, 2)
+
+				Wait(500)
+				PlayToggleEmote("re@construction", "out_of_breath", 51, 1300)
+				Wait(1200)
+				SetPedComponentVariation(Ped, 4, 97, color, 2)
+
+				Wait(500)
+				PlayToggleEmote("random@domestic", "pickup_low", 0, 1200)
+				Wait(1100)
+				SetPedComponentVariation(Ped, 6, 70, color, 2)
+				local clothesSkin = {
+					['tshirt_1'] 	= 15, 	['tshirt_2'] 	= color,
+					['torso_1'] 	= 251, 	['torso_2'] 	= color,
+					['decals_1'] 	= 0,  	['decals_2'] 	= 0,
+					['mask_1'] 	= 0, 		['mask_2'] 	= 0,
+					['arms'] 	= 30,
+					['pants_1'] 	= 97, 	['pants_2'] 	= color,
+					['shoes_1'] 	= 70, 	['shoes_2'] 	= color,
+					['helmet_1'] 	= -1, 	['helmet_2'] 	= -1,
+					['bags_1'] 	= -1,		['bags_2'] 	= -1,
+					['chain_1'] 	= -1, 	['bproof_1']	= -1, 
+					['bracelets_1'] = -1, 	['watches_1'] 	= -1,
+					['glasses_1'] 	= 0, 	['ears_1'] 	= -1
+				}
+				TriggerEvent('skinchanger:loadClothes', skin, clothesSkin) 
+				
+				Wait(500)
+				PlayToggleEmote("clothingtie", "try_tie_negative_a", 51, 1200)
+				Wait(1100)
+				SetPedComponentVariation(Ped, 8, 187, 0, 2)
+				
+				
+			end
+			SetEnableScuba(playerPed, true)
+			SetEnableScubaGearLight(playerPed, true)
+			SetPedMaxTimeUnderwater(playerPed, 1500.00)
 		end)
-	end
-	UseTenu  = not UseTenu
-	GUI.Time = GetGameTimer()
+	end 
+	UseTenu = not UseTenu
 end)
