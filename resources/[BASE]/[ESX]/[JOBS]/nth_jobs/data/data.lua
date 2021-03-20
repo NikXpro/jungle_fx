@@ -17,6 +17,7 @@ data.jobMenu = {
             MenuPosition = vector3(-437.17590332031, 6012.5166015625, 26.985612869263),
             MessageZone = "Appuyer sur ~INPUT_CONTEXT~ pour ouvrir les saisies",
             TailleZone = 1.5,
+            blip = { Activate = false, property = false, BlipId = 52, BlipScale = 0.8, BlipColor = 1, BlipName = "LTD Sud" },
             ped = { Activate = false, PedHash = "csb_trafficwarden", Heanding = 39.84715270996094 },
             marker = { Activate = true, MarkerType = 1, MarkerColor = {r = 50, g = 50, b = 204}, MarkerSize = {x = 1.5, y = 1.5, z = 0.5}, ViewDistance = 3.0 },
         },
@@ -44,6 +45,7 @@ data.jobMenu = {
             MenuPosition = vector3(-436.04013061523, 5999.880859375, 30.716094970703),
             MessageZone = "Appuyer sur ~INPUT_CONTEXT~ pour ouvrir l'armurerie",
             TailleZone = 2.5,
+            blip = { Activate = false, property = false, BlipId = 52, BlipScale = 0.8, BlipColor = 1, BlipName = "LTD Sud" },
             ped = { Activate = true, PedHash = "csb_trafficwarden", Heanding = 39.84715270996094 },
             marker = { Activate = false, MarkerType = 1, MarkerColor = {r = 50, g = 50, b = 204}, MarkerSize = {x = 2.0, y = 2.0, z = 0.5}, ViewDistance = 10 }
         },
@@ -87,6 +89,7 @@ data.jobMenu = {
             MenuPosition = vector3(300.36486816406, -598.44525146484, 42.284084320068),
             MessageZone = "Appuyer sur ~INPUT_CONTEXT~ pour ouvrir le vestiaire",
             TailleZone = 2.5,
+            blip = { Activate = false, property = false, BlipId = 52, BlipScale = 0.8, BlipColor = 1, BlipName = "LTD Sud" },
             ped = { Activate = false, PedHash = "csb_trafficwarden", Heanding = 39.84715270996094 },
             marker = { Activate = false, MarkerType = 1, MarkerColor = {r = 50, g = 50, b = 204}, MarkerSize = {x = 4.0, y = 4.0, z = 1.0}, ViewDistance = 5 },
             TenueRemove = {
@@ -258,9 +261,10 @@ data.jobMenu = {
             DescriptionMenu = "Location Bateau sud",
             CustomBanner = { Activate = true, BannerDic = "banner", BannerName = "BCSO" },
             MenuPosition = vector3(-858.16070556641, -1342.5528564453, 0.6051691770554),
-            MessageZone = "Appuyer sur ~INPUT_CONTEXT~ pour ouvrir le garage",
+            MessageZone = "Appuyer sur ~INPUT_CONTEXT~ pour parler a paul",
             TailleZone = 1.5,
-            ped = { Activate = true, PedHash = "s_m_m_paramedic_01", Heanding = 292.5040283203125 },
+            blip = { Activate = true, property = false, BlipId = 410, BlipScale = 0.8, BlipColor = 52, BlipName = "Location Bateau" },
+            ped = { Activate = true, PedHash = "a_m_m_mlcrisis_01", Heanding = 292.5040283203125 },
             marker = { Activate = false, MarkerType = 1, MarkerColor = {r = 50, g = 50, b = 204}, MarkerSize = {x = 2.0, y = 2.0, z = 0.5}, ViewDistance = 10 }
         },
         
@@ -278,14 +282,85 @@ data.jobMenu = {
             dinghy = { vehiculeName = "dinghy", vehiculeLabel = "Dinghy", disponible = true, GradeRequired = { Activate = false, GradeNumber = {} }, price = { Activate = true, price = 250 } },
             jetmax = { vehiculeName = "jetmax", vehiculeLabel = "Jetmax", disponible = true, GradeRequired = { Activate = false, GradeNumber = {} }, price = { Activate = true, price = 250 } },
             marquis = { vehiculeName = "marquis", vehiculeLabel = "Marquis(voilier)", disponible = true, GradeRequired = { Activate = false, GradeNumber = {} }, price = { Activate = true, price = 1000 } },
-            seashark = { vehiculeName = "seashark", vehiculeLabel = "Seashark (jet ski)", disponible = true, GradeRequired = { Activate = false, GradeNumber = {} }, price = { Activate = true, price = 258 } },
-            seashark3 = { vehiculeName = "seashark3", vehiculeLabel = "Seashark de luxe (jet ski)", disponible = true, GradeRequired = { Activate = false, GradeNumber = {} }, price = { Activate = true, price = 384 } },
             speeder = { vehiculeName = "speeder", vehiculeLabel = "Speeder", disponible = true, GradeRequired = { Activate = false, GradeNumber = {} }, price = { Activate = true, price = 250 } },
             squalo = { vehiculeName = "squalo", vehiculeLabel = "Squalo", disponible = true, GradeRequired = { Activate = false, GradeNumber = {} }, price = { Activate = true, price = 250 } },
             toro = { vehiculeName = "toro", vehiculeLabel = "Toro", disponible = true, GradeRequired = { Activate = false, GradeNumber = {} }, price = { Activate = true, price = 250 } },
             suntrap = { vehiculeName = "suntrap", vehiculeLabel = "Suntrap", disponible = true, GradeRequired = { Activate = false, GradeNumber = {} }, price = { Activate = true, price = 250 } },
             tropic = { vehiculeName = "tropic", vehiculeLabel = "Tropic", disponible = true, GradeRequired = { Activate = false, GradeNumber = {} }, price = { Activate = true, price = 250 } },
             longfin = { vehiculeName = "longfin", vehiculeLabel = "longfin", disponible = true, GradeRequired = { Activate = false, GradeNumber = {} }, price = { Activate = true, price = 1258 } }
+        }
+        
+    },
+
+    LocationBateauLac = {
+        MenuId = "LocationBateauLac",
+        MenuType = "garage",
+        Settings = {
+            JobRequired = { Activate = false, jobName = {} },
+            TitreMenu = "",
+            DescriptionMenu = "Location Bateau sud",
+            CustomBanner = { Activate = true, BannerDic = "banner", BannerName = "BCSO" },
+            MenuPosition = vector3(1440.7885742188, 3753.3828125, 30.986442565918),
+            MessageZone = "Appuyer sur ~INPUT_CONTEXT~ pour parler a Rebecca",
+            TailleZone = 1.5,
+            blip = { Activate = true, property = false, BlipId = 410, BlipScale = 0.8, BlipColor = 52, BlipName = "Location Bateau" },
+            ped = { Activate = true, PedHash = "a_f_y_juggalo_01", Heanding = 19.0543041229248 },
+            marker = { Activate = false, MarkerType = 1, MarkerColor = {r = 50, g = 50, b = 204}, MarkerSize = {x = 2.0, y = 2.0, z = 0.5}, ViewDistance = 10 }
+        },
+        
+        DeleterPoint = {
+            Coords = vector3(1457.4848632812, 3792.5363769531, 30.948211669922),
+            TailleZone = 4.5,
+            MessageZone = "Appuyer sur ~INPUT_CONTEXT~ pour rendre le vehicule"
+        },
+        SpawnPoints = {
+            { pos = vector3(1469.9578857422, 3787.5505371094, 30.003215789795), heading = 9.30932426452636},
+            { pos = vector3(1442.4632568359, 3793.5329589844, 30.507213592529), heading = 317.2590942382813}
+        },
+
+        VehiculeList = {
+            dinghy = { vehiculeName = "dinghy", vehiculeLabel = "Dinghy", disponible = true, GradeRequired = { Activate = false, GradeNumber = {} }, price = { Activate = true, price = 250 } },
+            jetmax = { vehiculeName = "jetmax", vehiculeLabel = "Jetmax", disponible = true, GradeRequired = { Activate = false, GradeNumber = {} }, price = { Activate = true, price = 250 } },
+            marquis = { vehiculeName = "marquis", vehiculeLabel = "Marquis(voilier)", disponible = true, GradeRequired = { Activate = false, GradeNumber = {} }, price = { Activate = true, price = 1000 } },
+            speeder = { vehiculeName = "speeder", vehiculeLabel = "Speeder", disponible = true, GradeRequired = { Activate = false, GradeNumber = {} }, price = { Activate = true, price = 250 } },
+            squalo = { vehiculeName = "squalo", vehiculeLabel = "Squalo", disponible = true, GradeRequired = { Activate = false, GradeNumber = {} }, price = { Activate = true, price = 250 } },
+            toro = { vehiculeName = "toro", vehiculeLabel = "Toro", disponible = true, GradeRequired = { Activate = false, GradeNumber = {} }, price = { Activate = true, price = 250 } },
+            suntrap = { vehiculeName = "suntrap", vehiculeLabel = "Suntrap", disponible = true, GradeRequired = { Activate = false, GradeNumber = {} }, price = { Activate = true, price = 250 } },
+            tropic = { vehiculeName = "tropic", vehiculeLabel = "Tropic", disponible = true, GradeRequired = { Activate = false, GradeNumber = {} }, price = { Activate = true, price = 250 } },
+            longfin = { vehiculeName = "longfin", vehiculeLabel = "longfin", disponible = true, GradeRequired = { Activate = false, GradeNumber = {} }, price = { Activate = true, price = 1258 } }
+        }
+        
+    },
+
+    LocationJetski = {
+        MenuId = "LocationJetski",
+        MenuType = "garage",
+        Settings = {
+            JobRequired = { Activate = false, jobName = {} },
+            TitreMenu = "",
+            DescriptionMenu = "Location Jet ski",
+            CustomBanner = { Activate = true, BannerDic = "banner", BannerName = "BCSO" },
+            MenuPosition = vector3(-1799.6520996094, -1223.4990234375, 0.6016956567764),
+            MessageZone = "Appuyer sur ~INPUT_CONTEXT~ pour ouvrir le garage",
+            TailleZone = 1.5,
+            blip = { Activate = true, property = false, BlipId = 471, BlipScale = 0.8, BlipColor = 52, BlipName = "Location Jet ski" },
+            ped = { Activate = true, PedHash = "s_m_y_baywatch_01", Heanding = 156.94375610351565 },
+            marker = { Activate = false, MarkerType = 1, MarkerColor = {r = 50, g = 50, b = 204}, MarkerSize = {x = 2.0, y = 2.0, z = 0.5}, ViewDistance = 10 }
+        },
+        
+        DeleterPoint = {
+            Coords = vector3(-1797.7150878906, -1233.8288574219, 0.43580636382103),
+            TailleZone = 2.5,
+            MessageZone = "Appuyer sur ~INPUT_CONTEXT~ pour rendre le vehicule"
+        },
+        SpawnPoints = {
+            { pos = vector3(-1794.7724609375, -1227.7983398438, 0.11282226443291), heading = 207.638916015625},
+            { pos = vector3(-1799.5052490234, -1232.42578125, 0.11282226443291), heading = 229.55694580078128}
+        },
+
+        VehiculeList = {
+            dinghy = { vehiculeName = "seashark", vehiculeLabel = "Jet ski", disponible = true, GradeRequired = { Activate = false, GradeNumber = {} }, price = { Activate = true, price = 152 } },
+            jetmax = { vehiculeName = "seashark3", vehiculeLabel = "Jet ski de luxe", disponible = true, GradeRequired = { Activate = false, GradeNumber = {} }, price = { Activate = true, price = 184 } },
         }
         
     },

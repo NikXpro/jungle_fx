@@ -753,14 +753,14 @@ Citizen.CreateThread(function()
               for _, f in pairs(d.list) do
                 RageUI.Button(f.hash, nil, {RightLabel = "🔄"}, true, {
                   onSelected = function()
-                    local xPlayer = PlayerId()
-    			          local xPeds = GetHashKey(f.hash)
-    			          RequestModel(xPeds)
-    			          while not HasModelLoaded(xPeds) do
+                    local playerId = PlayerId()
+    			          local peds = GetHashKey(f.hash)
+    			          RequestModel(peds)
+    			          while not HasModelLoaded(peds) do
       		    	      Wait(250)
    				          end
-   				          SetPlayerModel(xPlayer, xPeds)
-   				          SetModelAsNoLongerNeeded(xPeds)
+   				          SetPlayerModel(playerId, peds)
+   				          SetModelAsNoLongerNeeded(peds)
    				          ESX.ShowNotification('Skin changer en ~r~' .. f.hash)
                   end
                 });

@@ -1041,7 +1041,7 @@ data.shops = {
             TailleZone = 2.5,
             CustomBanner = { Activate = true, BannerDic = "banner", BannerName = "casinoui_slots_impotent" },
             JobRequired = { Activate = false, jobName = {} },
-            blip = { Activate = true, property = false, BlipId = 377, BlipScale = 1.0, BlipColor = 48, BlipName = "Magasin de parachutisme" },
+            blip = { Activate = true, property = false, BlipId = 377, BlipScale = 1.0, BlipColor = 51, BlipName = "Magasin de parachutisme" },
             ped = { Activate = true, PedHash = "cs_dom", Heanding = 56.37761306762695 },
             marker = { Activate = false, MarkerType = 1, MarkerColor = {r = 50, g = 50, b = 204}, MarkerSize = {x = 1.5, y = 1.5, z = 0.5}, ViewDistance = 3.0 },
         },
@@ -1069,7 +1069,7 @@ data.shops = {
             TailleZone = 2.5,
             CustomBanner = { Activate = true, BannerDic = "banner", BannerName = "casinoui_slots_impotent" },
             JobRequired = { Activate = false, jobName = {} },
-            blip = { Activate = true, property = false, BlipId = 377, BlipScale = 1.0, BlipColor = 48, BlipName = "Magasin de parachutisme" },
+            blip = { Activate = true, property = false, BlipId = 377, BlipScale = 1.0, BlipColor = 51, BlipName = "Magasin de parachutisme" },
             ped = { Activate = true, PedHash = "cs_dom", Heanding = 88.39604949951172 },
             marker = { Activate = false, MarkerType = 1, MarkerColor = {r = 50, g = 50, b = 204}, MarkerSize = {x = 1.5, y = 1.5, z = 0.5}, ViewDistance = 3.0 },
         },
@@ -1095,35 +1095,193 @@ data.shops = {
             MenuPosition = vector3(-1512.6689453125, 1517.0758056641, 114.28862762451),
             MessageZone = "Appuyer sur ~INPUT_CONTEXT~ pour parler a Paul",
             TailleZone = 2.5,
-            CustomBanner = { Activate = true, BannerDic = "banner", BannerName = "casinoui_slots_impotent" },
+            CustomBanner = { Activate = true, BannerDic = "banner", BannerName = "plonger" },
             JobRequired = { Activate = false, jobName = {} },
-            blip = { Activate = true, property = false, BlipId = 377, BlipScale = 1.0, BlipColor = 48, BlipName = "Magasin de plonger" },
+            blip = { Activate = true, property = false, BlipId = 729, BlipScale = 0.9, BlipColor = 38, BlipName = "Magasin de plonger" },
             ped = { Activate = true, PedHash = "cs_devin", Heanding = 87.41787719726562 },
             marker = { Activate = false, MarkerType = 1, MarkerColor = {r = 50, g = 50, b = 204}, MarkerSize = {x = 1.5, y = 1.5, z = 0.5}, ViewDistance = 3.0 },
         },
 
 		items = {
-			plonger_1 = {
+			plonger_pink = {
 				licence = "", --weapon, drive, dmv...
 				Type = "item", --weapon, item
-				Label = "Tenue de plonger amateur", --Nom item afficher
-				Name = "plonger_1", --Nom item serveur
+				Label = "Tenue Plongée | Rose", --Nom item afficher
+				Name = "plonger_pink", --Nom item serveur
 				Count = 1,
 				License = { Activate = false, Name = "" },
                 Price = { Activate = true, MoneyType = "money", Amount = 423 },
                 GradeRequired = { Activate = false, GradeNumber = {} },
 			},
-			plonger_2 = {
+			plonger_red = {
 				licence = "", --weapon, drive, dmv...
 				Type = "item", --weapon, item
-				Label = "Tenue de plongée professionnel", --Nom item afficher
-				Name = "plonger_2", --Nom item serveur
+				Label = "Tenue Plongée | Rouge", --Nom item afficher
+				Name = "plonger_red", --Nom item serveur
 				Count = 1,
 				License = { Activate = false, Name = "" },
-                Price = { Activate = true, MoneyType = "money", Amount = 784 },
+                Price = { Activate = true, MoneyType = "money", Amount = 425 },
+                GradeRequired = { Activate = false, GradeNumber = {} },
+			},
+			plonger_white = {
+				licence = "", --weapon, drive, dmv...
+				Type = "item", --weapon, item
+				Label = "Tenue Plongée | Blanche", --Nom item afficher
+				Name = "plonger_white", --Nom item serveur
+				Count = 1,
+				License = { Activate = false, Name = "" },
+                Price = { Activate = true, MoneyType = "money", Amount = 421 },
+                GradeRequired = { Activate = false, GradeNumber = {} },
+			},
+			plonger_green = {
+				licence = "", --weapon, drive, dmv...
+				Type = "item", --weapon, item
+				Label = "Tenue Plongée | Verte", --Nom item afficher
+				Name = "plonger_green", --Nom item serveur
+				Count = 1,
+				License = { Activate = false, Name = "" },
+                Price = { Activate = true, MoneyType = "money", Amount = 417 },
+                GradeRequired = { Activate = false, GradeNumber = {} },
+			},
+			plonger_yellow = {
+				licence = "", --weapon, drive, dmv...
+				Type = "item", --weapon, item
+				Label = "Tenue Plongée | Jaune", --Nom item afficher
+				Name = "plonger_yellow", --Nom item serveur
+				Count = 1,
+				License = { Activate = false, Name = "" },
+                Price = { Activate = true, MoneyType = "money", Amount = 420 },
+                GradeRequired = { Activate = false, GradeNumber = {} },
+			},
+			plonger_orange = {
+				licence = "", --weapon, drive, dmv...
+				Type = "item", --weapon, item
+				Label = "Tenue Plongée | Orange", --Nom item afficher
+				Name = "plonger_orange", --Nom item serveur
+				Count = 1,
+				License = { Activate = false, Name = "" },
+                Price = { Activate = true, MoneyType = "money", Amount = 433 },
+                GradeRequired = { Activate = false, GradeNumber = {} },
+			},
+			plonger_purple = {
+				licence = "", --weapon, drive, dmv...
+				Type = "item", --weapon, item
+				Label = "Tenue Plongée | Violette", --Nom item afficher
+				Name = "plonger_purple", --Nom item serveur
+				Count = 1,
+				License = { Activate = false, Name = "" },
+                Price = { Activate = true, MoneyType = "money", Amount = 438 },
+                GradeRequired = { Activate = false, GradeNumber = {} },
+			},
+			plonger_black = {
+				licence = "", --weapon, drive, dmv...
+				Type = "item", --weapon, item
+				Label = "Tenue Plongée | Noire", --Nom item afficher
+				Name = "plonger_black", --Nom item serveur
+				Count = 1,
+				License = { Activate = false, Name = "" },
+                Price = { Activate = true, MoneyType = "money", Amount = 428 },
                 GradeRequired = { Activate = false, GradeNumber = {} },
 			}
 		}
 	},
 
+	PlongerNord = {
+		MenuId = "PlongerNord", -- Identifiant unique pour chaque shop
+        Settings = {
+            TitreMenu = "",
+            DescriptionMenu = "Equipement de plonger",
+            MenuPosition = vector3(-1600.6561279297, 5204.1430664062, 3.3100929260254),
+            MessageZone = "Appuyer sur ~INPUT_CONTEXT~ pour parler a Paul",
+            TailleZone = 2.5,
+            CustomBanner = { Activate = true, BannerDic = "banner", BannerName = "plonger" },
+            JobRequired = { Activate = false, jobName = {} },
+            blip = { Activate = true, property = false, BlipId = 729, BlipScale = 0.9, BlipColor = 38, BlipName = "Magasin de plonger" },
+            ped = { Activate = true, PedHash = "cs_devin", Heanding = 25.8613109588623 },
+            marker = { Activate = false, MarkerType = 1, MarkerColor = {r = 50, g = 50, b = 204}, MarkerSize = {x = 1.5, y = 1.5, z = 0.5}, ViewDistance = 3.0 },
+        },
+
+		items = {
+			plonger_pink = {
+				licence = "", --weapon, drive, dmv...
+				Type = "item", --weapon, item
+				Label = "Tenue Plongée | Rose", --Nom item afficher
+				Name = "plonger_pink", --Nom item serveur
+				Count = 1,
+				License = { Activate = false, Name = "" },
+                Price = { Activate = true, MoneyType = "money", Amount = 424 },
+                GradeRequired = { Activate = false, GradeNumber = {} },
+			},
+			plonger_red = {
+				licence = "", --weapon, drive, dmv...
+				Type = "item", --weapon, item
+				Label = "Tenue Plongée | Rouge", --Nom item afficher
+				Name = "plonger_red", --Nom item serveur
+				Count = 1,
+				License = { Activate = false, Name = "" },
+                Price = { Activate = true, MoneyType = "money", Amount = 423 },
+                GradeRequired = { Activate = false, GradeNumber = {} },
+			},
+			plonger_white = {
+				licence = "", --weapon, drive, dmv...
+				Type = "item", --weapon, item
+				Label = "Tenue Plongée | Blanche", --Nom item afficher
+				Name = "plonger_white", --Nom item serveur
+				Count = 1,
+				License = { Activate = false, Name = "" },
+                Price = { Activate = true, MoneyType = "money", Amount = 419 },
+                GradeRequired = { Activate = false, GradeNumber = {} },
+			},
+			plonger_green = {
+				licence = "", --weapon, drive, dmv...
+				Type = "item", --weapon, item
+				Label = "Tenue Plongée | Verte", --Nom item afficher
+				Name = "plonger_green", --Nom item serveur
+				Count = 1,
+				License = { Activate = false, Name = "" },
+                Price = { Activate = true, MoneyType = "money", Amount = 418 },
+                GradeRequired = { Activate = false, GradeNumber = {} },
+			},
+			plonger_yellow = {
+				licence = "", --weapon, drive, dmv...
+				Type = "item", --weapon, item
+				Label = "Tenue Plongée | Jaune", --Nom item afficher
+				Name = "plonger_yellow", --Nom item serveur
+				Count = 1,
+				License = { Activate = false, Name = "" },
+                Price = { Activate = true, MoneyType = "money", Amount = 424 },
+                GradeRequired = { Activate = false, GradeNumber = {} },
+			},
+			plonger_orange = {
+				licence = "", --weapon, drive, dmv...
+				Type = "item", --weapon, item
+				Label = "Tenue Plongée | Orange", --Nom item afficher
+				Name = "plonger_orange", --Nom item serveur
+				Count = 1,
+				License = { Activate = false, Name = "" },
+                Price = { Activate = true, MoneyType = "money", Amount = 436 },
+                GradeRequired = { Activate = false, GradeNumber = {} },
+			},
+			plonger_purple = {
+				licence = "", --weapon, drive, dmv...
+				Type = "item", --weapon, item
+				Label = "Tenue Plongée | Violette", --Nom item afficher
+				Name = "plonger_purple", --Nom item serveur
+				Count = 1,
+				License = { Activate = false, Name = "" },
+                Price = { Activate = true, MoneyType = "money", Amount = 432 },
+                GradeRequired = { Activate = false, GradeNumber = {} },
+			},
+			plonger_black = {
+				licence = "", --weapon, drive, dmv...
+				Type = "item", --weapon, item
+				Label = "Tenue Plongée | Noire", --Nom item afficher
+				Name = "plonger_black", --Nom item serveur
+				Count = 1,
+				License = { Activate = false, Name = "" },
+                Price = { Activate = true, MoneyType = "money", Amount = 422 },
+                GradeRequired = { Activate = false, GradeNumber = {} },
+			}
+		}
+	},
 }

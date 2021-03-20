@@ -8,6 +8,24 @@ Citizen.CreateThread(function()
 end)
 
 Citizen.CreateThread(function()
+    for k,v in pairs(data.jobMenu) do
+         if v.Settings.blip.Activate == true then
+              local blip = AddBlipForCoord(v.Settings.MenuPosition)
+              SetBlipSprite(blip, v.Settings.blip.BlipId)
+              SetBlipScale(blip, v.Settings.blip.BlipScale)
+              SetBlipColour(blip, v.Settings.blip.BlipColor)
+              SetBlipAsShortRange(blip, true)
+              if v.Settings.blip.property then
+                   SetBlipCategory(blip, 10)
+              end
+              BeginTextCommandSetBlipName('STRING')
+            AddTextComponentString(v.Settings.blip.BlipName)
+            EndTextCommandSetBlipName(blip)
+         end
+    end
+end)
+
+Citizen.CreateThread(function()
     while true do
         attente = 1500
         for k,v in pairs(data.jobMenu) do
@@ -40,7 +58,7 @@ Citizen.CreateThread(function()
                     local ped = GetPlayerPed(-1)
                     if IsPedSittingInAnyVehicle(ped) then 
                         attente = 7
-                        ESX.ShowHelpNotification(string.format(v.Settings.MessageZone))
+                        ESX.ShowHelpNotification(string.format(v.DeleterPoint.MessageZone))
                         if IsControlJustReleased(0, 38) then
                             DeleteEntity(GetVehiclePedIsIn(GetPlayerPed(-1), 0))
                         end
