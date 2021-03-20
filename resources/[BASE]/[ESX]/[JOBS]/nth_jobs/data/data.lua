@@ -44,7 +44,7 @@ data.jobMenu = {
             CustomBanner = { Activate = true, BannerDic = "banner", BannerName = "BCSO" },
             MenuPosition = vector3(480.37353515625, -996.71826171875, 29.689744949341),
             MessageZone = "Appuyer sur ~INPUT_CONTEXT~ pour parler a kuklinski",
-            TailleZone = 2.3,
+            TailleZone = 2.5,
             blip = { Activate = false, property = false, BlipId = 52, BlipScale = 0.8, BlipColor = 1, BlipName = "LTD Sud" },
             ped = { Activate = true, PedHash = "csb_trafficwarden", Heanding = 86.09723663330078 },
             marker = { Activate = false, MarkerType = 1, MarkerColor = {r = 50, g = 50, b = 204}, MarkerSize = {x = 2.0, y = 2.0, z = 0.5}, ViewDistance = 10 }
