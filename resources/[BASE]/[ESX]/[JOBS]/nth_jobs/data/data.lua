@@ -22,7 +22,7 @@ data.jobMenu = {
             marker = { Activate = true, MarkerType = 1, MarkerColor = {r = 50, g = 50, b = 204}, MarkerSize = {x = 1.5, y = 1.5, z = 0.5}, ViewDistance = 3.0 },
         },
         
-    },
+    },]]
 
     LSPDarmurerie = {
         MenuId = "policeArmurerie",
@@ -42,8 +42,8 @@ data.jobMenu = {
             },
             DescriptionMenu = "Armurerie LSPD",
             CustomBanner = { Activate = true, BannerDic = "banner", BannerName = "BCSO" },
-            MenuPosition = vector3(-436.04013061523, 5999.880859375, 30.716094970703),
-            MessageZone = "Appuyer sur ~INPUT_CONTEXT~ pour ouvrir l'armurerie",
+            MenuPosition = vector3(480.37353515625, -996.71826171875, 29.689744949341),
+            MessageZone = "Appuyer sur ~INPUT_CONTEXT~ pour parler a kuklinski",
             TailleZone = 2.5,
             blip = { Activate = false, property = false, BlipId = 52, BlipScale = 0.8, BlipColor = 1, BlipName = "LTD Sud" },
             ped = { Activate = true, PedHash = "csb_trafficwarden", Heanding = 39.84715270996094 },
@@ -62,6 +62,138 @@ data.jobMenu = {
                     Prix = 15
                 }
             },
+            flashlight = {
+                Type = "weapon",
+                GradeRequired = { Activate = false, GradeNumber = {10} },
+				Label = "Lampe torche",
+                Name = "weapon_flashlight",
+                Count = 1,
+				Price = {
+                    MoneyType = "money",
+                    Prix = 15
+                }
+            },
+            stungun = {
+                Type = "weapon",
+                GradeRequired = { Activate = false, GradeNumber = {10} },
+				Label = "Tazer",
+                Name = "weapon_stungun",
+                Count = 1,
+				Price = {
+                    MoneyType = "money",
+                    Prix = 15
+                }
+            },
+            nightstick = {
+                Type = "weapon",
+                GradeRequired = { Activate = false, GradeNumber = {10} },
+				Label = "Mattraque",
+                Name = "weapon_nightstick",
+                Count = 1,
+				Price = {
+                    MoneyType = "money",
+                    Prix = 15
+                }
+            },
+            pistol_mk2 = {
+                Type = "weapon",
+                GradeRequired = { Activate = false, GradeNumber = {10} },
+				Label = "Pistolet MK2",
+                Name = "weapon_pistol_mk2",
+                Count = 1000,
+				Price = {
+                    MoneyType = "money",
+                    Prix = 15
+                }
+            },
+            combatpistol = {
+                Type = "weapon",
+                GradeRequired = { Activate = false, GradeNumber = {10} },
+				Label = "Pistolet de combat",
+                Name = "weapon_combatpistol",
+                Count = 1000,
+				Price = {
+                    MoneyType = "money",
+                    Prix = 15
+                }
+            },
+            pumpshotgun_mk2 = {
+                Type = "weapon",
+                GradeRequired = { Activate = false, GradeNumber = {10} },
+				Label = "Fusil a pompe MK2",
+                Name = "weapon_pumpshotgun_mk2",
+                Count = 1000,
+				Price = {
+                    MoneyType = "money",
+                    Prix = 15
+                }
+            },
+            pumpshotgun = {
+                Type = "weapon",
+                GradeRequired = { Activate = false, GradeNumber = {10} },
+				Label = "Fusil a pompe",
+                Name = "weapon_pumpshotgun",
+                Count = 1000,
+				Price = {
+                    MoneyType = "money",
+                    Prix = 15
+                }
+            },
+            carbinerifle_mk2 = {
+                Type = "weapon",
+                GradeRequired = { Activate = false, GradeNumber = {10} },
+				Label = "Carabine MK2",
+                Name = "weapon_carbinerifle_mk2",
+                Count = 1000,
+				Price = {
+                    MoneyType = "money",
+                    Prix = 15
+                }
+            },
+            carbinerifle = {
+                Type = "weapon",
+                GradeRequired = { Activate = false, GradeNumber = {10} },
+				Label = "Carabine",
+                Name = "weapon_carbinerifle",
+                Count = 1000,
+				Price = {
+                    MoneyType = "money",
+                    Prix = 15
+                }
+            },
+            specialcarbine = {
+                Type = "weapon",
+                GradeRequired = { Activate = false, GradeNumber = {10} },
+				Label = "Carabine spécial",
+                Name = "weapon_specialcarbine",
+                Count = 1000,
+				Price = {
+                    MoneyType = "money",
+                    Prix = 15
+                }
+            },
+            heavysniper_mk2 = {
+                Type = "weapon",
+                GradeRequired = { Activate = false, GradeNumber = {10} },
+				Label = "Sniper lourd MK2",
+                Name = "weapon_heavysniper_mk2",
+                Count = 1000,
+				Price = {
+                    MoneyType = "money",
+                    Prix = 15
+                }
+            },
+            sniperrifle = {
+                Type = "weapon",
+                GradeRequired = { Activate = false, GradeNumber = {10} },
+				Label = "Sniper",
+                Name = "weapon_sniperrifle",
+                Count = 1000,
+				Price = {
+                    MoneyType = "money",
+                    Prix = 15
+                }
+			},
 			gasmask = {
                 Type = "item",
                 GradeRequired = { Activate = false, GradeNumber = {5} },
@@ -70,13 +202,61 @@ data.jobMenu = {
                 Count = 1,
                 Price = {
                     MoneyType = "society",
-                    Prix = 720
+                    Prix = 186
+                }
+				
+			},
+            ammo_9mm = {
+                Type = "item",
+                GradeRequired = { Activate = false, GradeNumber = {5} },
+				Label = "Boite de 9mm",
+				Name = "ammo_9mm",
+                Count = 1,
+                Price = {
+                    MoneyType = "society",
+                    Prix = 254
+                }
+				
+			},
+            ammo_cal12 = {
+                Type = "item",
+                GradeRequired = { Activate = false, GradeNumber = {5} },
+				Label = "Boite de cal .12",
+				Name = "ammo_cal12",
+                Count = 1,
+                Price = {
+                    MoneyType = "society",
+                    Prix = 231
+                }
+				
+			},
+            ammo_5_56mm = {
+                Type = "item",
+                GradeRequired = { Activate = false, GradeNumber = {5} },
+				Label = "Boite de cal .12",
+				Name = "ammo_5.56mm",
+                Count = 1,
+                Price = {
+                    MoneyType = "society",
+                    Prix = 268
+                }
+				
+			},
+            ammo_7_62mm = {
+                Type = "item",
+                GradeRequired = { Activate = false, GradeNumber = {5} },
+				Label = "Boite de 7.62mm",
+				Name = "ammo_7.62mm",
+                Count = 1,
+                Price = {
+                    MoneyType = "society",
+                    Prix = 272
                 }
 				
 			}
 		}
         
-    },]]
+    },
 
     EMSvestiaire = {
         MenuId = "EMSvestiaire",

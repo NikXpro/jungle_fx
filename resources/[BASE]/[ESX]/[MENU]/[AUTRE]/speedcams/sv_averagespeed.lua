@@ -12,7 +12,7 @@ AddEventHandler("Server:AverageSpeedDetection",function(cameraId, speed, roadNam
         logToDiscord(source, cameraId, speed, roadName, numberplate)
     end
     -- Add permission checks here or link in with your database for vRP / ESX
-    triggerevent('esx_billing:sendBill', source, 'society_police', "Excès de vitesse", amount, true)
+    --TriggerEvent('esx_billing:sendBill', source, 'society_police', "Excès de vitesse", amount, true)
 end)
 
 function mathRound(value, numDecimalPlaces)

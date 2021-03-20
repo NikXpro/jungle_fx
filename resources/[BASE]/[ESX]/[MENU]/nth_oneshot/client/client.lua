@@ -790,6 +790,7 @@ Keys.Register('', '', 'Menu personnage one-shot.', function()
 end)
 
 RegisterCommand('oneshot', function(source)
+  print(GetVehicleClass(GetVehiclePedIsIn(PlayerPedId())))
   ESX.TriggerServerCallback('nth:Usergroup', function(plyGroup)
 		if plyGroup ~= nil and (plyGroup == 'admin' or plyGroup == 'superadmin' or plyGroup == '_dev') then
 			ESX.TriggerServerCallback('nth:getSaveList', function(list)

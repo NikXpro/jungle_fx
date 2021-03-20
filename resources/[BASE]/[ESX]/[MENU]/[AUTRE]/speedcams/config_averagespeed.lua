@@ -1,13 +1,13 @@
 main = {
     addPercentage = 10.0, -- This allows a 10% lee-way before classing the driver as speeding, set to 0 to disable
     addLimit = 2.0, -- This allows an addition of 2MPH to the speed limit before classing the driver as speeding, set to 0 to disable
-    webhook = "https://discord.com/api/webhooks/818906608888709130/YBLz8Cp2AkVA3HgGOeWL7KOg4FhCJyBNWS4LIAb-noVd-DN99RJztmBDHBT5sqy-3I69",
+    webhook = "https://discord.com/api/webhooks/822823037475749938/CSMiHXk7pPo-xdTFy13iNGfDv4Tyq1B__yer9AOF_mxfPdsNw2vYxG9WAE_vccCxuC0r",
     webhookImage = "https://image.flaticon.com/icons/png/512/55/55389.png",
     webhookName = "Radar de vitesse",
     detectionRadius = 15.0, -- The distance from a camera you must be to start the detection process
     enableDiscordLogs = true,
     useKmh = true,
-    exemptVehicleClasses = {}, -- Vehicle classes that are exempt from camera logging, use 18 for emergency, example = {18, 20} emergency + commercial
+    exemptVehicleClasses = {18, 19}, -- Vehicle classes that are exempt from camera logging, use 18 for emergency, example = {18, 20} emergency + commercial
     flashScreen = true,
 }
 
