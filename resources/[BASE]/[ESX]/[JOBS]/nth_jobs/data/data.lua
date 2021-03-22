@@ -527,7 +527,7 @@ data.jobMenu = {
                         ['decals_1'] = 0,   ['decals_2'] = 0,
                         ['arms'] = 88,
                         ['pants_1'] = 24,   ['pants_2'] = 2,
-                        ['shoes_1'] = 97,   ['shoes_2'] = 2,
+                        ['shoes_1'] = 97,   ['shoes_2'] = 0,
                         ['helmet_1'] = 122,  ['helmet_2'] = 0,
                         ['chain_1'] = 30,    ['chain_2'] = 0,
                         ['mask_1'] = 0,  ['mask_2'] = 0,
