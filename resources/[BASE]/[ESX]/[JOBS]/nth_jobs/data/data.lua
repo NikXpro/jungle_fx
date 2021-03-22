@@ -264,7 +264,7 @@ data.jobMenu = {
         Settings = {
             JobRequired = { Activate = true, jobName = {"mechanic"} },
             TitreMenu = "",
-            DescriptionMenu = "Vestiaire LSMS",
+            DescriptionMenu = "Vestiaire Mécano",
             CustomBanner = { Activate = false, BannerDic = "banner", BannerName = "BCSO" },
             MenuPosition = vector3(549.92681884766, -182.72499084473, 53.493244171143),
             MessageZone = "Appuyer sur ~INPUT_CONTEXT~ pour ouvrir le vestiaire",
