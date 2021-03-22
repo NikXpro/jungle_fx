@@ -355,6 +355,30 @@ data.jobMenu = {
                     }
                 }
             },
+            mecano_chef = {
+                tenuLabel = "Tenue Chef d'équipe",
+                RightLabel = "🦺",
+                GradeRequired = {Activate = true,GradeNumber = {3}},
+                Kevlar = {Activate = false,KevlarSize = 0},
+                Tenue =  {
+                    male = {
+                        ['tshirt_1'] = 15,  ['tshirt_2'] = 0,
+                        ['torso_1'] = 66,   ['torso_2'] = 0,
+                        ['decals_1'] = 0,   ['decals_2'] = 0,
+                        ['arms'] = 12,
+                        ['pants_1'] = 39,   ['pants_2'] = 0,
+                        ['shoes_1'] = 24,   ['shoes_2'] = 0,
+                    },
+                    female = {
+                        ['tshirt_1'] = 14,  ['tshirt_2'] = 0,
+                        ['torso_1'] = 60,   ['torso_2'] = 0,
+                        ['decals_1'] = 0,   ['decals_2'] = 0,
+                        ['arms'] = 9,
+                        ['pants_1'] = 39,   ['pants_2'] = 0,
+                        ['shoes_1'] = 25,   ['shoes_2'] = 0,
+                    }
+                }
+            },
         }
     },
 
