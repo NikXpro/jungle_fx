@@ -57,32 +57,20 @@ Config.VehiclesList = {
 Config.Uniforms = {
 	tenu_vigne = {
 		male = {
-			['tshirt_1'] = 53,  ['tshirt_2'] = 0,
-			['torso_1'] = 102,   ['torso_2'] = 0,
+			['tshirt_1'] = 15,  ['tshirt_2'] = 0,
+			['torso_1'] = 44,   ['torso_2'] = 1,
 			['decals_1'] = 0,   ['decals_2'] = 0,
-			['arms'] = 19,
-			['pants_1'] = 59,   ['pants_2'] = 0,
+			['arms'] = 11,
+			['pants_1'] = 9,   ['pants_2'] = 7,
 			['shoes_1'] = 25,   ['shoes_2'] = 0,
-			['helmet_1'] = -1,  ['helmet_2'] = 0,
-			['chain_1'] = 1,    ['chain_2'] = 0,
-			['mask_1'] = -1,  ['mask_2'] = 0,
-			['bproof_1'] = 0,  ['bproof_2'] = 0,
-			['ears_1'] = 2,     ['ears_2'] = 0,
-			['bags_1'] = 44,    ['bags_2'] = 0
 		},
 		female = {
-			['tshirt_1'] = 27,  ['tshirt_2'] = 0,
-			['torso_1'] = 93,   ['torso_2'] = 0,
+			['tshirt_1'] = 15,  ['tshirt_2'] = 0,
+			['torso_1'] = 27,   ['torso_2'] = 1,
 			['decals_1'] = 0,   ['decals_2'] = 0,
 			['arms'] = 31,
-			['pants_1'] = 61,   ['pants_2'] = 0,
+			['pants_1'] = 51,   ['pants_2'] = 0,
 			['shoes_1'] = 25,   ['shoes_2'] = 0,
-			['helmet_1'] = -1,  ['helmet_2'] = 0,
-			['chain_1'] = 1,    ['chain_2'] = 0,
-			['mask_1'] = -1,  ['mask_2'] = 0,
-			['bproof_1'] = 0,  ['bproof_2'] = 0,
-			['ears_1'] = 2,     ['ears_2'] = 0,
-			['bags_1'] = 44,    ['bags_2'] = 0
 		}
 	}
 }
