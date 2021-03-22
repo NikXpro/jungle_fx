@@ -1,10 +1,4 @@
 Locales['fr'] = {
-  -- cloakroom
-  ['cloakroom_menu'] = 'vestiaire',
-  ['cloakroom_prompt'] = 'appuyez sur ~INPUT_CONTEXT~ pour ouvrir le ~y~cloakroom~s~.',
-  ['wear_citizen'] = 'tenue civile',
-  ['wear_work'] = 'tenue de travail',
-
   -- garage
   ['spawner_prompt'] = 'appuyez sur ~INPUT_CONTEXT~ pour ouvrir le ~y~garage~s~.',
   ['store_veh'] = 'appuyez sur ~INPUT_CONTEXT~ pour ranger le véhicule',
@@ -17,10 +11,10 @@ Locales['fr'] = {
   ['amount_invalid'] = 'montant invalide',
   ['press_to_open'] = 'appuyez sur ~INPUT_CONTEXT~ pour accéder au menu',
   ['billing'] = 'facuration',
-  ['billing_sent'] = 'the bill has been registered!',
+  ['billing_sent'] = 'la facture a été enregistrée!',
   ['invoice_amount'] = 'montant de la facture',
   ['no_players_near'] = 'aucun joueur à proximité',
-  ['start_job'] = 'start / stop driving NPC jobs',
+  ['start_job'] = 'Activer/Désactiver la recherche de client',
   ['drive_search_pass'] = 'conduisez à la recherche de ~y~passagers',
   ['customer_found'] = 'vous avez ~g~trouvé~s~ un client, conduisez jusqu\'à ce dernier',
   ['client_unconcious'] = 'votre client est ~r~inconscient~s~. Cherchez-en un autre.',
@@ -31,7 +25,7 @@ Locales['fr'] = {
   ['return_to_veh'] = 'veuillez remonter dans votre véhicule pour continuer la mission',
   ['must_in_taxi'] = 'vous devez être dans un taxi pour commencer la mission',
   ['must_in_vehicle'] = 'vous devez être dans un véhicule pour commencer la mission',
-  ['not_in_taxi'] = 'You left the taxi while on mission!',
+  ['not_in_taxi'] = 'Vous avez quitté le taxi en mission!',
   ['have_earned'] = 'vous avez gagné ~g~$%s~s~',
   ['comp_earned'] = '- Votre société a gagné ~g~$%s~s~\n- Vous avez gagné ~g~$%s~s~',
   ['deposit_stock'] = 'Déposer Stock',
@@ -48,5 +42,5 @@ Locales['fr'] = {
   ['blip_taxi'] = 'taxi',
   ['phone_taxi'] = 'taxi',
   ['taxi'] = 'taxi',
-  ['taxi_stock'] = 'taxi Stock'
+  ['taxi_stock'] = 'Coffre taxi'
 }

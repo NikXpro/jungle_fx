@@ -53,16 +53,13 @@ AddEventHandler('esx_taxijob:getStockItem', function(itemName, count)
 	if xPlayer.job.name == 'taxi' then
 		TriggerEvent('esx_addoninventory:getSharedInventory', 'society_taxi', function(inventory)
 			local item = inventory.getItem(itemName)
-
-			-- is there enough in the society?
 			if count > 0 and item.count >= count then
-				-- can the player carry the said amount of x item?
-				if xPlayer.canCarryItem(itemName, count) then
+				if item.limit ~= -1 and (item.count + count) > item.limit then
+					xPlayer.showNotification(_U('player_cannot_hold'))
+				else
 					inventory.removeItem(itemName, count)
 					xPlayer.addInventoryItem(itemName, count)
 					xPlayer.showNotification(_U('have_withdrawn', count, item.label))
-				else
-					xPlayer.showNotification(_U('player_cannot_hold'))
 				end
 			else
 				xPlayer.showNotification(_U('quantity_invalid'))
