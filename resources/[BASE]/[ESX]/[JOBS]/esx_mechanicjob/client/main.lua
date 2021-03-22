@@ -69,8 +69,6 @@ end
 function OpenMechanicActionsMenu()
 	local elements = {
 		{label = _U('vehicle_list'),   value = 'vehicle_list'},
-		--{label = _U('work_wear'),      value = 'cloakroom'},
-		--{label = _U('civ_wear'),       value = 'cloakroom2'},
 		{label = _U('deposit_stock'),  value = 'put_stock'},
 		{label = _U('withdraw_stock'), value = 'get_stock'}
 	}
@@ -162,20 +160,6 @@ function OpenMechanicActionsMenu()
 				end)
 
 			end
-		elseif data.current.value == 'cloakroom' then
-			menu.close()
-			ESX.TriggerServerCallback('esx_skin:getPlayerSkin', function(skin, jobSkin)
-				if skin.sex == 0 then
-					TriggerEvent('skinchanger:loadClothes', skin, jobSkin.skin_male)
-				else
-					TriggerEvent('skinchanger:loadClothes', skin, jobSkin.skin_female)
-				end
-			end)
-		elseif data.current.value == 'cloakroom2' then
-			menu.close()
-			ESX.TriggerServerCallback('esx_skin:getPlayerSkin', function(skin, jobSkin)
-				TriggerEvent('skinchanger:loadSkin', skin)
-			end)
 		elseif data.current.value == 'put_stock' then
 			OpenPutStocksMenu()
 		elseif data.current.value == 'get_stock' then

@@ -1,6 +1,6 @@
 Config                            = {}
 
-Config.DrawDistance               = 10.0 -- How close do you need to be for the markers to be drawn (in GTA units).
+Config.DrawDistance               = 10.0
 Config.MarkerType                 = {Cloakrooms = 25, Armories = 25, BossActions = 25, Vehicles = 25, Helicopters = 25}
 Config.MarkerSize                 = {x = 1.5, y = 1.5, z = 0.2}
 Config.MarkerColor                = {r = 50, g = 50, b = 204}
@@ -141,6 +141,7 @@ Config.AuthorizedVehicles = {
 			{model = 'police5', price = 1},
 			{model = 'police6', price = 1},
 			{model = 'police7', price = 1},
+			{model = 'policeb', price = 1},
 			{model = 'riot', price = 1},
 			{model = 'fbi', price = 1},
 			{model = 'fbi2', price = 1}
@@ -154,6 +155,7 @@ Config.AuthorizedVehicles = {
 			{model = 'police5', price = 1},
 			{model = 'police6', price = 1},
 			{model = 'police7', price = 1},
+			{model = 'policeb', price = 1},
 			{model = 'riot', price = 1},
 			{model = 'fbi', price = 1},
 			{model = 'fbi2', price = 1}
@@ -168,6 +170,7 @@ Config.AuthorizedVehicles = {
 			{model = 'police5', price = 1},
 			{model = 'police6', price = 1},
 			{model = 'police7', price = 1},
+			{model = 'policeb', price = 1},
 			{model = 'riot', price = 1},
 			{model = 'fbi', price = 1},
 			{model = 'fbi2', price = 1}
@@ -181,6 +184,7 @@ Config.AuthorizedVehicles = {
 			{model = 'police5', price = 1},
 			{model = 'police6', price = 1},
 			{model = 'police7', price = 1},
+			{model = 'policeb', price = 1},
 			{model = 'riot', price = 1},
 			{model = 'fbi', price = 1},
 			{model = 'fbi2', price = 1}
@@ -194,6 +198,7 @@ Config.AuthorizedVehicles = {
 			{model = 'police5', price = 1},
 			{model = 'police6', price = 1},
 			{model = 'police7', price = 1},
+			{model = 'policeb', price = 1},
 			{model = 'riot', price = 1},
 			{model = 'fbi', price = 1},
 			{model = 'fbi2', price = 1}
@@ -224,22 +229,12 @@ Config.AuthorizedVehicles = {
 }
 
 Config.CustomPeds = {
-	shared = {
-		{label = 'Sheriff Ped', maleModel = 's_m_y_sheriff_01', femaleModel = 's_f_y_sheriff_01'},
-		{label = 'Police Ped', maleModel = 's_m_y_cop_01', femaleModel = 's_f_y_cop_01'}
-	},
-
+	shared = {},
 	recruit = {},
-
 	officer = {},
-
 	sergeant = {},
-
 	lieutenant = {},
-
-	boss = {
-		{label = 'SWAT Ped', maleModel = 's_m_y_swat_01', femaleModel = 's_m_y_swat_01'}
-	}
+	boss = {}
 }
 
 -- CHECK SKINCHANGER CLIENT MAIN.LUA for matching elements

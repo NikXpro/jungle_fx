@@ -258,6 +258,95 @@ data.jobMenu = {
         
     },
 
+    MECHANICvestiaire = {
+        MenuId = "MECHANICvestiaire",
+        MenuType = "vestiaire",
+        Settings = {
+            JobRequired = { Activate = true, jobName = {"mechanic"} },
+            TitreMenu = "",
+            DescriptionMenu = "Vestiaire LSMS",
+            CustomBanner = { Activate = false, BannerDic = "banner", BannerName = "BCSO" },
+            MenuPosition = vector3(549.92681884766, -182.72499084473, 53.493244171143),
+            MessageZone = "Appuyer sur ~INPUT_CONTEXT~ pour ouvrir le vestiaire",
+            TailleZone = 3.5,
+            blip = { Activate = false, property = false, BlipId = 52, BlipScale = 0.8, BlipColor = 1, BlipName = "LTD Sud" },
+            ped = { Activate = false, PedHash = "csb_trafficwarden", Heanding = 39.84715270996094 },
+            marker = { Activate = false, MarkerType = 1, MarkerColor = {r = 50, g = 50, b = 204}, MarkerSize = {x = 3.5, y = 3.5, z = 1.0}, ViewDistance = 5 },
+            TenueRemove = {
+                Activate = true,
+                KevlarRemover = false,
+                ButtonName= "Tenue Civil",
+                RightLabel = "👔"
+            }
+        },
+
+        TenueList = {
+            manche_longue = {
+                tenuLabel = "Tenue Méchano",
+                RightLabel = "🥼",
+                GradeRequired = { Activate = false, GradeNumber = {0} },
+                Kevlar = { Activate = false, KevlarSize = 0 },
+                Tenue =  {
+                    male = {
+                        ['tshirt_1'] = 15,      ['tshirt_2'] = 0,
+                        ['torso_1'] = 66,      ['torso_2'] = 1,
+                        ['decals_1'] = 0,       ['decals_2'] = 0,
+                        ['arms'] = 12,
+                        ['pants_1'] = 39,       ['pants_2'] = 1,
+                        ['shoes_1'] = 24,       ['shoes_2'] = 0,
+                    },
+                    female = {
+                        ['tshirt_1'] = 15,  ['tshirt_2'] = 0,
+                        ['torso_1'] = 60,   ['torso_2'] = -1,
+                        ['decals_1'] = 0,   ['decals_2'] = 0,
+                        ['arms'] = 9,
+                        ['pants_1'] = 39,   ['pants_2'] = 1,
+                        ['shoes_1'] = 25,   ['shoes_2'] = 0,
+                    }
+                }
+                
+            },
+            manche_courte = {
+                tenuLabel = "Tenue Manche courte",
+                RightLabel = "🥼",
+                GradeRequired = {Activate = false,GradeNumber = {5}},
+                Kevlar = {Activate = false,KevlarSize = 0},
+                Tenue =  {
+                    male = {
+                        ['tshirt_1'] = 15,  ['tshirt_2'] = 0,
+                        ['torso_1'] = 74,   ['torso_2'] = 3,
+                        ['decals_1'] = 0,   ['decals_2'] = 0,
+                        ['arms'] = 85,
+                        ['pants_1'] = 24,   ['pants_2'] = 2,
+                        ['shoes_1'] = 97,   ['shoes_2'] = 0,
+                        ['helmet_1'] = 122,  ['helmet_2'] = 30,
+                        ['chain_1'] = -1,    ['chain_2'] = 0,
+                        ['mask_1'] = -1,  ['mask_2'] = 0,
+                        ['bproof_1'] = 0,  ['bproof_2'] = 0,
+                        ['ears_1'] = 5,     ['ears_2'] = 4,
+                        ['bags_1'] = 0,    ['bags_2'] = 0
+                    },
+                    female = {
+                        ['tshirt_1'] = 15,      ['tshirt_2'] = 0,
+                        ['torso_1'] =25,       ['torso_2'] = 2,
+                        ['decals_1'] = 0,       ['decals_2'] = 0,
+                        ['arms'] = 109,
+                        ['pants_1'] = 6,       ['pants_2'] = 0,
+                        ['shoes_1'] = 101,       ['shoes_2'] = 0,
+                        ['helmet_1'] = 121,      ['helmet_2'] = 14,
+                        ['chain_1'] = 0,        ['chain_2'] = 0,
+                        ['mask_1'] = -1,        ['mask_2'] = 0,
+                        ['bproof_1'] = 0,      ['bproof_2'] = 0,
+                        ['ears_1'] = 2,         ['ears_2'] = 0,
+                        ['bags_1'] = 0,         ['bags_2'] = 0,
+                    }
+                }
+                
+            },
+        }
+        
+    },
+
     EMSvestiaire = {
         MenuId = "EMSvestiaire",
         MenuType = "vestiaire",
