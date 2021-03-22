@@ -49,12 +49,12 @@ end)
 RegisterNetEvent('esx_taxijob:getStockItem')
 AddEventHandler('esx_taxijob:getStockItem', function(itemName, count)
 	local xPlayer = ESX.GetPlayerFromId(source)
-
+	local sourceItem = xPlayer.getInventoryItem(itemName)
 	if xPlayer.job.name == 'taxi' then
 		TriggerEvent('esx_addoninventory:getSharedInventory', 'society_taxi', function(inventory)
-			local item = inventory.getItem(itemName)
-			if count > 0 and item.count >= count then
-				if item.limit ~= -1 and (item.count + count) > item.limit then
+			local inventoryItem = inventory.getItem(itemName)
+			if count > 0 and inventoryItem.count >= count then
+				if sourceItem.limit ~= -1 and (sourceItem.count + count) > sourceItem.limit then
 					xPlayer.showNotification(_U('player_cannot_hold'))
 				else
 					inventory.removeItem(itemName, count)
