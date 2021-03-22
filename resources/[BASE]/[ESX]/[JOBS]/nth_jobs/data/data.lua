@@ -607,6 +607,59 @@ data.jobMenu = {
         }
     },
 
+    TAXIvestiaire = {
+        MenuId = "TAXIvestiaire",
+        MenuType = "vestiaire",
+        Settings = {
+            JobRequired = { Activate = true, jobName = {"taxi"} },
+            TitreMenu = "",
+            DescriptionMenu = "Vestiaire Taxi",
+            CustomBanner = { Activate = true, BannerDic = "banner", BannerName = "jungle_header" },
+            MenuPosition = vector3(888.22088623047, -153.97038269043, 76.891059875488),
+            MessageZone = "Appuyer sur ~INPUT_CONTEXT~ pour ouvrir le vestiaire",
+            TailleZone = 1.5,
+            blip = { Activate = false, property = false, BlipId = 52, BlipScale = 0.8, BlipColor = 1, BlipName = "LTD Sud" },
+            ped = { Activate = false, PedHash = "csb_trafficwarden", Heanding = 39.84715270996094 },
+            marker = { Activate = false, MarkerType = 1, MarkerColor = {r = 50, g = 50, b = 204}, MarkerSize = {x = 1.5, y = 1.5, z = 1.0}, ViewDistance = 5 },
+            TenueRemove = {
+                Activate = true,
+                KevlarRemover = false,
+                ButtonName= "Tenue Civil",
+                RightLabel = "👔"
+            }
+        },
+
+        TenueList = {
+            travail = {
+                tenuLabel = "Tenue de travail",
+                RightLabel = "👕",
+                GradeRequired = { Activate = false, GradeNumber = {0} },
+                Kevlar = { Activate = false, KevlarSize = 0 },
+                Tenue =  {
+                    male = {
+                        ['tshirt_1'] = 15,      ['tshirt_2'] = 0,
+                        ['torso_1'] = 14,      ['torso_2'] = 1,
+                        ['decals_1'] = 0,       ['decals_2'] = 0,
+                        ['arms'] = 19,
+                        ['pants_1'] = 28,       ['pants_2'] = 1,
+                        ['shoes_1'] = 9,       ['shoes_2'] = 12,
+                        ['helmet_1'] = 76,      ['helmet_2'] = 4,
+                    },
+                    female = {
+                        ['tshirt_1'] = 14,  ['tshirt_2'] = 0,
+                        ['torso_1'] = 14,   ['torso_2'] = 11,
+                        ['decals_1'] = 0,   ['decals_2'] = 0,
+                        ['arms'] = 31,
+                        ['pants_1'] = 133,   ['pants_2'] = 0,
+                        ['shoes_1'] = 42,   ['shoes_2'] = 2,
+                        ['helmet_1'] = 75,      ['helmet_2'] = 4,
+                    }
+                }
+                
+            }
+        }
+    },
+
     LocationBateauPort = {
         MenuId = "LocationBateauPort",
         MenuType = "garage",

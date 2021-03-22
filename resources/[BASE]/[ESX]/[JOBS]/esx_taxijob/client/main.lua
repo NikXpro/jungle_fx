@@ -105,38 +105,6 @@ function StopTaxiJob()
 	DrawSub(_U('mission_complete'), 5000)
 end
 
-function OpenCloakroom()
-	ESX.UI.Menu.CloseAll()
-
-	ESX.UI.Menu.Open('default', GetCurrentResourceName(), 'taxi_cloakroom', {
-		title    = _U('cloakroom_menu'),
-		align    = 'top-left',
-		elements = {
-			{label = _U('wear_citizen'), value = 'wear_citizen'},
-			{label = _U('wear_work'),    value = 'wear_work'}
-	}}, function(data, menu)
-		if data.current.value == 'wear_citizen' then
-			ESX.TriggerServerCallback('esx_skin:getPlayerSkin', function(skin)
-				TriggerEvent('skinchanger:loadSkin', skin)
-			end)
-		elseif data.current.value == 'wear_work' then
-			ESX.TriggerServerCallback('esx_skin:getPlayerSkin', function(skin, jobSkin)
-				if skin.sex == 0 then
-					TriggerEvent('skinchanger:loadClothes', skin, jobSkin.skin_male)
-				else
-					TriggerEvent('skinchanger:loadClothes', skin, jobSkin.skin_female)
-				end
-			end)
-		end
-	end, function(data, menu)
-		menu.close()
-
-		CurrentAction     = 'cloakroom'
-		CurrentActionMsg  = _U('cloakroom_prompt')
-		CurrentActionData = {}
-	end)
-end
-
 function OpenVehicleSpawnerMenu()
 	ESX.UI.Menu.CloseAll()
 
@@ -466,11 +434,6 @@ AddEventHandler('esx_taxijob:hasEnteredMarker', function(zone)
 		CurrentAction     = 'taxi_actions_menu'
 		CurrentActionMsg  = _U('press_to_open')
 		CurrentActionData = {}
-
-	elseif zone == 'Cloakroom' then
-		CurrentAction     = 'cloakroom'
-		CurrentActionMsg  = _U('cloakroom_prompt')
-		CurrentActionData = {}
 	end
 end)
 
@@ -737,8 +700,6 @@ Citizen.CreateThread(function()
 			if IsControlJustReleased(0, 38) and ESX.PlayerData.job and ESX.PlayerData.job.name == 'taxi' then
 				if CurrentAction == 'taxi_actions_menu' then
 					OpenTaxiActionsMenu()
-				elseif CurrentAction == 'cloakroom' then
-					OpenCloakroom()
 				elseif CurrentAction == 'vehicle_spawner' then
 					OpenVehicleSpawnerMenu()
 				elseif CurrentAction == 'delete_vehicle' then
