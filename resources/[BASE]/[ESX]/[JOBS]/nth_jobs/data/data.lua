@@ -281,10 +281,10 @@ data.jobMenu = {
         },
 
         TenueList = {
-            manche_longue = {
-                tenuLabel = "Tenue Méchano",
-                RightLabel = "🥼",
-                GradeRequired = { Activate = false, GradeNumber = {0} },
+            mecano = {
+                tenuLabel = "Tenue Mécano",
+                RightLabel = "🦺",
+                GradeRequired = { Activate = true, GradeNumber = {0} },
                 Kevlar = { Activate = false, KevlarSize = 0 },
                 Tenue =  {
                     male = {
@@ -306,45 +306,56 @@ data.jobMenu = {
                 }
                 
             },
-            manche_courte = {
-                tenuLabel = "Tenue Manche courte",
-                RightLabel = "🥼",
-                GradeRequired = {Activate = false,GradeNumber = {5}},
+            mecano_intermediaire = {
+                tenuLabel = "Tenue Mécano intermédiaire",
+                RightLabel = "🦺",
+                GradeRequired = {Activate = true,GradeNumber = {1}},
                 Kevlar = {Activate = false,KevlarSize = 0},
                 Tenue =  {
                     male = {
-                        ['tshirt_1'] = 15,  ['tshirt_2'] = 0,
-                        ['torso_1'] = 74,   ['torso_2'] = 3,
+                        ['tshirt_1'] = 90,  ['tshirt_2'] = 0,
+                        ['torso_1'] = 66,   ['torso_2'] = 2,
                         ['decals_1'] = 0,   ['decals_2'] = 0,
-                        ['arms'] = 85,
-                        ['pants_1'] = 24,   ['pants_2'] = 2,
-                        ['shoes_1'] = 97,   ['shoes_2'] = 0,
-                        ['helmet_1'] = 122,  ['helmet_2'] = 30,
-                        ['chain_1'] = -1,    ['chain_2'] = 0,
-                        ['mask_1'] = -1,  ['mask_2'] = 0,
-                        ['bproof_1'] = 0,  ['bproof_2'] = 0,
-                        ['ears_1'] = 5,     ['ears_2'] = 4,
-                        ['bags_1'] = 0,    ['bags_2'] = 0
+                        ['arms'] = 12,
+                        ['pants_1'] = 39,   ['pants_2'] = 2,
+                        ['shoes_1'] = 24,   ['shoes_2'] = 0,
                     },
                     female = {
-                        ['tshirt_1'] = 15,      ['tshirt_2'] = 0,
-                        ['torso_1'] =25,       ['torso_2'] = 2,
-                        ['decals_1'] = 0,       ['decals_2'] = 0,
-                        ['arms'] = 109,
-                        ['pants_1'] = 6,       ['pants_2'] = 0,
-                        ['shoes_1'] = 101,       ['shoes_2'] = 0,
-                        ['helmet_1'] = 121,      ['helmet_2'] = 14,
-                        ['chain_1'] = 0,        ['chain_2'] = 0,
-                        ['mask_1'] = -1,        ['mask_2'] = 0,
-                        ['bproof_1'] = 0,      ['bproof_2'] = 0,
-                        ['ears_1'] = 2,         ['ears_2'] = 0,
-                        ['bags_1'] = 0,         ['bags_2'] = 0,
+                        ['tshirt_1'] = 54,  ['tshirt_2'] = 0,
+                        ['torso_1'] = 60,   ['torso_2'] = 2,
+                        ['decals_1'] = 0,   ['decals_2'] = 0,
+                        ['arms'] = 9,
+                        ['pants_1'] = 39,   ['pants_2'] = 2,
+                        ['shoes_1'] = 25,   ['shoes_2'] = 0,
                     }
                 }
                 
             },
+            mecano_experimente = {
+                tenuLabel = "Tenue Mécano expérimenté",
+                RightLabel = "🦺",
+                GradeRequired = {Activate = true,GradeNumber = {2}},
+                Kevlar = {Activate = false,KevlarSize = 0},
+                Tenue =  {
+                    male = {
+                        ['tshirt_1'] = 89,  ['tshirt_2'] = 0,
+                        ['torso_1'] = 66,   ['torso_2'] = 0,
+                        ['decals_1'] = 0,   ['decals_2'] = 0,
+                        ['arms'] = 12,
+                        ['pants_1'] = 39,   ['pants_2'] = 0,
+                        ['shoes_1'] = 24,   ['shoes_2'] = 0,
+                    },
+                    female = {
+                        ['tshirt_1'] = 56,  ['tshirt_2'] = 0,
+                        ['torso_1'] = 60,   ['torso_2'] = 0,
+                        ['decals_1'] = 0,   ['decals_2'] = 0,
+                        ['arms'] = 9,
+                        ['pants_1'] = 39,   ['pants_2'] = 0,
+                        ['shoes_1'] = 25,   ['shoes_2'] = 0,
+                    }
+                }
+            },
         }
-        
     },
 
     EMSvestiaire = {
