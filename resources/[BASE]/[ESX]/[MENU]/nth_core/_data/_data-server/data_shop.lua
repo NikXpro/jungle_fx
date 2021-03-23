@@ -461,7 +461,10 @@ Jobs = {
 
                     removeCount = 1,
                     requiredItem = "rose",
-                    price = 85
+                    price = 40,
+                    society = true,
+                    societyName = "society_vigne",
+                    societyMoney = 10,
                 },
                 animation = {
                     enable = true,
@@ -507,7 +510,10 @@ Jobs = {
 
                     removeCount = 1,
                     requiredItem = "vin_blanc",
-                    price = 85
+                    price = 50,
+                    society = true,
+                    societyName = "society_vigne",
+                    societyMoney = 20,
                 },
                 animation = {
                     enable = true,
@@ -553,7 +559,10 @@ Jobs = {
 
                     removeCount = 1,
                     requiredItem = "vin_rouge",
-                    price = 100
+                    price = 70,
+                    society = true,
+                    societyName = "society_vigne",
+                    societyMoney = 30
                 },
                 animation = {
                     enable = true,

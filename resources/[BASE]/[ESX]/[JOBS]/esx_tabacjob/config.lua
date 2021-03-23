@@ -23,13 +23,13 @@ Config.CigResellQuantity= {
 }
 
 Config.CigPrices = {
-  malbora = {min = 35, max = 20},
-  gitanes = {min = 25,   max = 25},
+  malbora = {min = 5, max = 15},
+  gitanes = {min = 2,   max = 10},
 }
 
 Config.CigPricesHigh = {
-  malbora = {min = 65, max = 30},
-  gitanes = {min = 55,   max = 35},
+  malbora = {min = 10, max = 20},
+  gitanes = {min = 5,   max = 20},
 }
 
 Config.Time = {

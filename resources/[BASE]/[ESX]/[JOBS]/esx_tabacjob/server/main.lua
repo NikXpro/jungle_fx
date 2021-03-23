@@ -594,7 +594,7 @@ local function Sell(source, zone)
       else
         if (gitanes == 1) then
           SetTimeout(1100, function()
-            local money = math.random(70,70)
+            local money = 45
             xPlayer.removeInventoryItem('gitanes', 1)
             local societyAccount = nil
 
@@ -603,13 +603,15 @@ local function Sell(source, zone)
             end)
             if societyAccount ~= nil then
               societyAccount.addMoney(money)
-              TriggerClientEvent('esx:showNotification', xPlayer.source, _U('comp_earned') .. money)
+              xPlayer.addMoney(10)
+              TriggerClientEvent('esx:showNotification', xPlayer.source, "Vous avez gagner ~g~10$")
+              TriggerClientEvent('esx:showNotification', xPlayer.source, "Votre entreprise a gagner ~g~" .. money.."$")
             end
             Sell(source,zone)
           end)
         elseif (malbora == 1) then
           SetTimeout(1100, function()
-            local money = math.random(70,70)
+            local money = 40
             xPlayer.removeInventoryItem('malbora', 1)
             local societyAccount = nil
 
@@ -618,7 +620,9 @@ local function Sell(source, zone)
             end)
             if societyAccount ~= nil then
               societyAccount.addMoney(money)
-              TriggerClientEvent('esx:showNotification', xPlayer.source, _U('comp_earned') .. money)
+              xPlayer.addMoney(15)
+              TriggerClientEvent('esx:showNotification', xPlayer.source, "Vous avez gagner ~g~15$")
+              TriggerClientEvent('esx:showNotification', xPlayer.source, "Votre entreprise a gagner ~g~" .. money.."$")
             end
             Sell(source,zone)
           end)

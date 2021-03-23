@@ -74,6 +74,12 @@ AddEventHandler("cylex_jobs:server:process", function(coords, k, v, id)
                     else
                         print("Le type d'argent na pas etait spécifier")
                     end
+                    if jobData.item["society"] == true then
+                        TriggerEvent('esx_addonaccount:getSharedAccount', jobData.item["societyName"], function(account)
+                            account.addMoney(jobData.item["societyMoney"])
+                            print(jobData.item["societyMoney"])
+                        end)
+                    end
                     TriggerClientEvent('mythic_notify:client:SendAlert', player.source, { type = 'inform', text = "Vous avez vendu "..jobData.item["removeCount"].."x "..ESX.GetItemLabel(jobData.item["requiredItem"]).. " pour $"..jobData.item["price"]})
                 else
                     TriggerClientEvent('mythic_notify:client:SendAlert', player.source, { type = 'error', text = "Vous n'avez pas assez d'items!"})
