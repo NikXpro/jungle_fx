@@ -169,64 +169,63 @@ Config.DeliveryLocationsTruck = {
 	{Item1 = {x = -548.34, y = 308.19, z = 83.34},		Item2 = {x = -546.6, y = 291.46, z = 83.02}},
 }
 
--- Player outfit of scooter
-Config.OutfitScooter = {
-	[1]  = {drawables = 0, texture = 0},
-	[3]  = {drawables = 66, texture = 0},
-	[4]  = {drawables = 97, texture = 3},
-	[5]  = {drawables = 0, texture = 0},
-	[6]  = {drawables = 32, texture = 14},
-	[7]  = {drawables = 0, texture = 0},
-	[8]  = {drawables = 15, texture = 0},
-	[9]  = {drawables = 0, texture = 0},
-	[11] = {drawables = 184, texture = 0},
-	[12] = {drawables = 18, texture = 5},
-	[13] = {drawables = 1280, texture = 2},
-}
-
--- Player outfit of scooter (female)
-Config.OutfitScooterF = {
-	[1]  = {drawables = 0, texture = 0},
-	[3]  = {drawables = 9, texture = 0},
-	[4]  = {drawables = 11, texture = 3},
-	[5]  = {drawables = 0, texture = 0},
-	[6]  = {drawables = 11, texture = 2},
-	[7]  = {drawables = 0, texture = 0},
-	[8]  = {drawables = 13, texture = 0},
-	[9]  = {drawables = 0, texture = 0},
-	[11] = {drawables = 295, texture = 0},
-	[12] = {drawables = 18, texture = 5},
-	[13] = {drawables = 1280, texture = 2},
-}
-
--- Player outfit of van and truck
-Config.OutfitVan = {
-	[1]  = {drawables = 0, texture = 0},
-	[3]  = {drawables = 66, texture = 0},
-	[4]  = {drawables = 97, texture = 3},
-	[5]  = {drawables = 0, texture = 0},
-	[6]  = {drawables = 32, texture = 14},
-	[7]  = {drawables = 0, texture = 0},
-	[8]  = {drawables = 141, texture = 0},
-	[9]  = {drawables = 0, texture = 0},
-	[11] = {drawables = 230, texture = 3},
-	[12] = {drawables = 45, texture = 7},
-	[13] = {drawables = 1280, texture = 2},
-}
-
--- Player outfit of van and truck (female)
-Config.OutfitVanF = {
-	[1]  = {drawables = 0, texture = 0},
-	[3]  = {drawables = 14, texture = 0},
-	[4]  = {drawables = 45, texture = 1},
-	[5]  = {drawables = 0, texture = 0},
-	[6]  = {drawables = 27, texture = 0},
-	[7]  = {drawables = 0, texture = 0},
-	[8]  = {drawables = 14, texture = 0},
-	[9]  = {drawables = 0, texture = 0},
-	[11] = {drawables = 14, texture = 3},
-	[12] = {drawables = 18, texture = 7},
-	[13] = {drawables = 1280, texture = 2},
+Config.Uniforms = {
+	scooter = {
+        male = {
+            ['tshirt_1'] = 15,  ['tshirt_2'] = 0,
+            ['torso_1'] = 279,   ['torso_2'] = 15,
+            ['decals_1'] = 0,   ['decals_2'] = 0,
+            ['arms'] = 17,
+            ['pants_1'] = 130,   ['pants_2'] = 4,
+            ['shoes_1'] = 7,   ['shoes_2'] = 0,
+            ['helmet_1'] = 130,  ['helmet_2'] = 6,
+            ['chain_1'] = 0,    ['chain_2'] = 0,
+            ['mask_1'] = -1,  ['mask_2'] = 0,
+            ['ears_1'] = 2,     ['ears_2'] = 0,
+            ['bags_1'] = 21,    ['bags_2'] = 11,
+        },
+        female = {
+            ['tshirt_1'] = 19,  ['tshirt_2'] = 0,
+            ['torso_1'] =192,   ['torso_2'] = 0,
+            ['decals_1'] = 0,   ['decals_2'] = 0,
+            ['arms'] = 14,
+            ['pants_1'] = 54,   ['pants_2'] = 1,
+            ['shoes_1'] = 24,   ['shoes_2'] = 0,
+            ['helmet_1'] = 45,  ['helmet_2'] = 0,
+            ['chain_1'] = 0,    ['chain_2'] = 0,
+            ['mask_1'] = -1,  ['mask_2'] = 0,
+            ['ears_1'] = 2,     ['ears_2'] = 0,
+            ['bags_1'] = 0,    ['bags_2'] = 0,
+        }
+	},
+	truck = {
+        male = {
+            ['tshirt_1'] = 15,  ['tshirt_2'] = 0,
+            ['torso_1'] = 45,   ['torso_2'] = 0,
+            ['decals_1'] = 0,   ['decals_2'] = 0,
+            ['arms'] = 41,
+            ['pants_1'] = 24,   ['pants_2'] = 6,
+            ['shoes_1'] = 51,   ['shoes_2'] = 0,
+            ['helmet_1'] = 142,  ['helmet_2'] = 5,
+            ['chain_1'] = 0,    ['chain_2'] = 0,
+            ['mask_1'] = -1,  ['mask_2'] = 0,
+            ['ears_1'] = 2,     ['ears_2'] = 0,
+            ['bags_1'] = 21,    ['bags_2'] = 17,
+        },
+        female = {
+            ['tshirt_1'] = 19,  ['tshirt_2'] = 0,
+            ['torso_1'] =192,   ['torso_2'] = 0,
+            ['decals_1'] = 0,   ['decals_2'] = 0,
+            ['arms'] = 14,
+            ['pants_1'] = 54,   ['pants_2'] = 1,
+            ['shoes_1'] = 24,   ['shoes_2'] = 0,
+            ['helmet_1'] = 45,  ['helmet_2'] = 0,
+            ['chain_1'] = 0,    ['chain_2'] = 0,
+            ['mask_1'] = -1,  ['mask_2'] = 0,
+            ['ears_1'] = 2,     ['ears_2'] = 0,
+            ['bags_1'] = 0,    ['bags_2'] = 0,
+        }
+	}
 }
 
 -- Random van goods

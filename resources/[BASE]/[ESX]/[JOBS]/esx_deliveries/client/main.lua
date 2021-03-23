@@ -34,25 +34,27 @@ function LoadWorkPlayerSkin(deliveryType)
 	local playerPed = GetPlayerPed(-1)
 	
 	if deliveryType == 'scooter' then
-		if IsPedMale(playerPed) then
-			for k, v in pairs(Config.OutfitScooter) do
-				SetPedComponentVariation(playerPed, k, v.drawables, v.texture, 1)
+		TriggerEvent('skinchanger:getSkin', function(skin)
+			local uniformObject
+	
+			if skin.sex == 0 then
+				uniformObject = Config.Uniforms.scooter.male
+			else
+				uniformObject = Config.Uniforms.scooter.female
 			end
-		else
-			for k, v in pairs(Config.OutfitScooterF) do
-				SetPedComponentVariation(playerPed, k, v.drawables, v.texture, 1)
-			end
-		end
+			TriggerEvent('skinchanger:loadClothes', skin, uniformObject)
+		end)
 	else
-		if IsPedMale(playerPed) then
-			for k, v in pairs(Config.OutfitVan) do
-				SetPedComponentVariation(playerPed, k, v.drawables, v.texture, 1)
+		TriggerEvent('skinchanger:getSkin', function(skin)
+			local uniformObject
+	
+			if skin.sex == 0 then
+				uniformObject = Config.Uniforms.truck.male
+			else
+				uniformObject = Config.Uniforms.truck.female
 			end
-		else
-			for k, v in pairs(Config.OutfitVanF) do
-				SetPedComponentVariation(playerPed, k, v.drawables, v.texture, 1)
-			end
-		end
+			TriggerEvent('skinchanger:loadClothes', skin, uniformObject)
+		end)
 	end
 end
 
