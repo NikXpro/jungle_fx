@@ -790,7 +790,7 @@ data.jobMenu = {
         
         DeleterPoint = {
             Coords = vector3(-761.33508300781, -1320.1007080078, 5.000382900238),
-            TailleZone = 2.5,
+            TailleZone = 5.0,
             MessageZone = "Appuyer sur ~INPUT_CONTEXT~ pour rendre le vehicule"
         },
         SpawnPoints = {
