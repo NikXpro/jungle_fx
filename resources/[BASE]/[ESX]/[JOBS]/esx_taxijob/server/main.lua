@@ -28,8 +28,8 @@ AddEventHandler('esx_taxijob:success', function()
 
 			TriggerEvent('esx_addonaccount:getSharedAccount', 'society_taxi', function(account)
 				if account then
-					local playerMoney  = ESX.Math.Round(total / 100 * 70)
-					local societyMoney = ESX.Math.Round(total / 100 * 30)
+					local playerMoney  = ESX.Math.Round(total / 100 * 30)
+					local societyMoney = ESX.Math.Round(total / 100 * 70)
 
 					xPlayer.addMoney(playerMoney)
 					account.addMoney(societyMoney)

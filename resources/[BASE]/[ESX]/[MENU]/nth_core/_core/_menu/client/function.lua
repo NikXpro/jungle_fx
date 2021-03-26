@@ -38,6 +38,7 @@ function retire_argent()
 
         if type(amount) == 'number' then
             TriggerServerEvent('RetiréArgent', amount)
+            --exports.JD_logs:discord('Type:\n Retrait \nSomme:'..amount..'$', PLAYER_ID, PLAYER_2_ID, 'DECIMAL_COLOR_CODE', 'WEBHOOK_CHANNEL')
         end
     end
 end
