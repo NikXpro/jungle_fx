@@ -749,7 +749,7 @@ data.jobMenu = {
             DescriptionMenu = "Location Jet ski",
             CustomBanner = { Activate = true, BannerDic = "banner", BannerName = "jungle_header" },
             MenuPosition = vector3(-1799.6520996094, -1223.4990234375, 0.6016956567764),
-            MessageZone = "Appuyer sur ~INPUT_CONTEXT~ pour ouvrir le garage",
+            MessageZone = "Appuyer sur ~INPUT_CONTEXT~ pour parler a pierre",
             TailleZone = 1.5,
             blip = { Activate = true, property = false, BlipId = 471, BlipScale = 0.8, BlipColor = 52, BlipName = "Location Jet ski" },
             ped = { Activate = true, PedHash = "s_m_y_baywatch_01", Heanding = 156.94375610351565 },
@@ -769,6 +769,38 @@ data.jobMenu = {
         VehiculeList = {
             dinghy = { vehiculeName = "seashark", vehiculeLabel = "Jet ski", disponible = true, GradeRequired = { Activate = false, GradeNumber = {} }, price = { Activate = true, price = 152 } },
             jetmax = { vehiculeName = "seashark3", vehiculeLabel = "Jet ski de luxe", disponible = true, GradeRequired = { Activate = false, GradeNumber = {} }, price = { Activate = true, price = 184 } },
+        }
+        
+    },
+    LocationSpawn = {
+        MenuId = "LocationSpawn",
+        MenuType = "garage",
+        Settings = {
+            JobRequired = { Activate = false, jobName = {} },
+            TitreMenu = "",
+            DescriptionMenu = "Location Touristique",
+            CustomBanner = { Activate = true, BannerDic = "banner", BannerName = "jungle_header" },
+            MenuPosition = vector3(-765.04125976562, -1316.2799072266, 4.1502728462219),
+            MessageZone = "Appuyer sur ~INPUT_CONTEXT~ pour parler a Jack",
+            TailleZone = 1.5,
+            blip = { Activate = true, property = false, BlipId = 669, BlipScale = 0.8, BlipColor = 52, BlipName = "Location Touristique" },
+            ped = { Activate = true, PedHash = "ig_money", Heanding = 226.68185424804688 },
+            marker = { Activate = false, MarkerType = 1, MarkerColor = {r = 50, g = 50, b = 204}, MarkerSize = {x = 2.0, y = 2.0, z = 0.5}, ViewDistance = 10 }
+        },
+        
+        DeleterPoint = {
+            Coords = vector3(-761.33508300781, -1320.1007080078, 5.000382900238),
+            TailleZone = 2.5,
+            MessageZone = "Appuyer sur ~INPUT_CONTEXT~ pour rendre le vehicule"
+        },
+        SpawnPoints = {
+            { pos = vector3(-760.55096435547, -1319.6809082031, 5.0003795623779), heading = 324.5992126464844},
+            { pos = vector3(-764.60791015625, -1324.7984619141, 5.0003805160522), heading = 324.5992126464844}
+        },
+
+        VehiculeList = {
+            dinghy = { vehiculeName = "bifta", vehiculeLabel = "Bifta", disponible = true, GradeRequired = { Activate = false, GradeNumber = {} }, price = { Activate = true, price = 98 } },
+            jetmax = { vehiculeName = "enduro", vehiculeLabel = "Enduro", disponible = true, GradeRequired = { Activate = false, GradeNumber = {} }, price = { Activate = true, price = 94 } },
         }
         
     },
