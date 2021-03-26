@@ -1,15 +1,21 @@
+GlobalState.plyChannels = {}
 voiceData = {}
 radioData = {}
 callData = {}
 
 function defaultTable(source)
+	GlobalState.plyChannels[source] = 0
 	return {
 		radio = 0,
 		call = 0,
 		lastRadio = 0,
-		lastCall = 0
+		lastCall = 0,
+		routingBucket = 0
 	}
 end
+
+-- micro optimize, local function calls are quite a bit faster.
+local defaultTable = defaultTable
 
 -- temp fix before an actual fix is added
 CreateThread(function()
@@ -21,23 +27,23 @@ end)
 RegisterNetEvent('playerJoined', function()
 	if not voiceData[source] then
 		voiceData[source] = defaultTable(source)
-		Player(source).state:set('routingBucket', 0, true)
+		TriggerClientEvent('pma-voice:setRoutingBucket', source, 0)
 	end
 end)
 
---- update/sets the players routing bucket
----@param source number the player to update/set
----@param routingBucket number the routing bucket to set them to
 function updateRoutingBucket(source, routingBucket)
-	local route
+	local route = 0
 	-- make it optional to provide the routing bucket just incase 
 	-- people use another resource to manage their routing buckets.
 	if routingBucket then
 		SetPlayerRoutingBucket(source, routingBucket)
+		route = routingBucket
 	else
 		route = GetPlayerRoutingBucket(source)
 	end
-	Player(source).state:set('routingBucket', route or routingBucket, true)
+	voiceData[source] = voiceData[source] or defaultTable(source)
+	voiceData[source].routingBucket = route
+	TriggerClientEvent('pma-voice:updateRoutingBucket', source, route)
 end
 exports('updateRoutingBucket', updateRoutingBucket)
 
@@ -49,6 +55,7 @@ AddEventHandler("playerDropped", function()
 		if plyData.radio ~= 0 then
 			removePlayerFromRadio(source, plyData.radio)
 		end
+		GlobalState.plyChannels[source] = nil
 
 		if plyData.call ~= 0 then
 			removePlayerFromCall(source, plyData.call)
@@ -57,26 +64,3 @@ AddEventHandler("playerDropped", function()
 		voiceData[source] = nil
 	end
 end)
-
-AddEventHandler('onResourceStart', function(resource)
-	if resource ~= GetCurrentResourceName() then return end
-	if GetConvar('onesync') == 'on' then
-		local players = GetPlayers()
-		for i = 1, #players do
-			local ply = players[i]
-			if not voiceData[ply] then
-				voiceData[ply] = defaultTable(ply)
-				Player(ply).state:set('routingBucket', GetPlayerRoutingBucket(ply), true)
-			end
-		end
-	end
-end)
-
-RegisterCommand('mute', function(source, args)
-	local mutePly = tonumber(args[1])
-	if mutePly then
-		if voiceData[mutePly] then
-			TriggerClientEvent('pma-voice:mutePlayer', mutePly)
-		end
-	end
-end, true)

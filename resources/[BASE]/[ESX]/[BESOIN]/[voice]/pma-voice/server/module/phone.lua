@@ -1,29 +1,41 @@
--- micro optimize
-local defaultTable = defaultTable
+--- removes a player from the call for everyone in the call.
+---@param source number the player to remove from the call
+---@param callChannel number the call channel to remove them from
+function removePlayerFromCall(source, callChannel)
+    debug.log(('[phone] Removed %s from call %s'):format(source, callChannel))
 
-function removePlayerFromCall(source, currentChannel)
-    callData[currentChannel] = callData[currentChannel] or {}
-    for player, _ in pairs(callData[currentChannel]) do
+    callData[callChannel] = callData[callChannel] or {}
+    for player, _ in pairs(callData[callChannel]) do
         TriggerClientEvent('pma-voice:removePlayerFromCall', player, source)
     end
-    callData[currentChannel][source] = nil
+    callData[callChannel][source] = nil
     voiceData[source] = voiceData[source] or defaultTable(source)
     voiceData[source].call = 0
 end
 
-function addPlayerToCall(source, channel)
+--- adds a player to a call
+---@param source number the player to add to the call 
+---@param callChannel number the call channel to add them to
+function addPlayerToCall(source, callChannel)
+    debug.log(('[phone] Added %s to call %s'):format(source, callChannel))
     -- check if the channel exists, if it does set the varaible to it
     -- if not create it (basically if not callData make callData)
-    callData[channel] = callData[channel] or {}
-    for player, _ in pairs(callData[channel]) do
-        TriggerClientEvent('pma-voice:addPlayerToCall', player, source)
+    callData[callChannel] = callData[callChannel] or {}
+    for player, _ in pairs(callData[callChannel]) do
+        -- don't need to send to the source because they're about to get sync'd!
+        if player ~= source then
+            TriggerClientEvent('pma-voice:addPlayerToCall', player, source)
+        end
     end
-    callData[channel][source] = false
+    callData[callChannel][source] = false
     voiceData[source] = voiceData[source] or defaultTable(source)
-    voiceData[source].call = channel
-    TriggerClientEvent('pma-voice:syncCallData', source, callData[channel])
+    voiceData[source].call = callChannel
+    TriggerClientEvent('pma-voice:syncCallData', source, callData[callChannel])
 end
 
+--- set the players call channel
+---@param source number the player to set the call off
+---@param callChannel number the channel to set the player to (or 0 to remove them from any call channel)
 function setPlayerCall(source, callChannel)
 	if GetConvarInt('voice_enablePhones', 1) ~= 1 then return end
     if GetInvokingResource() then
@@ -46,21 +58,27 @@ function setPlayerCall(source, callChannel)
 end
 exports('setPlayerCall', setPlayerCall)
 
-RegisterNetEvent('pma-voice:setPlayerCall')
-AddEventHandler('pma-voice:setPlayerCall', function(callChannel)
+RegisterNetEvent('pma-voice:setPlayerCall', function(callChannel)
     setPlayerCall(source, callChannel)
 end)
 
-RegisterNetEvent('pma-voice:setTalkingOnCall')
-AddEventHandler('pma-voice:setTalkingOnCall', function(talking)
+
+function setTalkingOnCall(talking)
 	if GetConvarInt('voice_enablePhones', 1) ~= 1 then return end
     local source = source
     voiceData[source] = voiceData[source] or defaultTable(source)
     local plyVoice = voiceData[source]
     local callTbl = callData[plyVoice.call]
     if callTbl then
+        debug.log(('[phone] %s started talking in call %s'):format(source, plyVoice.call))
         for player, _ in pairs(callTbl) do
-            TriggerClientEvent('pma-voice:setTalkingOnCall', player, source, talking)
+            if player ~= source then
+                debug.verbose(('[call] Sending event to %s to tell them that %s is talking'):format(player, source))
+                TriggerClientEvent('pma-voice:setTalkingOnCall', player, source, talking)
+            end
         end
+    else
+        debug.log(('[phone] %s tried to talk in call %s, but it doesnt exist.'):format(source, plyVoice.call))
     end
-end)
+end
+RegisterNetEvent('pma-voice:setTalkingOnCall', setTalkingOnCall)
