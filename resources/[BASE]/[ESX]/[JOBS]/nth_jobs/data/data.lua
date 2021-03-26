@@ -804,4 +804,40 @@ data.jobMenu = {
         }
         
     },
+    LocationVelo = {
+        MenuId = "LocationVelo",
+        MenuType = "garage",
+        Settings = {
+            JobRequired = { Activate = false, jobName = {} },
+            TitreMenu = "",
+            DescriptionMenu = "Location Velo",
+            CustomBanner = { Activate = true, BannerDic = "banner", BannerName = "jungle_header" },
+            MenuPosition = vector3(-425.32171630859, 1209.6101074219, 324.75830078125),
+            MessageZone = "Appuyer sur ~INPUT_CONTEXT~ pour parler a marine",
+            TailleZone = 1.5,
+            blip = { Activate = true, property = false, BlipId = 559, BlipScale = 0.8, BlipColor = 52, BlipName = "Location Velo" },
+            ped = { Activate = true, PedHash = "ig_maryann", Heanding = 257.871826171875 },
+            marker = { Activate = false, MarkerType = 1, MarkerColor = {r = 50, g = 50, b = 204}, MarkerSize = {x = 2.0, y = 2.0, z = 0.5}, ViewDistance = 10 }
+        },
+        
+        DeleterPoint = {
+            Coords = vector3(-418.84539794922, 1206.2735595703, 325.64169311523),
+            TailleZone = 5.0,
+            MessageZone = "Appuyer sur ~INPUT_CONTEXT~ pour rendre le velo"
+        },
+        SpawnPoints = {
+            { pos = vector3(-428.95590209961, 1200.8121337891, 325.75830078125), heading = 226.28628540039065},
+            { pos = vector3(-427.55117797852, 1203.3428955078, 325.75830078125), heading = 226.28628540039065},
+            { pos = vector3(-422.70227050781, 1215.5922851562, 325.75830078125), heading = 230.61981201171875}
+        },
+
+        VehiculeList = {
+            fixter = { vehiculeName = "fixter", vehiculeLabel = "Fixter", disponible = true, GradeRequired = { Activate = false, GradeNumber = {} }, price = { Activate = true, price = 20 } },
+            scorcher = { vehiculeName = "scorcher", vehiculeLabel = "Scorcher", disponible = true, GradeRequired = { Activate = false, GradeNumber = {} }, price = { Activate = true, price = 28 } },
+            tribike = { vehiculeName = "tribike", vehiculeLabel = "Tribike", disponible = true, GradeRequired = { Activate = false, GradeNumber = {} }, price = { Activate = true, price = 34 } },
+            tribike2 = { vehiculeName = "tribike2", vehiculeLabel = "Tribike 2", disponible = true, GradeRequired = { Activate = false, GradeNumber = {} }, price = { Activate = true, price = 39 } },
+            tribike3 = { vehiculeName = "tribike3", vehiculeLabel = "Tribike 3", disponible = true, GradeRequired = { Activate = false, GradeNumber = {} }, price = { Activate = true, price = 43 } }
+        }
+        
+    },
 }   
