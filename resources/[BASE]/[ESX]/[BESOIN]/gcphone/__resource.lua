@@ -51,7 +51,11 @@ files {
 	'html/static/img/icons_app/9gag.png',
 	'html/static/img/icons_app/twitter.png',
 	'html/static/img/icons_app/borrado.png',
-	
+	'html/static/img/icons_app/tabac.png',
+	'html/static/img/icons_app/taxi.png',
+	'html/static/img/icons_app/vigneron.png',
+	'html/static/img/icons_app/mecano.png',
+
 	'html/static/img/app_bank/fleeca_tar.png',
 	'html/static/img/app_bank/tarjetas.png',
 

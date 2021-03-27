@@ -92,17 +92,17 @@
 
 
   "serviceCall": [{
-      "display": "Police",
+      "display": "LSPD",
       "icon": "/html/static/img/icons_app/policia.png",
       "subMenu": [{
-          "title": "Send a message",
+          "title": "Envoyer un message",
           "eventName": "esx_addons_gcphone:call",
           "type": {
             "number": "police"
           }
         },
         {
-          "title": "Call emergency number",
+          "title": "Appeler les urgence",
           "eventName": "gcphone:autoCallNumber",
           "type": {
             "number": "911"
@@ -111,11 +111,11 @@
       ]
     },
     {
-      "display": "Ambulance",
+      "display": "LSMS",
       "backgroundColor": "red",
       "icon": "/html/static/img/icons_app/lsfd.png",
       "subMenu": [{
-        "title": "Send a message",
+        "title": "Envoyer un message",
         "eventName": "esx_addons_gcphone:call",
         "type": {
           "number": "ambulance"
@@ -123,34 +123,91 @@
       }]
     },
     {
-      "display": "Taxi",
-      "backgroundColor": "yellow",
+      "display": "DownTown Cab Co",
+      "backgroundColor": "red",
+      "icon": "/html/static/img/icons_app/taxi.png",
       "subMenu": [{
-        "title": "Send a message",
+        "title": "Envoyer un message",
         "eventName": "esx_addons_gcphone:call",
         "type": {
           "number": "taxi"
         }
       }]
+    },
+    {
+      "display": "Redwood Cigarettes",
+      "backgroundColor": "red",
+      "icon": "/html/static/img/icons_app/tabac.png",
+      "subMenu": [{
+        "title": "Envoyer un message",
+        "eventName": "esx_addons_gcphone:call",
+        "type": {
+          "number": "tabac"
+        }
+      }]
+    },
+    {
+      "display": "Auto Exotic",
+      "backgroundColor": "red",
+      "icon": "/html/static/img/icons_app/mecano.png",
+      "subMenu": [{
+        "title": "Envoyer un message",
+        "eventName": "esx_addons_gcphone:call",
+        "type": {
+          "number": "mechanic"
+        }
+      }]
+    },
+    {
+      "display": "Vignoble",
+      "backgroundColor": "red",
+      "icon": "/html/static/img/icons_app/vigneron.png",
+      "subMenu": [{
+        "title": "Envoyer un message",
+        "eventName": "esx_addons_gcphone:call",
+        "type": {
+          "number": "vigne"
+        }
+      }]
     }
+    
   ],
 
   "defaultContacts": [{
       "number": "ambulance",
-      "display": "Ambulance",
+      "display": "LSMS",
       "backgroundColor": "red",
       "icon": "/html/static/img/icons_app/lsfd.png"
     },
     {
       "number": "police",
-      "display": "Police",
+      "display": "LSPD",
       "backgroundColor": "blue",
       "icon": "/html/static/img/icons_app/policia.png"
     },
     {
       "number": "taxi",
-      "display": "Taxi",
-      "backgroundColor": "yellow"
+      "display": "DownTown Cab Co",
+      "backgroundColor": "yellow",
+      "icon": "/html/static/img/icons_app/taxi.png"
+    },
+    {
+      "number": "tabac",
+      "display": "Redwood Cigarettes",
+      "backgroundColor": "yellow",
+      "icon": "/html/static/img/icons_app/tabac.png"
+    },
+    {
+      "number": "mechanic",
+      "display": "Auto Exotic",
+      "backgroundColor": "yellow",
+      "icon": "/html/static/img/icons_app/mecano.png"
+    },
+    {
+      "number": "vigne",
+      "display": "Vignoble",
+      "backgroundColor": "yellow",
+      "icon": "/html/static/img/icons_app/vigneron.png"
     }
   ],
 
