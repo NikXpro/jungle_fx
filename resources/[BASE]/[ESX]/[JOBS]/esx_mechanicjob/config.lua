@@ -11,13 +11,33 @@ Config.NPCNextToDistance          = 25.0
 Config.NPCJobEarnings             = { min = 15, max = 40 }
 
 Config.Vehicles = {
-	'adder',
-	'asea',
-	'asterope',
-	'banshee',
-	'buffalo',
-	'sultan',
-	'baller3'
+	"dilettante",
+	"blista",
+	"prairie",
+	"felon",
+	"exemplar",
+	"sentinel2",
+	"oracle",
+	"buccaneer2",
+	"buccaneer",
+	"dukes3",
+	"sabregt2",
+	"bifta",
+	"bfinjection",
+	"baller2",
+	"baller",
+	"landstalker",
+	"radi",
+	"rocoto",
+	"fq2",
+	"habanero",
+	"asterope",
+	"emperor",
+	"emperor2",
+	"fugitive",
+	"ingot",
+	"tailgater",
+	"warrener"
 }
 
 Config.Zones = {
