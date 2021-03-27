@@ -1022,6 +1022,12 @@ function DrawAdvancedTextCNN (x,y ,w,h,sc, text, r,g,b,a,font,jus)
     DrawText(x - 0.1+w, y - 0.02+h)
 end
 
+RegisterNetEvent('esx_tabac:annonce')
+AddEventHandler('esx_tabac:annonce', function(text, jobs)
+  texteafiche = text
+  jobName = jobs
+  affichenews = true
+end) 
 
 Citizen.CreateThread(function()
   while true do
@@ -1037,14 +1043,6 @@ Citizen.CreateThread(function()
   end
 end)
 
-
-
-RegisterNetEvent('esx_tabac:annonce')
-AddEventHandler('esx_tabac:annonce', function(text, jobs)
-  texteafiche = text
-  jobName = jobs
-  affichenews = true
-end) 
 
 
 RegisterNetEvent('esx_tabac:annoncestop')

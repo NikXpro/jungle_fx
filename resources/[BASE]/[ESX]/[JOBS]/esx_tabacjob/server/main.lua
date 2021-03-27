@@ -483,15 +483,16 @@ ESX.RegisterServerCallback('esx_tabac:tryRemoveInventoryItem', function(source, 
 end)
 
 RegisterServerEvent('esx_tabac:annonce')
-AddEventHandler('esx_tabac:annonce', function(jobs, result)
+AddEventHandler('esx_tabac:annonce', function(result, jobs)
   local _source  = source
   local xPlayer  = ESX.GetPlayerFromId(_source)
   local xPlayers = ESX.GetPlayers()
   local text     = result
+  local entreprise = jobs
   print(text)
   for i=1, #xPlayers, 1 do
     local xPlayer = ESX.GetPlayerFromId(xPlayers[i])
-    TriggerClientEvent('esx_tabac:annonce', xPlayers[i], text, jobs)
+    TriggerClientEvent('esx_tabac:annonce', xPlayers[i], text, entreprise)
   end
 
   Wait(10000)

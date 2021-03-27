@@ -30,7 +30,7 @@ function Message()
 			if (GetOnscreenKeyboardResult()) then
 				local result = GetOnscreenKeyboardResult()
 				messagenotfinish = false
-				TriggerServerEvent('esx_tabac:annonce', "Auto Exotic", result)
+				TriggerServerEvent('esx_tabac:annonce', result, "Auto Exotic")
 		  	end
 		end
 	end)

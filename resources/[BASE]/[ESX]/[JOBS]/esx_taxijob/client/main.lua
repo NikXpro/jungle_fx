@@ -28,7 +28,7 @@ function Message()
 			if (GetOnscreenKeyboardResult()) then
 				local result = GetOnscreenKeyboardResult()
 				messagenotfinish = false
-				TriggerServerEvent('esx_tabac:annonce', "Taxi", result)
+				TriggerServerEvent('esx_tabac:annonce', result, "Taxi")
 		  	end
 		end
 	end)
