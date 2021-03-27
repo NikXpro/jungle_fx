@@ -28,12 +28,12 @@ Config.NourritureList = {
 		GiveEat = { Activate = true, AddNumber = 20000 },
 		GiveDrink = { Activate = true, AddNumber = 200000 }
 	},
-	jus-orange = {
+	jus_orange = {
 		itemType = { AnimeType = "Drink", Message = "Vous avez bu un Jus d'orange" },
 		GiveEat = { Activate = false, AddNumber = 200000 },
 		GiveDrink = { Activate = true, AddNumber = 200000 }
 	},
-	jungle-drink = {
+	jungle_drink = {
 		itemType = { AnimeType = "Drink", Message = "Vous avez bu un Jungle Drink" },
 		GiveEat = { Activate = true, AddNumber = 200000 },
 		GiveDrink = { Activate = true, AddNumber = 200000 }
@@ -60,7 +60,7 @@ Config.NourritureList = {
 		GiveEat = { Activate = true, AddNumber = 200000 },
 		GiveDrink = { Activate = false, AddNumber = 200000 }
 	},
-	kitkat-ball = {
+	kitkat_ball = {
 		itemType = { AnimeType = "Eat", Message = "Vous avez manger un paquet de kitkat-ball" },
 		GiveEat = { Activate = true, AddNumber = 200000 },
 		GiveDrink = { Activate = false, AddNumber = 200000 }

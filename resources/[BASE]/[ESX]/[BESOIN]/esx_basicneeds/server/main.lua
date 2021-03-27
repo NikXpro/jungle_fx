@@ -4,31 +4,32 @@ TriggerEvent('esx:getSharedObject', function(obj) ESX = obj end)
 
 
 
+--Citizen.CreateThread(function()
+	for k, v in pairs(Config.NourritureList) do
+		ESX.RegisterUsableItem(k, function(source)
+			local xPlayer = ESX.GetPlayerFromId(source)
+			xPlayer.removeInventoryItem(k, 1)
+			if v.GiveEat.Activate == true then
+				TriggerClientEvent('esx_status:add', source, 'hunger', v.GiveEat.AddNumber)
+			end
 
-for k, v in pairs(Config.NourritureList) do
-	ESX.RegisterUsableItem(k, function(source)
-		local xPlayer = ESX.GetPlayerFromId(source)
-		xPlayer.removeInventoryItem(k, 1)
-		if v.GiveEat.Activate == true then
-			TriggerClientEvent('esx_status:add', source, 'hunger', v.GiveEat.AddNumber)
-		end
+			if v.GiveDrink.Activate == true then
+				TriggerClientEvent('esx_status:add', source, 'thirst', v.GiveDrink.AddNumber)
+			end
 
-		if v.GiveDrink.Activate == true then
-			TriggerClientEvent('esx_status:add', source, 'thirst', v.GiveDrink.AddNumber)
-		end
+			if v.itemType.AnimeType == "Eat" then
+				TriggerClientEvent('esx_basicneeds:onEat', source)
+				TriggerClientEvent('esx:showNotification', source, v.itemType.Message)
+			elseif v.itemType.AnimeType == "Drink" then
+				TriggerClientEvent('esx_basicneeds:onDrink', source)
+				TriggerClientEvent('esx:showNotification', source, v.itemType.Message)
+			else
+				print("Animation/Notification de l'item non défini")
+			end
+		end)
+	end
+--end)
 
-		if v.itemType.AnimeType == "Eat" then
-			TriggerClientEvent('esx_basicneeds:onEat', source)
-			TriggerClientEvent('esx:showNotification', source, v.itemType.Message)
-		elseif v.itemType.AnimeType == "Drink" then
-			TriggerClientEvent('esx_basicneeds:onDrink', source)
-			TriggerClientEvent('esx:showNotification', source, v.itemType.Message)
-		else
-			print("Animation/Notification de l'item non défini")
-		end
-		
-	end)
-end
 
 TriggerEvent('es:addGroupCommand', 'heal', 'admin', function(source, args, user)
 	-- heal another player - don't heal source
