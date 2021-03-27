@@ -13,10 +13,19 @@ ESX.StartPayCheck = function()
 			if salary > 0 then
 				if job == 'unemployed' then -- unemployed
 					xPlayer.addAccountMoney('bank', salary)
-					TriggerClientEvent('esx:showAdvancedNotification', xPlayer.source, _U('bank'), _U('received_paycheck'), _U('received_help', salary), 'CHAR_BANK_MAZE', 9)
-				elseif job == ('police' or 'policeoff' or 'ambulance' or 'ambulanceoff') then
+					TriggerClientEvent('esx:showAdvancedNotification', xPlayer.source, _U('bank'), _U('received_paycheck'), _U('received_salary', salary), 'CHAR_BANK_MAZE', 9)
+				elseif job == 'police' then -- unemployed
 					xPlayer.addAccountMoney('bank', salary)
-					TriggerClientEvent('esx:showAdvancedNotification', xPlayer.source, _U('bank'), _U('received_paycheck'), _U('received_salary', salary - salary * (20/100)), 'CHAR_BANK_MAZE', 9)
+					TriggerClientEvent('esx:showAdvancedNotification', xPlayer.source, _U('bank'), _U('received_paycheck'), _U('received_salary', salary), 'CHAR_BANK_MAZE', 9)
+				elseif job == 'policeoff' then -- unemployed
+					xPlayer.addAccountMoney('bank', salary)
+					TriggerClientEvent('esx:showAdvancedNotification', xPlayer.source, _U('bank'), _U('received_paycheck'), _U('received_salary', salary), 'CHAR_BANK_MAZE', 9)
+				elseif job == 'ambulance' then -- unemployed
+					xPlayer.addAccountMoney('bank', salary)
+					TriggerClientEvent('esx:showAdvancedNotification', xPlayer.source, _U('bank'), _U('received_paycheck'), _U('received_salary', salary), 'CHAR_BANK_MAZE', 9)
+				elseif job == 'ambulanceoff' then -- unemployed
+					xPlayer.addAccountMoney('bank', salary)
+					TriggerClientEvent('esx:showAdvancedNotification', xPlayer.source, _U('bank'), _U('received_paycheck'), _U('received_salary', salary), 'CHAR_BANK_MAZE', 9)
 				elseif Config.EnableSocietyPayouts then -- possibly a society
 					TriggerEvent('esx_society:getSociety', xPlayer.job.name, function (society)
 						if society ~= nil then -- verified society
