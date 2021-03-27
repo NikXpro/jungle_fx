@@ -1,8 +1,8 @@
 radioConfig = {
     Controls = {
         Activator = { -- Open/Close Radio
-            Name = "INPUT_REPLAY_START_STOP_RECORDING", -- Control name
-            Key = 289, -- F3
+            Name = "INPUT_REPLAY_START_STOP_RECORDING_SECONDARY", -- Control name
+            Key = 289, -- F2
         },
         Secondary = {
             Name = "INPUT_SPRINT",
@@ -38,12 +38,9 @@ radioConfig = {
         }
     },
     Frequency = {
-        Private = { 
-            [1] = true,
-            [2] = true,
-            [3] = true,
-            [4] = true,
-        },
+        Private = { -- List of private frequencies
+            [1] = true, -- Make 1 a private frequency
+        }, -- List of private frequencies
         Current = 1, -- Don't touch
         CurrentIndex = 1, -- Don't touch
         Min = 1, -- Minimum frequency

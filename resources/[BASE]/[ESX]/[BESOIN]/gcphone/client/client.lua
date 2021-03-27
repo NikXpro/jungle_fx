@@ -380,7 +380,8 @@ AddEventHandler("gcPhone:acceptCall", function(infoCall, initiator)
     inCall = true
     --NetworkSetVoiceChannel(infoCall.id + 1)
     --NetworkSetTalkerProximity(0.0)
-    exports["pma-voice"]:addPlayerToCall(infoCall.id + 1)
+    --exports["pma-voice"]:addPlayerToCall(infoCall.id + 1)
+    exports["mumble-voip"]:addPlayerToCall(infoCall.id + 1)
   end
   if menuIsOpen == false then 
     TooglePhone()
@@ -395,7 +396,8 @@ AddEventHandler("gcPhone:rejectCall", function(infoCall)
     inCall = false
     --Citizen.InvokeNative(0xE036A705F989E049)
     --NetworkSetTalkerProximity(2.5)
-    exports["pma-voice"]:addPlayerToCall(0)
+    --exports["pma-voice"]:addPlayerToCall(0)
+    exports["mumble-voip"]:addPlayerToCall(0)
   end
   PhonePlayText()
   SendNUIMessage({event = 'rejectCall', infoCall = infoCall})
