@@ -18,6 +18,25 @@ Citizen.CreateThread(function()
 	ESX.PlayerData = ESX.GetPlayerData()
 end)
 
+function Message()
+	Citizen.CreateThread(function()
+	  	while messagenotfinish do
+		Citizen.Wait(500)
+			DisplayOnscreenKeyboard(1, "FMMC_MPM_NA", "", "", "", "", "", 30)
+			while (UpdateOnscreenKeyboard() == 0) do
+				DisableAllControlActions(0);
+				Citizen.Wait(5)
+			end
+			if (GetOnscreenKeyboardResult()) then
+				local result = GetOnscreenKeyboardResult()
+				messagenotfinish = false
+				TriggerServerEvent('esx_tabac:annonce', "Auto Exotic", result)
+		  	end
+		end
+	end)
+end
+
+
 function SelectRandomTowable()
 	local index = GetRandomIntInRange(1,  #Config.Towables)
 
@@ -262,7 +281,8 @@ function OpenMobileMechanicActionsMenu()
 			{label = _U('clean'),         value = 'clean_vehicle'},
 			{label = _U('imp_veh'),       value = 'del_vehicle'},
 			{label = _U('flat_bed_interact'),      value = 'dep_vehicle'},
-			{label = _U('place_objects'), value = 'object_spawner'}
+			{label = _U('place_objects'), value = 'object_spawner'},
+			{label = "Passer une annonce", value = 'announce'}
 	}}, function(data, menu)
 		if isBusy then return end
 
@@ -507,6 +527,9 @@ function OpenMobileMechanicActionsMenu()
 			end, function(data2, menu2)
 				menu2.close()
 			end)
+		elseif data.current.value == 'announce' then
+			messagenotfinish = true
+			Message()
 		end
 	end, function(data, menu)
 		menu.close()

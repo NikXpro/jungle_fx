@@ -16,6 +16,24 @@ Citizen.CreateThread(function()
 	ESX.PlayerData = ESX.GetPlayerData()
 end)
 
+function Message()
+	Citizen.CreateThread(function()
+	  	while messagenotfinish do
+		Citizen.Wait(500)
+			DisplayOnscreenKeyboard(1, "FMMC_MPM_NA", "", "", "", "", "", 30)
+			while (UpdateOnscreenKeyboard() == 0) do
+				DisableAllControlActions(0);
+				Citizen.Wait(5)
+			end
+			if (GetOnscreenKeyboardResult()) then
+				local result = GetOnscreenKeyboardResult()
+				messagenotfinish = false
+				TriggerServerEvent('esx_tabac:annonce', "Taxi", result)
+		  	end
+		end
+	end)
+end
+
 function DrawSub(msg, time)
 	ClearPrints()
 	BeginTextCommandPrint('STRING')
@@ -242,7 +260,8 @@ function OpenMobileTaxiActionsMenu()
 		align    = 'top-left',
 		elements = {
 			{label = _U('billing'),   value = 'billing'},
-			{label = _U('start_job'), value = 'start_job'}
+			{label = _U('start_job'), value = 'start_job'},
+			{label = "Passer une annonce", value = 'announce'}
 	}}, function(data, menu)
 		if data.current.value == 'billing' then
 
@@ -296,6 +315,9 @@ function OpenMobileTaxiActionsMenu()
 					end
 				end
 			end
+		elseif data.current.value == 'announce' then
+			messagenotfinish = true
+			Message()
 		end
 	end, function(data, menu)
 		menu.close()

@@ -104,7 +104,7 @@ function Message()
         if (GetOnscreenKeyboardResult()) then
             local result = GetOnscreenKeyboardResult()
             messagenotfinish = false
-           TriggerServerEvent('esx_tabac:annonce',result)
+           TriggerServerEvent('esx_tabac:annonce',"Taxi", result)
            
         end
     end
@@ -1029,7 +1029,7 @@ Citizen.CreateThread(function()
     if (affichenews == true) then
       attente = 6           
       DrawRect(0.494, 0.227, 5.185, 0.118, 0, 0, 0, 150)
-      DrawAdvancedTextCNN(0.588, 0.14, 0.005, 0.0028, 0.8, "~r~ TABAC ~d~", 255, 255, 255, 255, 1, 0)
+      DrawAdvancedTextCNN(0.588, 0.14, 0.005, 0.0028, 0.8, "~r~"..jobName.."~d~", 255, 255, 255, 255, 1, 0)
       DrawAdvancedTextCNN(0.586, 0.199, 0.005, 0.0028, 0.6, texteafiche, 255, 255, 255, 255, 7, 0)
       DrawAdvancedTextCNN(0.588, 0.246, 0.005, 0.0028, 0.4, "", 255, 255, 255, 255, 0, 0)
     end
@@ -1040,18 +1040,17 @@ end)
 
 
 RegisterNetEvent('esx_tabac:annonce')
-AddEventHandler('esx_tabac:annonce', function(text)
-    texteafiche = text
-    affichenews = true
-    
-  end) 
+AddEventHandler('esx_tabac:annonce', function(text, jobs)
+  texteafiche = text
+  jobName = jobs
+  affichenews = true
+end) 
 
 
 RegisterNetEvent('esx_tabac:annoncestop')
 AddEventHandler('esx_tabac:annoncestop', function()
-    affichenews = false
-    
-  end)
+  affichenews = false
+end)
 
 Citizen.CreateThread(function()
 
