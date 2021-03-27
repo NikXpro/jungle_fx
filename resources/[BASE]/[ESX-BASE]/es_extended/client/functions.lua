@@ -344,31 +344,27 @@ ESX.Game.SpawnVehicle = function(modelName, coords, heading, cb)
 	local model = (type(modelName) == 'number' and modelName or GetHashKey(modelName))
 
 	Citizen.CreateThread(function()
-		RequestModel(model)
-
-		while not HasModelLoaded(model) do
-			Citizen.Wait(0)
-		end
+		ESX.Streaming.RequestModel(model)
 
 		local vehicle = CreateVehicle(model, coords.x, coords.y, coords.z, heading, true, false)
-		local id      = NetworkGetNetworkIdFromEntity(vehicle)
+		local networkId = NetworkGetNetworkIdFromEntity(vehicle)
+		local timeout = 0
 
-		SetNetworkIdCanMigrate(id, true)
+		SetNetworkIdCanMigrate(networkId, true)
 		SetEntityAsMissionEntity(vehicle, true, false)
 		SetVehicleHasBeenOwnedByPlayer(vehicle, true)
 		SetVehicleNeedsToBeHotwired(vehicle, false)
+		SetVehRadioStation(vehicle, 'OFF')
 		SetModelAsNoLongerNeeded(model)
-
 		RequestCollisionAtCoord(coords.x, coords.y, coords.z)
 
-		while not HasCollisionLoadedAroundEntity(vehicle) do
-			RequestCollisionAtCoord(coords.x, coords.y, coords.z)
+		-- we can get stuck here if any of the axies are "invalid"
+		while not HasCollisionLoadedAroundEntity(vehicle) and timeout < 2000 do
 			Citizen.Wait(0)
+			timeout = timeout + 1
 		end
 
-		SetVehRadioStation(vehicle, 'OFF')
-
-		if cb ~= nil then
+		if cb then
 			cb(vehicle)
 		end
 	end)
