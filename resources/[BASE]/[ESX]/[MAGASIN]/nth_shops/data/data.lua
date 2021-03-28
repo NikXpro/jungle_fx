@@ -228,7 +228,7 @@ data.shops = {
 				licence = "", --weapon, drive, dmv...
 				Type = "item", --weapon, item
 				Label = "Jungle Drink", --Nom item afficher
-				Name = "jungle-drink", --Nom item serveur
+				Name = "jungle_drink", --Nom item serveur
 				Count = 1,
 				License = { Activate = false, Name = "" },
                 Price = { Activate = true, MoneyType = "money", Amount = 40 },  -- money, black_money, bank
@@ -288,7 +288,7 @@ data.shops = {
 				licence = "", --weapon, drive, dmv...
 				Type = "item", --weapon, item
 				Label = "Jus D'orange", --Nom item afficher
-				Name = "jus-orange", --Nom item serveur
+				Name = "jus_orange", --Nom item serveur
 				Count = 1,
 				License = { Activate = false, Name = "" },
                 Price = { Activate = true, MoneyType = "money", Amount = 20 },  -- money, black_money, bank
@@ -376,7 +376,7 @@ data.shops = {
 				licence = "", --weapon, drive, dmv...
 				Type = "item", --weapon, item
 				Label = "Jungle Drink", --Nom item afficher
-				Name = "jungle-drink", --Nom item serveur
+				Name = "jungle_drink", --Nom item serveur
 				Count = 1,
 				License = { Activate = false, Name = "" },
                 Price = { Activate = true, MoneyType = "money", Amount = 60 },
@@ -454,7 +454,7 @@ data.shops = {
 				licence = "", --weapon, drive, dmv...
 				Type = "item", --weapon, item
 				Label = "Jungle Drink", --Nom item afficher
-				Name = "jungle-drink", --Nom item serveur
+				Name = "jungle_drink", --Nom item serveur
 				Count = 1,
 				License = { Activate = false, Name = "" },
                 Price = { Activate = true, MoneyType = "money", Amount = 60 },
@@ -492,7 +492,7 @@ data.shops = {
 				licence = "", --weapon, drive, dmv...
 				Type = "item", --weapon, item
 				Label = "Jus d'orange", --Nom item afficher
-				Name = "jus-orange", --Nom item serveur
+				Name = "jus_orange", --Nom item serveur
 				Count = 1,
 				License = { Activate = false, Name = "" },
                 Price = { Activate = true, MoneyType = "money", Amount = 30 },
@@ -512,7 +512,7 @@ data.shops = {
 				licence = "", --weapon, drive, dmv...
 				Type = "item", --weapon, item
 				Label = "KitKat Ball", --Nom item afficher
-				Name = "kitkat-ball", --Nom item serveur
+				Name = "kitkat_ball", --Nom item serveur
 				Count = 1,
 				License = { Activate = false, Name = "" },
                 Price = { Activate = true, MoneyType = "money", Amount = 35 },
@@ -542,7 +542,7 @@ data.shops = {
 				licence = "", --weapon, drive, dmv...
 				Type = "item", --weapon, item
 				Label = "Jungle Drink", --Nom item afficher
-				Name = "jungle-drink", --Nom item serveur
+				Name = "jungle_drink", --Nom item serveur
 				Count = 1,
 				License = { Activate = false, Name = "" },
                 Price = { Activate = true, MoneyType = "money", Amount = 60 },

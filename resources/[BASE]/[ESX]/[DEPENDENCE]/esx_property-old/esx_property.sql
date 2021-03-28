@@ -90,5 +90,5 @@ INSERT INTO `properties` VALUES
   (40,'DellPerroHeights','Dell Perro Heights','{\"x\":-1447.06,\"y\":-538.28,\"z\":33.74}',NULL,NULL,'{\"x\":-1440.022,\"y\":-548.696,\"z\":33.74}','[]',NULL,0,0,1,NULL,0),
   (41,'DellPerroHeightst4','Dell Perro Heights - Apt 28',NULL,'{\"x\":-1452.125,\"y\":-540.591,\"z\":73.044}','{\"x\":-1455.435,\"y\":-535.79,\"z\":73.044}',NULL,'[]','DellPerroHeights',0,1,0,'{\"x\":-1467.058,\"y\":-527.571,\"z\":72.443}',1700000),
   (42,'DellPerroHeightst7','Dell Perro Heights - Apt 30',NULL,'{\"x\":-1451.562,\"y\":-523.535,\"z\":55.928}','{\"x\":-1456.02,\"y\":-519.209,\"z\":55.929}',NULL,'[]','DellPerroHeights',0,1,0,'{\"x\":-1457.026,\"y\":-530.219,\"z\":55.937}',1700000)
-;
+  (73,'Pacific bluffs','Pacific bluffs - Apt 30',NULL,'{\"x\":-2120.359,\"y\":-454.5090,\"z\":6.631}','{\"x\":-2121.471,\"y\":-455.5411,\"z\":6.659}',NULL,'[]','DellPerroHeights',0,1,0,'{\"x\":-2118.828,\"y\":-463.8902,\"z\":11.465}',4700000);
 
