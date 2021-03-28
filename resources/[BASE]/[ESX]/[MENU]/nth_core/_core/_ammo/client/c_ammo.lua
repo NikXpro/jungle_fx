@@ -6,7 +6,7 @@ AddEventHandler('nth:ammoClipCal12', function()
 
         if Weapon == GetHashKey(pistol) then     
             TriggerEvent("mythic_progbar:client:progress", {
-                name = "9mm",
+                name = "call12",
                 duration = 2500,
                 label = "Utillisation d'une boite de 9mm",
                 useWhileDead = false,
