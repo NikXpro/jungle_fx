@@ -17,7 +17,7 @@ data.jobMenu = {
             MenuPosition = vector3(129.57067871094, -1284.1968994141, 28.269393920898),
             MessageZone = "Appuyer sur ~INPUT_CONTEXT~ pour ouvrir le frigo",
             TailleZone = 1.5,
-            blip = { Activate = true, property = false, BlipId = 121, BlipScale = 0.8, BlipColor = 1, BlipName = "Unicorn" },
+            blip = { Activate = true, property = false, BlipId = 52, BlipScale = 0.8, BlipColor = 1, BlipName = "Unicorn" },
             ped = { Activate = false, PedHash = "csb_trafficwarden", Heanding = 39.84715270996094 },
             marker = { Activate = false, MarkerType = 1, MarkerColor = {r = 50, g = 50, b = 204}, MarkerSize = {x = 1.5, y = 1.5, z = 0.5}, ViewDistance = 3.0 },
         },
@@ -39,7 +39,7 @@ data.jobMenu = {
             MenuPosition = vector3(93.714965820312, -1291.1306152344, 29.263589859009),
             MessageZone = "Appuyer sur ~INPUT_CONTEXT~ pour ouvrir le Coffre",
             TailleZone = 1.5,
-            blip = { Activate = false, property = false, BlipId = 52, BlipScale = 0.8, BlipColor = 27, BlipName = "Unicorn" },
+            blip = { Activate = true, property = false, BlipId = 52, BlipScale = 0.8, BlipColor = 1, BlipName = "Unicorn" },
             ped = { Activate = false, PedHash = "csb_trafficwarden", Heanding = 39.84715270996094 },
             marker = { Activate = false, MarkerType = 1, MarkerColor = {r = 50, g = 50, b = 204}, MarkerSize = {x = 1.5, y = 1.5, z = 0.5}, ViewDistance = 3.0 },
         },
@@ -57,19 +57,19 @@ data.jobMenu = {
             MenuPosition = vector3(135.8239440918, -1279.14453125, 28.369115829468),
             MessageZone = "Appuyer sur ~INPUT_CONTEXT~ pour ouvrir le garage",
             TailleZone = 1.5,
-            blip = { Activate = false, property = false, BlipId = 410, BlipScale = 0.8, BlipColor = 52, BlipName = "Garage unicorn" },
+            blip = { Activate = false, property = false, BlipId = 410, BlipScale = 0.8, BlipColor = 52, BlipName = "Location Bateau" },
             ped = { Activate = false, PedHash = "a_m_m_mlcrisis_01", Heanding = 292.5040283203125 },
             marker = { Activate = false, MarkerType = 1, MarkerColor = {r = 50, g = 50, b = 204}, MarkerSize = {x = 2.0, y = 2.0, z = 0.5}, ViewDistance = 10 }
         },
         
         DeleterPoint = {
-            Coords = vector3(137.62118530273, -1270.8994140625, 29.067514419556),
-            TailleZone = 4.5,
-            MessageZone = "Appuyer sur ~INPUT_CONTEXT~ pour rentrer le vehicule dans le garage"
+            Coords = vector3(-852.74603271484, -1335.9423828125, 0.78264832496643),
+            TailleZone = 2.5,
+            MessageZone = "Appuyer sur ~INPUT_CONTEXT~ pour rendre le vehicule"
         },
         SpawnPoints = {
             { pos = vector3(137.54885864258, -1270.8289794922, 29.069229125977), heading = 100.84298706054688},
-            { pos = vector3(129.23895263672, -1272.9135742188, 29.077905654907), heading = 101.6070556640625}
+            { pos = vector3(129.23895263672, -1272.9135742188, 29.077905654907), heading = 107.13339996338}
         },
 
         VehiculeList = {
