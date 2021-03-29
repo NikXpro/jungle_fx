@@ -63,9 +63,9 @@ data.jobMenu = {
         },
         
         DeleterPoint = {
-            Coords = vector3(-852.74603271484, -1335.9423828125, 0.78264832496643),
-            TailleZone = 2.5,
-            MessageZone = "Appuyer sur ~INPUT_CONTEXT~ pour rendre le vehicule"
+            Coords = vector3(137.62118530273, -1270.8994140625, 29.067514419556),
+            TailleZone = 4.5,
+            MessageZone = "Appuyer sur ~INPUT_CONTEXT~ pour rentrer le vehicule dans le garage"
         },
         SpawnPoints = {
             { pos = vector3(137.54885864258, -1270.8289794922, 29.069229125977), heading = 100.84298706054688},
