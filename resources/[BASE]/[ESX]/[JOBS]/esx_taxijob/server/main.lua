@@ -28,15 +28,15 @@ AddEventHandler('esx_taxijob:success', function()
 
 			TriggerEvent('esx_addonaccount:getSharedAccount', 'society_taxi', function(account)
 				if account then
-					local playerMoney  = ESX.Math.Round(total / 100 * 30)
-					local societyMoney = ESX.Math.Round(total / 100 * 70)
+					local playerMoney  = 75
+					local societyMoney = 150
 
 					xPlayer.addMoney(playerMoney)
 					account.addMoney(societyMoney)
 
 					xPlayer.showNotification(_U('comp_earned', societyMoney, playerMoney))
 				else
-					xPlayer.addMoney(total)
+					xPlayer.addMoney(playerMoney)
 					xPlayer.showNotification(_U('have_earned', total))
 				end
 			end)
