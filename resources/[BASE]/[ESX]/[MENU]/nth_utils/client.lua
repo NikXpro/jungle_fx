@@ -319,7 +319,7 @@ Citizen.CreateThread(function()
 		Citizen.Wait(5)
 		local myPed = GetPlayerPed(-1)
 		if IsPedInMeleeCombat(myPed) then
-			if GetEntityHealth(myPed) < 115 then
+			if GetEntityHealth(myPed) < 100 then
 				SetPlayerInvincible(PlayerId(), true)
 				SetPedToRagdoll(myPed, 1000, 1000, 0, 0, 0, 0)
 				ESX.ShowNotification("~r~Vous êtes KO!")
