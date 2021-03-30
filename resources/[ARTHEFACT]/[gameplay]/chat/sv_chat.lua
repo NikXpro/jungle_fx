@@ -21,17 +21,17 @@ RegisterServerEvent('__cfx_internal:commandFallback')
     print(author .. '^7: ' .. message .. '^7')
 end)]]
 
---[[AddEventHandler('__cfx_internal:commandFallback', function(command)
+AddEventHandler('__cfx_internal:commandFallback', function(command)
     local name = GetPlayerName(source)
 
     TriggerEvent('chatMessage', source, name, '/' .. command)
 
     if not WasEventCanceled() then
-        TriggerClientEvent('chatMessage', -1, name, { 255, 255, 255 }, '/' .. command) 
+        --TriggerClientEvent('chatMessage', -1, name, { 255, 255, 255 }, '/' .. command) 
     end
 
     CancelEvent()
-end)]]
+end)
 
 -- player join messages
 --AddEventHandler('chat:init', function()

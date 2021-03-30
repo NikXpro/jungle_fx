@@ -650,7 +650,7 @@ Citizen.CreateThread(function()
 			end
 			
 			
-			if id and valid then
+			if id then
 				local reason = string.gsub(rawCommand, "report " ..args[1].." ", "")
 				if not PlayerReports[id] then
 					PlayerReports[id] = { }
@@ -663,7 +663,7 @@ Citizen.CreateThread(function()
 				end
 				if addReport then
 					table.insert(PlayerReports[id], {source = source, sourceName = GetPlayerName(source), reason = reason, time = os.time()})
-					SendWebhookMessage(moderationNotification,string.format(GetLocalisedText("playerreportedplayer"), getName(source), source, GetPlayerName(id), id, reason, #PlayerReports[id], minimumreports), "report")
+					SendWebhookMessage(moderationNotification,string.format(GetLocalisedText("playerreportedplayer"), getName(source), source, id, reason, #PlayerReports[id], minimumreports), "report")
 					-- "playerreportedplayer":"```\nUser %s (ID: %a) reported a player!\n%s (%a), Reason: %s\nReport %a/%a\n```",
 					for i,_ in pairs(OnlineAdmins) do 
 						TriggerClientEvent('chatMessage', i, "^3!!EasyAdmin Report!!^7\n"..string.format(string.gsub(GetLocalisedText("playerreportedplayer"), "```", ""), getName(source), source, GetPlayerName(id), id, reason, #PlayerReports[id], minimumreports))
