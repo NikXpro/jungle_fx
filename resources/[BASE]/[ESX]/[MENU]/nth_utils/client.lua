@@ -274,7 +274,7 @@ end
 Citizen.CreateThread(function()
     while true do
         SetWeaponDrops()
-        Citizen.Wait(500)
+        Citizen.Wait(150)
     end
 end)
 
@@ -287,7 +287,7 @@ end)
 -- Disable dispatch & Weapon POLICE
 Citizen.CreateThread(function()
     while true do
-        Citizen.Wait(3000)
+        Citizen.Wait(1500)
        
         if GetPlayerWantedLevel(PlayerId()) ~= 0 then
             SetPlayerWantedLevel(PlayerId(), 0, false)
@@ -301,7 +301,7 @@ Citizen.CreateThread(function()
 		Citizen.InvokeNative(0xDC0F817884CDD856, i, false)
 	end
     while true do
-        Citizen.Wait(500)
+        Citizen.Wait(250)
         local myCoords = GetEntityCoords(GetPlayerPed(-1))
 		ClearAreaOfCops(myCoords.x, myCoords.y, myCoords.z, 100.0, 0)
 		DisablePlayerVehicleRewards(PlayerId())
