@@ -66,8 +66,7 @@
     "Salmon": "pink.png",
     "Red": "red.png",
     "Mint": "s8.png",
-    "Blue": "blue.png",
-    "Iphone 11": "no_cover.png"
+    "Blue": "blue.png"
   },
 
   "sonido": {
@@ -112,7 +111,6 @@
     },
     {
       "display": "LSMS",
-      "backgroundColor": "red",
       "icon": "/html/static/img/icons_app/lsfd.png",
       "subMenu": [{
         "title": "Envoyer un message",
@@ -124,7 +122,6 @@
     },
     {
       "display": "DownTown Cab Co",
-      "backgroundColor": "red",
       "icon": "/html/static/img/icons_app/taxi.png",
       "subMenu": [{
         "title": "Envoyer un message",
@@ -136,7 +133,6 @@
     },
     {
       "display": "Redwood Cigarettes",
-      "backgroundColor": "red",
       "icon": "/html/static/img/icons_app/tabac.png",
       "subMenu": [{
         "title": "Envoyer un message",
@@ -148,7 +144,6 @@
     },
     {
       "display": "Auto Exotic",
-      "backgroundColor": "red",
       "icon": "/html/static/img/icons_app/mecano.png",
       "subMenu": [{
         "title": "Envoyer un message",
@@ -160,7 +155,6 @@
     },
     {
       "display": "Vignoble",
-      "backgroundColor": "red",
       "icon": "/html/static/img/icons_app/vigneron.png",
       "subMenu": [{
         "title": "Envoyer un message",
@@ -176,37 +170,31 @@
   "defaultContacts": [{
       "number": "ambulance",
       "display": "LSMS",
-      "backgroundColor": "red",
       "icon": "/html/static/img/icons_app/lsfd.png"
     },
     {
       "number": "police",
       "display": "LSPD",
-      "backgroundColor": "blue",
       "icon": "/html/static/img/icons_app/policia.png"
     },
     {
       "number": "taxi",
       "display": "DownTown Cab Co",
-      "backgroundColor": "yellow",
       "icon": "/html/static/img/icons_app/taxi.png"
     },
     {
       "number": "tabac",
       "display": "Redwood Cigarettes",
-      "backgroundColor": "yellow",
       "icon": "/html/static/img/icons_app/tabac.png"
     },
     {
       "number": "mechanic",
       "display": "Auto Exotic",
-      "backgroundColor": "yellow",
       "icon": "/html/static/img/icons_app/mecano.png"
     },
     {
       "number": "vigne",
       "display": "Vignoble",
-      "backgroundColor": "yellow",
       "icon": "/html/static/img/icons_app/vigneron.png"
     }
   ],
