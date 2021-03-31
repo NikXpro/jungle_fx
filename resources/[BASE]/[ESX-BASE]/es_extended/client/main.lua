@@ -528,7 +528,7 @@ if Config.ShowDotAbovePlayer then
 	Citizen.CreateThread(function()
 		while true do
 
-			Citizen.Wait(1)
+			Citizen.Wait(5)
 
 			local players = ESX.Game.GetPlayers()
 			for i = 1, #players, 1 do
@@ -545,26 +545,14 @@ end
 
 -- Disable wanted level
 if Config.DisableWantedLevel then
-
-	Citizen.CreateThread(function()
-		while true do
-			Citizen.Wait(0)
-
-			local playerId = PlayerId()
-			if GetPlayerWantedLevel(playerId) ~= 0 then
-				SetPlayerWantedLevel(playerId, 0, false)
-				SetPlayerWantedLevelNow(playerId, false)
-			end
-		end
-	end)
-
+	SetMaxWantedLevel(0) 
 end
 
 -- Pickups
 Citizen.CreateThread(function()
 	while true do
 
-		Citizen.Wait(0)
+		Citizen.Wait(5)
 
 		local playerPed = PlayerPedId()
 		local coords    = GetEntityCoords(playerPed)
