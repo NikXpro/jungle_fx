@@ -129,7 +129,7 @@ Stores = {
 	},
 	["unicorn_ltd"] = {
 		position = {x = 546.28796386719, y = 2662.748046875, z = 41.156497955322},
-		reward = mmath.random(750, 1500),
+		reward = math.random(750, 1500),
 		nameOfStore = "247 Supermarket. (Harmony)",
 		secondsRemaining = 300, -- seconds
 		lastRobbed = 0
