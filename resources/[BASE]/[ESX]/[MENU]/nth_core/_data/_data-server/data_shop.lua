@@ -461,7 +461,7 @@ Jobs = {
 
                     removeCount = 1,
                     requiredItem = "rose",
-                    price = 40,
+                    price = 80,
                     society = true,
                     societyName = "society_vigne",
                     societyMoney = 10,
@@ -510,7 +510,7 @@ Jobs = {
 
                     removeCount = 1,
                     requiredItem = "vin_blanc",
-                    price = 50,
+                    price = 90,
                     society = true,
                     societyName = "society_vigne",
                     societyMoney = 20,
@@ -559,7 +559,7 @@ Jobs = {
 
                     removeCount = 1,
                     requiredItem = "vin_rouge",
-                    price = 70,
+                    price = 95,
                     society = true,
                     societyName = "society_vigne",
                     societyMoney = 30
