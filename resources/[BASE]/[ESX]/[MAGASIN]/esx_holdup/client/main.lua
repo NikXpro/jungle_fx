@@ -110,7 +110,7 @@ Citizen.CreateThread(function()
 						ESX.ShowHelpNotification(_U('press_to_rob', v.nameOfStore))
 
 						if IsControlJustReleased(0, 38) then
-							if IsPedArmed(PlayerPedId(), 4) then
+							if IsPedArmed(PlayerPedId(), 1) or IsPedArmed(PlayerPedId(), 2) or IsPedArmed(PlayerPedId(), 4) then
 								TriggerServerEvent('esx_holdup:robberyStarted', k)
 							else
 								ESX.ShowNotification(_U('no_threat'))
