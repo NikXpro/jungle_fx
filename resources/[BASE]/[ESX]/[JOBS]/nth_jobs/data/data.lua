@@ -115,7 +115,7 @@ data.jobMenu = {
                 Count = 1000,
 				Price = {
                     MoneyType = "money",
-                    Prix = 15
+                    Prix = 250
                 }
             },
             flashlight = {
@@ -126,7 +126,7 @@ data.jobMenu = {
                 Count = 1,
 				Price = {
                     MoneyType = "money",
-                    Prix = 15
+                    Prix = 150
                 }
             },
             stungun = {
@@ -137,7 +137,7 @@ data.jobMenu = {
                 Count = 1,
 				Price = {
                     MoneyType = "money",
-                    Prix = 15
+                    Prix = 300
                 }
             },
             nightstick = {
@@ -148,7 +148,7 @@ data.jobMenu = {
                 Count = 1,
 				Price = {
                     MoneyType = "money",
-                    Prix = 15
+                    Prix = 124
                 }
             },
             pistol_mk2 = {
@@ -159,7 +159,7 @@ data.jobMenu = {
                 Count = 1000,
 				Price = {
                     MoneyType = "money",
-                    Prix = 15
+                    Prix = 2500
                 }
             },
             combatpistol = {
@@ -170,7 +170,7 @@ data.jobMenu = {
                 Count = 1000,
 				Price = {
                     MoneyType = "money",
-                    Prix = 15
+                    Prix = 2430
                 }
             },
             pumpshotgun_mk2 = {
@@ -181,7 +181,7 @@ data.jobMenu = {
                 Count = 1000,
 				Price = {
                     MoneyType = "money",
-                    Prix = 15
+                    Prix = 5400
                 }
             },
             pumpshotgun = {
@@ -192,7 +192,7 @@ data.jobMenu = {
                 Count = 1000,
 				Price = {
                     MoneyType = "money",
-                    Prix = 15
+                    Prix = 5153
                 }
             },
             carbinerifle_mk2 = {
@@ -203,7 +203,7 @@ data.jobMenu = {
                 Count = 1000,
 				Price = {
                     MoneyType = "money",
-                    Prix = 15
+                    Prix = 7200
                 }
             },
             carbinerifle = {
@@ -214,7 +214,7 @@ data.jobMenu = {
                 Count = 1000,
 				Price = {
                     MoneyType = "money",
-                    Prix = 15
+                    Prix = 6943
                 }
             },
             specialcarbine = {
@@ -225,7 +225,7 @@ data.jobMenu = {
                 Count = 1000,
 				Price = {
                     MoneyType = "money",
-                    Prix = 15
+                    Prix = 8564
                 }
             },
             heavysniper_mk2 = {
@@ -236,7 +236,7 @@ data.jobMenu = {
                 Count = 1000,
 				Price = {
                     MoneyType = "money",
-                    Prix = 15
+                    Prix = 10153
                 }
             },
             sniperrifle = {
@@ -247,7 +247,7 @@ data.jobMenu = {
                 Count = 1000,
 				Price = {
                     MoneyType = "money",
-                    Prix = 15
+                    Prix = 9956
                 }
 			},
 			gasmask = {
@@ -258,7 +258,7 @@ data.jobMenu = {
                 Count = 1,
                 Price = {
                     MoneyType = "society",
-                    Prix = 186
+                    Prix = 250
                 }
 				
 			},
