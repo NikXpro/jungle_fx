@@ -583,4 +583,196 @@ Jobs = {
             }
         },
     },
+
+    ["motodealer"] = {
+        jobRequired = true,
+        jobName = "motodealer",
+        location = { 
+            [1] = { --collect
+                coords = vector3(963.75561523438, -1025.4779052734, 39.847511291504),
+                zoneSize = 5.0,
+                blip = {
+                    showBlip = true,
+                    blipName = "[1] Recuppération de papier",
+                    sprite = 148,
+                    color = 83,
+                    scale = 0.2,
+                },
+                marker = {
+                    enable = false,
+                    size  = { x = 10.0, y = 10.0, z = 0.4 },
+                    color = { r = 255, g = 0, b = 0 },
+                    type  = 2
+                },
+                draw3dtext = {
+                    enable = false,
+                    text = "Recuppération de papier",
+                },
+                item = {
+                    process = "pickup",
+                    itemName = "papier",
+                    addCount = 2,
+                },                
+                animation = {
+                    enable = true,
+                    animationFunction = function(ped)
+                        animDict = "mp_car_bomb"
+                        animName = "car_bomb_mechanic"
+                        Citizen.CreateThread(function() 
+                            RequestAnimDict(animDict) 
+                            while not HasAnimDictLoaded(animDict) do Citizen.Wait(10) end 
+                            TaskPlayAnim(ped, animDict, animName, 8.0, -8, -1, 49, 0, 0, 0, 0)
+                        end)
+                    end,
+                },
+                progressbar = {
+                    enable = true,
+                    progText = "Recuppération de papier...", 
+                    duration = 5000 
+                }
+            },
+            [2] = { --traitement 1
+                coords = vector3(2476.1665039062, 4087.3825683594, 38.119007110596),
+                zoneSize = 2.5,
+                blip = {
+                    showBlip = true,
+                    blipName = "[2] Impression des contrats",
+                    sprite = 148,
+                    color = 83,
+                    scale = 0.2,
+                },
+                marker = {
+                    enable = false,
+                    size  = { x = 0.7, y = 0.7, z = 0.4 },
+                    color = { r = 204, g = 204, b = 0 },
+                    type  = 2
+                },
+                draw3dtext = {
+                    enable = true,
+                    text = "[2] Impression des contrats",
+                },
+                item = {
+                    process = "exchange",
+                    
+                    addCount = 1,
+                    itemName = "papier_imprimer",
+                    
+                    removeCount = 2,
+                    requiredItem = "papier",
+                },
+                animation = {
+                    enable = true,
+                    animationFunction = function(ped)
+                        animDict = "mp_car_bomb"
+                        animName = "car_bomb_mechanic"
+                        Citizen.CreateThread(function()
+                            RequestAnimDict(animDict) 
+                            while not HasAnimDictLoaded(animDict) do Citizen.Wait(10) end
+                            TaskPlayAnim(ped, animDict, animName, 8.0, -8, -1, 49, 0, 0, 0, 0)
+                        end)
+                    end,
+                },
+                progressbar = {
+                    enable = true,
+                    progText = "Impression des contrats...",
+                    duration = 5000
+                }
+            },
+            [3] = { --Mise en bouteille 2
+                coords = vector3(-324.19412231445, -1355.8492431641, 31.295705795288),
+                zoneSize = 1.5,
+                blip = {
+                    showBlip = true,
+                    blipName = "[3] Certification des contrats",
+                    sprite = 148,
+                    color = 83,
+                    scale = 0.2,
+                },
+                marker = {
+                    enable = false,
+                    size  = { x = 0.7, y = 0.7, z = 0.4 },
+                    color = { r = 204, g = 204, b = 0 },
+                    type  = 2
+                },
+                draw3dtext = {
+                    enable = true,
+                    text = "[3] Certification des contrats",
+                },
+                item = {
+                    process = "package",
+
+                    addCount = 2,
+                    itemName = "papier_certifier",
+
+                    removeCount = 2,
+                    requiredItem = "papier_imprimer", 
+                },
+                animation = {
+                    enable = true,
+                    animationFunction = function(ped)
+                        animDict = "mp_car_bomb"
+                        animName = "car_bomb_mechanic"
+                        Citizen.CreateThread(function()
+                            RequestAnimDict(animDict) 
+                            while not HasAnimDictLoaded(animDict) do Citizen.Wait(10) end
+                            TaskPlayAnim(ped, animDict, animName, 8.0, -8, -1, 49, 0, 0, 0, 0)
+                        end)
+                    end,
+                },
+                progressbar = {
+                    enable = true,
+                    progText = "Certification des contrat",
+                    duration = 5000
+                }
+            },
+            [4] = {
+                coords = vector3(-5.199999332428, -716.33740234375, 31.33805847168),
+                zoneSize = 3.5,
+                blip = {
+                    showBlip = true,
+                    blipName = "[4] Vente des contrats",
+                    sprite = 148,
+                    color = 83,
+                    scale = 0.2,
+                },
+                marker = {
+                    enable = false,
+                    size  = { x = 0.7, y = 0.7, z = 0.4 },
+                    color = { r = 204, g = 204, b = 0 },
+                    type  = 2
+                },
+                draw3dtext = {
+                    enable = true,
+                    text = "[4] Vente des contrats",
+                },
+                item = {
+                    process = "sell", --dont touch
+                    moneyType = "money",-- money, bank, black_money
+
+                    removeCount = 1,
+                    requiredItem = "papier_certifier",
+                    price = 83,
+                    society = true,
+                    societyName = "society_motodealer",
+                    societyMoney = 28
+                },
+                animation = {
+                    enable = true,
+                    animationFunction = function(ped)
+                        animDict = "mp_car_bomb"
+                        animName = "car_bomb_mechanic"
+                        Citizen.CreateThread(function()
+                            RequestAnimDict(animDict) while not HasAnimDictLoaded(animDict) do Citizen.Wait(10) end
+                            TaskPlayAnim(ped, animDict, animName, 8.0, -8, -1, 49, 0, 0, 0, 0)
+                        end)
+                    end,
+                },
+                progressbar = {
+                    enable = true,
+                    progText = "Vente des contrats...",
+                    duration = 5000
+                }
+            }
+        },
+    },
 }

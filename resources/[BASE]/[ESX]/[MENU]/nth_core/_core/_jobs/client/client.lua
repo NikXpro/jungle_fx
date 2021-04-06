@@ -52,8 +52,8 @@ end)
 function main()
     Citizen.CreateThread(function()
         local farDistance = 10
-        while true do
-            local wait, show = 500, true
+        while (true) do
+            local wait, show = 5, true
             if PlayerLoaded and PlayerData.job ~= nil then
                 local ped = PlayerPedId()
                 local coords = GetEntityCoords(ped)
@@ -62,7 +62,7 @@ function main()
                         if v.jobRequired then 
                             if PlayerData.job.name ~= v.jobName then
                                 show = false
-                                wait = 500
+                                wait = 5
                             end
                         end                    
                         if show then
