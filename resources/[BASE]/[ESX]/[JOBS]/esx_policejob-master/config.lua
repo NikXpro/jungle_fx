@@ -223,7 +223,7 @@ Config.AuthorizedVehicles = {
 		},
 
 		boss = {
-			{model = 'polmav', props = {modLivery = 0}, price = 100000}
+			{model = 'polmav', props = {modLivery = 0}, price = 10}
 		}
 	}
 }
