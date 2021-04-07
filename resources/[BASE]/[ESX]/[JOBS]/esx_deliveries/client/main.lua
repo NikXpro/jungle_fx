@@ -128,7 +128,7 @@ function HandleLogic()
 					RemovePlayerProps()
 					RemoveBlip(CurrentBlip)
 					DeliveryLocation.Item1 = Config.Base.retveh
-					DeliveryLocation.Item2 = {x = 0, y = 0, z = 0}
+					DeliveryLocation.Item2 = {x = -283.2421875, y = -1033.6911621094, z = 30.387327194214}
 					CurrentBlip            = CreateBlipAt(DeliveryLocation.Item1.x, DeliveryLocation.Item1.y, DeliveryLocation.Item1.z)
 					CurrentSubtitle        = _U("get_back_to_deliveryhub")
 					CurrentStatus          = Status.PLAYER_RETURNING_TO_BASE

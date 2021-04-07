@@ -159,9 +159,11 @@ function ResetClothing(anim)
 	local e = Drawables.Top.Emote
 	if anim then TaskPlayAnim(Ped, e.Dict, e.Anim, 3.0, 3.0, 3000, e.Move, 0, false, false, false) end
 	for k,v in pairs(LastEquipped) do
-		if v then
-			if v.Drawable then SetPedComponentVariation(Ped, v.Id, v.Drawable, v.Texture, 0)
-			elseif v.Prop then ClearPedProp(Ped, v.Id) SetPedPropIndex(Ped, v.Id, v.Prop, v.Texture, true) end
+		if v ~= LastEquipped["Mask"] then
+			if v then
+				if v.Drawable then SetPedComponentVariation(Ped, v.Id, v.Drawable, v.Texture, 0)
+				elseif v.Prop then ClearPedProp(Ped, v.Id) SetPedPropIndex(Ped, v.Id, v.Prop, v.Texture, true) end
+			end
 		end
 	end
 	LastEquipped = {}
@@ -177,8 +179,6 @@ Citizen.CreateThread(function()
 	end
 
 end)
-
-LastEquipped["Mask"] = true
 
 function ToggleMask()
 	PlayToggleEmote(Drawables["Mask"].Emote, function()
@@ -196,7 +196,6 @@ function ToggleMask()
 						ClearPedProp(player, 0)
 					else
 						ESX.ShowNotification(_U('no_mask'))
-
 					end
 				end)
 			end)
