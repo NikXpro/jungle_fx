@@ -391,87 +391,85 @@ function OpenVehicleSpawnerMenu()
 
 end
 
+function Message()
+	Citizen.CreateThread(function()
+	  	while messagenotfinish do
+		Citizen.Wait(500)
+			DisplayOnscreenKeyboard(1, "FMMC_MPM_NA", "", "", "", "", "", 30)
+			while (UpdateOnscreenKeyboard() == 0) do
+				DisableAllControlActions(0);
+				Citizen.Wait(5)
+			end
+			if (GetOnscreenKeyboardResult()) then
+				local result = GetOnscreenKeyboardResult()
+				messagenotfinish = false
+				TriggerServerEvent('esx_tabac:annonce', result, "Burger shot")
+		  	end
+		end
+	end)
+end
+
 function OpenSocietyActionsMenu()
-
-  local elements = {}
-
-  table.insert(elements, {label = _U('billing'),    value = 'billing'})
-  table.insert(elements, {label = _U('ingredient'),    value = 'menu_ingredient'})
-  table.insert(elements, {label = _U('crafting'),    value = 'menu_crafting'})
-
+  local elements = {
+    {label = _U('billing'), value = 'billing'},
+    {label = _U('ingredient'), value = 'menu_ingredient'},
+    {label = _U('crafting'), value = 'menu_crafting'},
+    {label = "Passer une annonce", value = 'announce'}
+  }
   ESX.UI.Menu.CloseAll()
-
-  ESX.UI.Menu.Open(
-    'default', GetCurrentResourceName(), 'burgershot_actions',
+  ESX.UI.Menu.Open('default', GetCurrentResourceName(), 'burgershot_actions',
     {
       title    = _U('burgershot'),
       align    = 'top-left',
       elements = elements
     },
-    function(data, menu)
-
-      if data.current.value == 'billing' then
-        OpenBillingMenu()
-      end
-
-      if data.current.value == 'menu_crafting' then
-        
-          ESX.UI.Menu.Open(
-              'default', GetCurrentResourceName(), 'menu_crafting',
-              {
-                  title = _U('crafting'),
-                  align = 'top-left',
-                  elements = {
-                      {label = _U('burger'),     value = 'burger'},
-                      {label = _U('frites'),     value = 'fritesba'},
-                  }
-              },
-              function(data2, menu2)
-            
-                TriggerServerEvent('esx_burgerjob:craftingBurger', data2.current.value)
-                animsAction({ lib = "mini@drinking", anim = "shots_barman_b" })
-      
-              end,
-              function(data2, menu2)
-                  menu2.close()
-              end
-          )
-      end
-
-       if data.current.value == 'menu_ingredient' then
-        
-          ESX.UI.Menu.Open(
-              'default', GetCurrentResourceName(), 'menu_ingredient',
-              {
-                  title = _U('ingredient'),
-                  align = 'top-left',
-                  elements = {
-                      {label = _U('cuttomate'),     value = 'cuttomate'},
-                      {label = _U('lavesalade'),     value = 'lavesalade'},
-                      {label = _U('cuiresteak'),     value = 'cuiresteak'},
-                      {label = _U('friteuse'),     value = 'friteuse'},
-                  }
-              },
-              function(data2, menu3)
-            
-                TriggerServerEvent('esx_burgerjob:ingredientgBurger', data2.current.value)
-                animsAction({ lib = "mini@drinking", anim = "shots_barman_b" })
-      
-              end,
-              function(data2, menu3)
-                  menu3.close()
-              end
-          )
-      end
-     
-    end,
-    function(data, menu)
-
-      menu.close()
-
+  function(data, menu)
+    if data.current.value == 'billing' then
+      OpenBillingMenu()
+    elseif data.current.value == 'menu_crafting' then
+      ESX.UI.Menu.Open('default', GetCurrentResourceName(), 'menu_crafting',
+        {
+          title = _U('crafting'),
+          align = 'top-left',
+          elements = {
+            {label = _U('burger'),     value = 'burger'},
+            {label = _U('frites'),     value = 'fritesba'},
+          }
+        },
+        function(data2, menu2)
+          TriggerServerEvent('esx_burgerjob:craftingBurger', data2.current.value)
+          animsAction({ lib = "mini@drinking", anim = "shots_barman_b" })
+        end,
+      function(data2, menu2)
+        menu2.close()
+      end)
+    elseif data.current.value == 'menu_ingredient' then
+      ESX.UI.Menu.Open('default', GetCurrentResourceName(), 'menu_ingredient',
+        {
+          title = _U('ingredient'),
+          align = 'top-left',
+          elements = {
+            {label = _U('cuttomate'),     value = 'cuttomate'},
+            {label = _U('lavesalade'),     value = 'lavesalade'},
+            {label = _U('cuiresteak'),     value = 'cuiresteak'},
+            {label = _U('friteuse'),     value = 'friteuse'},
+          }
+        },
+        function(data2, menu3)
+          TriggerServerEvent('esx_burgerjob:ingredientgBurger', data2.current.value)
+          animsAction({ lib = "mini@drinking", anim = "shots_barman_b" })
+        end,
+        function(data2, menu3)
+          menu3.close()
+      end)
+    elseif data.current.value == 'announce' then
+      messagenotfinish = true
+			Message()
     end
-  )
-
+  end,
+  function(data, menu)
+    menu.close()
+  end)
 end
 
 function OpenBillingMenu()
