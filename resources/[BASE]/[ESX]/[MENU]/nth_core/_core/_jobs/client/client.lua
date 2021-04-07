@@ -1,29 +1,31 @@
 ESX = nil
+local PlayerData = {}
 local PlayerLoaded = false
 local blips = {}
 Citizen.CreateThread(function()
-    while ESX == nil do
-        TriggerEvent('esx:getSharedObject', function(obj) ESX = obj end)
-        Citizen.Wait(0)
-    end
-
-    while ESX.GetPlayerData().job == nil do
+    TriggerEvent('esx:getSharedObject', function(obj) 
+        ESX = obj 
+    end)
+    while Jobs == nil or ESX.GetPlayerData().job == nil do
 		Citizen.Wait(10)
     end
 
-    PlayerData = ESX.GetPlayerData()
+    ESX.PlayerData = ESX.GetPlayerData()
     PlayerLoaded = true
+
+    main()
+    refreshBlips()
 end)
 
 RegisterNetEvent('esx:playerLoaded')
 AddEventHandler('esx:playerLoaded', function(xPlayer)
-    PlayerData = xPlayer
+    ESX.PlayerData = xPlayer
     PlayerLoaded = true
 end)
 
 RegisterNetEvent('esx:setJob')
 AddEventHandler('esx:setJob', function(job)
-    PlayerData.job = job
+    ESX.PlayerData.job = job
     deleteBlips()
 	refreshBlips()
 end)
@@ -32,7 +34,7 @@ RegisterNetEvent("cylex_jobs:client:getJobsData")
 AddEventHandler("cylex_jobs:client:getJobsData", function(jobs)
     Jobs = jobs
     Citizen.CreateThread(function()
-        while ESX == nil and Jobs == nil and PlayerData == nil do
+        while ESX == nil and Jobs == nil and ESX.PlayerData == nil do
             Citizen.Wait(100)
         end
         main()
@@ -40,34 +42,30 @@ AddEventHandler("cylex_jobs:client:getJobsData", function(jobs)
     end)
 end)
 
-RegisterNetEvent("cylex_jobs:client:TriggerAnimation")
-AddEventHandler("cylex_jobs:client:TriggerAnimation", function(ped, animDict, animName)
-    Citizen.CreateThread(function()
-        RequestAnimDict(animDict) 
-        while not HasAnimDictLoaded(animDict) do Citizen.Wait(10) end
-        TaskPlayAnim(ped, animDict, animName, 8.0, -8, -1, 49, 0, 0, 0, 0)
-    end)
-end)
+function TriggerAnimation(ped, animDict, animName)
+    RequestAnimDict(animDict) 
+    while not HasAnimDictLoaded(animDict) do Citizen.Wait(10) end
+    TaskPlayAnim(ped, animDict, animName, 8.0, -8, -1, 49, 0, 0, 0, 0)
+end
 
 function main()
     Citizen.CreateThread(function()
         local farDistance = 10
         while (true) do
-            local wait, show = 5, true
-            if PlayerLoaded and PlayerData.job ~= nil then
+            local wait= 5
+            if PlayerLoaded and ESX.PlayerData.job ~= nil then
                 local ped = PlayerPedId()
                 local coords = GetEntityCoords(ped)
                 for k, v in pairs(Jobs) do
                     for i=1, #v.location do
+                        local show = true
+                        local distance = #(coords - v.location[i]["coords"])
                         if v.jobRequired then 
-                            if PlayerData.job.name ~= v.jobName then
+                            if ESX.PlayerData.job.name ~= v.jobName then
                                 show = false
-                                wait = 5
                             end
-                        end                    
+                        end          
                         if show then
-                            local distance = #(coords - v.location[i]["coords"])
-                            
                             if distance <= farDistance then  
                                 wait = 5
                                 if v.location[i].marker["enable"] then
@@ -151,7 +149,7 @@ function refreshBlips()
             for i = 1, #v.location do
                 if v.location[i].blip["showBlip"] then
                     if v.jobRequired then
-                        if PlayerData.job.name == v.jobName then
+                        if ESX.PlayerData.job.name == v.jobName then
                             JobBlip = AddBlipForCoord(v.location[i]["coords"])
                             SetBlipSprite(JobBlip, v.location[i].blip["sprite"])
                             SetBlipColour(JobBlip, v.location[i].blip["color"])
