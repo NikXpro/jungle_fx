@@ -137,7 +137,7 @@ Config.Commands = {
 		Name = Lang("Bracelet")
 	},
 	[Lang("MASK")] = {
-		Func = function() ToggleClothing("Mask") end,
+		Func = function() ToggleMask() end,
 		Sprite = "mask",
 		Desc = string.format(Lang("TakeOffOn"), string.lower(Lang("Mask"))),
 		Button = 6,

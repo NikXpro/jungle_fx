@@ -167,6 +167,53 @@ function ResetClothing(anim)
 	LastEquipped = {}
 end
 
+ESX                           = nil
+
+Citizen.CreateThread(function()
+
+	while ESX == nil do
+		TriggerEvent('esx:getSharedObject', function(obj) ESX = obj end)
+		Citizen.Wait(0)
+	end
+
+end)
+
+LastEquipped["Mask"] = true
+
+function ToggleMask()
+	PlayToggleEmote(Drawables["Mask"].Emote, function()
+		if LastEquipped["Mask"] then
+			TriggerEvent('skinchanger:getSkin', function(skin)
+				ESX.TriggerServerCallback('esx_mask:getMask', function(hasMask, maskSkin)
+					if hasMask then
+						TriggerEvent('skinchanger:loadClothes', skin, {
+							mask_1 = maskSkin.mask_1,
+							mask_2 = maskSkin.mask_2
+						})
+						local player = GetPlayerPed(-1)
+						SetPedPropIndex(player, 1, 0, 0, 0)
+						SetPedPropIndex(player, 2, -1, 0, 0)
+						ClearPedProp(player, 0)
+					else
+						ESX.ShowNotification(_U('no_mask'))
+
+					end
+				end)
+			end)
+			LastEquipped["Mask"] = false
+		else
+			TriggerEvent('skinchanger:getSkin', function(skin)
+				TriggerEvent('skinchanger:loadClothes', skin, {
+					mask_1 = 0,
+					mask_2 = 0
+				})
+			end)
+			LastEquipped["Mask"] = true
+		end
+	end)
+	
+end
+
 function ToggleClothing(which, extra)
 	if Cooldown then return end
 	local Toggle = Drawables[which] if extra then Toggle = Extras[which] end
