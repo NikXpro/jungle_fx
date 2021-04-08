@@ -1,0 +1,13 @@
+hair_020_u = 1
+hair_017_u = 2
+hair_005_u = 3
+hair_006_u = 4
+hair_019_u = 5
+hair_***_u = 6
+hair_***_u = 7
+hair_***_u = 8
+hair_***_u = 9
+hair_***_u = 10
+hair_***_u = 11
+hair_***_u = 12
+hair_***_u = 13
