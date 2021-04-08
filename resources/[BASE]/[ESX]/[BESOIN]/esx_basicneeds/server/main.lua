@@ -17,11 +17,18 @@ TriggerEvent('esx:getSharedObject', function(obj) ESX = obj end)
 				TriggerClientEvent('esx_status:add', source, 'thirst', v.GiveDrink.AddNumber)
 			end
 
+			if v.GiveDrunk.Activate == true then
+				TriggerClientEvent('esx_status:add', source, 'drunk', v.GiveDrunk.AddNumber)
+			end
+
 			if v.itemType.AnimeType == "Eat" then
 				TriggerClientEvent('esx_basicneeds:onEat', source)
 				TriggerClientEvent('esx:showNotification', source, v.itemType.Message)
 			elseif v.itemType.AnimeType == "Drink" then
 				TriggerClientEvent('esx_basicneeds:onDrink', source)
+				TriggerClientEvent('esx:showNotification', source, v.itemType.Message)
+			elseif v.itemType.AnimeType == "Drunk" then
+				TriggerClientEvent('esx_optionalneeds:onDrink', source)
 				TriggerClientEvent('esx:showNotification', source, v.itemType.Message)
 			else
 				print("Animation/Notification de l'item non défini")
